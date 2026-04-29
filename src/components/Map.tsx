@@ -6,6 +6,8 @@ import SunCalc from "suncalc";
 import "mapbox-gl/dist/mapbox-gl.css";
 import {
   type BuildingFootprint,
+  computeShadowPolygon,
+  estimateSkyExposure,
   filterBuildingsByProximity,
   scoreSunlight,
 } from "@/lib/shadows";
@@ -14,6 +16,14 @@ import {
 
 const LA_LAT = 34.0195;
 const LA_LNG = -118.4912;
+const METRIC_WEIGHTS = {
+  directSun: 0.6,
+  futureSun: 0.25,
+  skyExposure: 0.15,
+} as const;
+const FORECAST_MINUTES = 90;
+const FORECAST_STEP_MINUTES = 30;
+const SUN_UNTIL_STEP_MINUTES = 10;
 
 // ===================== TYPES =====================
 
@@ -25,6 +35,10 @@ interface VenueFeature {
   outdoor_seating: string;
   website: string | null;
   sunScore: number;
+  directSun: number;
+  futureSun: number;
+  skyExposure: number;
+  sunUntil: string | null;
   coordinates: [number, number];
 }
 
@@ -69,6 +83,33 @@ function formatTimeShort(date: Date): string {
   return `${hour}${ampm}`;
 }
 
+function formatDateLabel(date: Date): string {
+  return date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+}
+
+function formatSunAltitude(altitudeRad: number): string {
+  return `${Math.round((altitudeRad * 180) / Math.PI)}deg`;
+}
+
+function formatSunDirection(azimuthRad: number): string {
+  const bearing = (((azimuthRad * 180) / Math.PI + 180) % 360 + 360) % 360;
+  const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
+  const index = Math.round(bearing / 45) % directions.length;
+  return directions[index];
+}
+
+function getSeasonLabel(date: Date): string {
+  const month = date.getMonth();
+  if (month >= 2 && month <= 4) return "Spring";
+  if (month >= 5 && month <= 7) return "Summer";
+  if (month >= 8 && month <= 10) return "Fall";
+  return "Winter";
+}
+
 function toDateInputValue(date: Date): string {
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -82,19 +123,142 @@ function createPopupHTML(props: {
   cuisine: string | null;
   website: string | null;
   sunScore: number;
+  directSun?: number;
+  sunUntil?: string | null;
 }): string {
-  const sunny = props.sunScore >= 0.5;
+  const sunny = (props.directSun ?? props.sunScore) >= 0.5;
   return `<div style="font-size:13px;min-width:160px">
     <div style="font-size:15px;font-weight:600;margin-bottom:6px">${props.name}</div>
     <div style="text-transform:capitalize;color:rgba(250,250,249,0.5);margin-bottom:4px">
       ${props.amenity}${props.cuisine ? ` · ${props.cuisine}` : ""}
     </div>
     ${props.website ? `<a href="${props.website}" target="_blank" rel="noopener" style="color:#F59E0B;text-decoration:none;font-size:12px">Visit Website &#8594;</a><br/>` : ""}
+    <div style="margin-top:8px;color:rgba(250,250,249,0.82);font-size:12px">
+      Sun score <strong>${Math.round(props.sunScore)}</strong>/100
+      ${props.sunUntil ? ` · sunny until ${props.sunUntil}` : ""}
+    </div>
     <div style="margin-top:8px;display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:600;${sunny ? "color:#F59E0B;background:rgba(245,158,11,0.15)" : "color:#818CF8;background:rgba(129,140,248,0.15)"}">
       <span style="width:8px;height:8px;border-radius:50%;background:${sunny ? "#F59E0B" : "#818CF8"};display:inline-block"></span>
       ${sunny ? "In Sun" : "In Shade"}
     </div>
   </div>`;
+}
+
+function isVenueInBounds(
+  bounds: mapboxgl.LngLatBounds,
+  coordinates: [number, number]
+) {
+  return bounds.contains(coordinates);
+}
+
+function scoreVenueForTimeWindow(
+  coordinates: [number, number],
+  buildings: BuildingFootprint[],
+  startTime: Date,
+  sunsetTime: Date
+) {
+  const directSun = scoreSunlight(
+    coordinates,
+    buildings,
+    SunCalc.getPosition(startTime, LA_LAT, LA_LNG)
+  );
+
+  const skyExposure = estimateSkyExposure(coordinates, buildings);
+  const horizonEnd = Math.min(
+    sunsetTime.getTime(),
+    startTime.getTime() + FORECAST_MINUTES * 60_000
+  );
+
+  let futureSamples = 0;
+  let futureSunHits = 0;
+  for (
+    let time = startTime.getTime() + FORECAST_STEP_MINUTES * 60_000;
+    time <= horizonEnd;
+    time += FORECAST_STEP_MINUTES * 60_000
+  ) {
+    futureSamples += 1;
+    futureSunHits += scoreSunlight(
+      coordinates,
+      buildings,
+      SunCalc.getPosition(new Date(time), LA_LAT, LA_LNG)
+    );
+  }
+
+  const futureSun = futureSamples > 0 ? futureSunHits / futureSamples : directSun;
+
+  let sunUntil: string | null = null;
+  if (directSun >= 0.5) {
+    let nextShadeTime = sunsetTime;
+    for (
+      let time = startTime.getTime() + SUN_UNTIL_STEP_MINUTES * 60_000;
+      time <= sunsetTime.getTime();
+      time += SUN_UNTIL_STEP_MINUTES * 60_000
+    ) {
+      const sampleSun = scoreSunlight(
+        coordinates,
+        buildings,
+        SunCalc.getPosition(new Date(time), LA_LAT, LA_LNG)
+      );
+      if (sampleSun < 0.5) {
+        nextShadeTime = new Date(time);
+        break;
+      }
+    }
+    sunUntil = formatTime(nextShadeTime);
+  }
+
+  const sunScore =
+    (directSun * METRIC_WEIGHTS.directSun +
+      futureSun * METRIC_WEIGHTS.futureSun +
+      skyExposure * METRIC_WEIGHTS.skyExposure) *
+    100;
+
+  return {
+    directSun,
+    futureSun,
+    skyExposure,
+    sunScore,
+    sunUntil,
+  };
+}
+
+function createEmptyFeatureCollection(): GeoJSON.FeatureCollection<GeoJSON.Polygon> {
+  return {
+    type: "FeatureCollection",
+    features: [],
+  };
+}
+
+function extractRenderedBuildings(map: mapboxgl.Map): BuildingFootprint[] {
+  const buildingFeatures = map.queryRenderedFeatures({
+    layers: ["3d-buildings"],
+  });
+
+  const buildings: BuildingFootprint[] = [];
+  for (const bf of buildingFeatures) {
+    if (
+      bf.geometry.type !== "Polygon" &&
+      bf.geometry.type !== "MultiPolygon"
+    ) {
+      continue;
+    }
+
+    const height =
+      (bf.properties?.height as number) ||
+      ((bf.properties?.levels as number) || 3) * 3;
+
+    if (bf.geometry.type === "Polygon") {
+      const ring = bf.geometry.coordinates[0] as [number, number][];
+      buildings.push({ polygon: ring, height });
+    } else {
+      for (const poly of bf.geometry.coordinates) {
+        const ring = poly[0] as [number, number][];
+        buildings.push({ polygon: ring, height });
+      }
+    }
+  }
+
+  return buildings;
 }
 
 // ===================== COMPONENT =====================
@@ -121,6 +285,8 @@ export default function Map() {
   const [activeFilter, setActiveFilter] = useState<AmenityFilter>("all");
   const [sunOnly, setSunOnly] = useState(false);
   const [selectedVenueId, setSelectedVenueId] = useState<number | null>(null);
+  const [mapReady, setMapReady] = useState(false);
+  const [shadowOverlayOn, setShadowOverlayOn] = useState(true);
 
   // ===================== COMPUTED =====================
 
@@ -145,23 +311,30 @@ export default function Map() {
     }
 
     if (sunOnly) {
-      list = list.filter((v) => v.sunScore >= 0.5);
+      list = list.filter((v) => v.directSun >= 0.5);
     }
 
     return [...list].sort((a, b) => {
       if (b.sunScore !== a.sunScore) return b.sunScore - a.sunScore;
+      if (b.directSun !== a.directSun) return b.directSun - a.directSun;
       return a.name.localeCompare(b.name);
     });
   }, [venues, searchQuery, activeFilter, sunOnly]);
 
   const sunCount = useMemo(
-    () => venues.filter((v) => v.sunScore >= 0.5).length,
+    () => venues.filter((v) => v.directSun >= 0.5).length,
     [venues]
   );
 
   const shadeCount = useMemo(
-    () => venues.filter((v) => v.sunScore < 0.5).length,
+    () => venues.filter((v) => v.directSun < 0.5).length,
     [venues]
+  );
+
+  const bestVenue = useMemo(() => filteredVenues[0] ?? null, [filteredVenues]);
+  const sunPosition = useMemo(
+    () => SunCalc.getPosition(currentTime, LA_LAT, LA_LNG),
+    [currentTime]
   );
 
   // ===================== CALLBACKS =====================
@@ -214,10 +387,19 @@ export default function Map() {
   }, []);
 
   const updateVenuesList = useCallback(() => {
-    if (!venueDataRef.current) return;
+    const map = mapRef.current;
+    if (!map || !venueDataRef.current) return;
 
+    const bounds = map.getBounds();
+    if (!bounds) return;
     const list: VenueFeature[] = venueDataRef.current.features
       .filter((f) => f.properties?.name)
+      .filter((f) =>
+        isVenueInBounds(
+          bounds,
+          (f.geometry as GeoJSON.Point).coordinates as [number, number]
+        )
+      )
       .map((f) => ({
         id: f.properties!.osm_id as number,
         name: f.properties!.name as string,
@@ -225,7 +407,14 @@ export default function Map() {
         cuisine: f.properties!.cuisine as string | null,
         outdoor_seating: f.properties!.outdoor_seating as string,
         website: f.properties!.website as string | null,
-        sunScore: (f.properties!.sunScore as number) ?? 1,
+        sunScore: Number(f.properties!.sunScore ?? 0),
+        directSun: Number(f.properties!.directSun ?? 0),
+        futureSun: Number(f.properties!.futureSun ?? 0),
+        skyExposure: Number(f.properties!.skyExposure ?? 1),
+        sunUntil:
+          typeof f.properties!.sunUntil === "string"
+            ? (f.properties!.sunUntil as string)
+            : null,
         coordinates: (f.geometry as GeoJSON.Point).coordinates as [
           number,
           number,
@@ -235,83 +424,108 @@ export default function Map() {
     setVenues(list);
   }, []);
 
+  const updateShadowOverlay = useCallback(
+    (buildings: BuildingFootprint[], sunPos: { azimuth: number; altitude: number }) => {
+      const map = mapRef.current;
+      if (!map || !map.getSource("shadow-polygons")) return;
+
+      const source = map.getSource("shadow-polygons") as mapboxgl.GeoJSONSource;
+
+      if (!shadowOverlayOn || sunPos.altitude <= 0 || buildings.length === 0) {
+        source.setData(createEmptyFeatureCollection());
+        return;
+      }
+
+      const features: GeoJSON.Feature<GeoJSON.Polygon>[] = buildings
+        .map((building) => computeShadowPolygon(building, sunPos))
+        .filter((polygon) => polygon.length >= 4)
+        .map((polygon, index) => ({
+          type: "Feature",
+          id: index,
+          properties: {},
+          geometry: {
+            type: "Polygon",
+            coordinates: [polygon],
+          },
+        }));
+
+      source.setData({
+        type: "FeatureCollection",
+        features,
+      });
+    },
+    [shadowOverlayOn]
+  );
+
   const scoreVenues = useCallback(() => {
     const map = mapRef.current;
     if (!map || !map.isStyleLoaded() || !map.getSource("venues")) return;
+    if (!venueDataRef.current) return;
 
     const sunPos = SunCalc.getPosition(currentTime, LA_LAT, LA_LNG);
+    const bounds = map.getBounds();
+    if (!bounds) return;
+    const visibleVenueFeatures = venueDataRef.current.features.filter((feature) =>
+      isVenueInBounds(
+        bounds,
+        (feature.geometry as GeoJSON.Point).coordinates as [number, number]
+      )
+    );
+
+    const buildings = extractRenderedBuildings(map);
+    updateShadowOverlay(buildings, sunPos);
+
+    for (const f of venueDataRef.current.features) {
+      if (!f.properties) continue;
+      f.properties.inView = isVenueInBounds(
+        bounds,
+        (f.geometry as GeoJSON.Point).coordinates as [number, number]
+      );
+    }
 
     if (sunPos.altitude <= 0) {
-      if (venueDataRef.current) {
-        for (const f of venueDataRef.current.features) {
-          if (f.properties) f.properties.sunScore = 0;
-        }
-        const source = map.getSource("venues") as mapboxgl.GeoJSONSource;
-        source.setData(venueDataRef.current);
-        updateVenuesList();
-      }
-      return;
-    }
-
-    const buildingFeatures = map.queryRenderedFeatures({
-      layers: ["3d-buildings"],
-    });
-
-    const buildings: BuildingFootprint[] = [];
-    for (const bf of buildingFeatures) {
-      if (
-        bf.geometry.type !== "Polygon" &&
-        bf.geometry.type !== "MultiPolygon"
-      )
-        continue;
-
-      const height =
-        (bf.properties?.height as number) ||
-        ((bf.properties?.levels as number) || 3) * 3;
-
-      if (bf.geometry.type === "Polygon") {
-        const ring = bf.geometry.coordinates[0] as [number, number][];
-        buildings.push({ polygon: ring, height });
-      } else {
-        for (const poly of bf.geometry.coordinates) {
-          const ring = poly[0] as [number, number][];
-          buildings.push({ polygon: ring, height });
-        }
-      }
-    }
-
-    const venueFeatures = map.queryRenderedFeatures({
-      layers: ["venue-dots"],
-    });
-
-    if (venueFeatures.length === 0 || buildings.length === 0) return;
-
-    const scoreByOsmId: Record<number, number> = {};
-    for (const vf of venueFeatures) {
-      const osmId = vf.properties?.osm_id;
-      if (osmId == null || osmId in scoreByOsmId) continue;
-
-      const coords = (vf.geometry as GeoJSON.Point).coordinates as [
-        number,
-        number,
-      ];
-      const nearby = filterBuildingsByProximity(coords, buildings, 200);
-      const score = scoreSunlight(coords, nearby, sunPos);
-      scoreByOsmId[osmId] = score;
-    }
-
-    if (venueDataRef.current) {
-      for (const f of venueDataRef.current.features) {
-        const osmId = f.properties?.osm_id;
-        if (osmId != null && osmId in scoreByOsmId) {
-          f.properties!.sunScore = scoreByOsmId[osmId];
-        }
+      for (const f of visibleVenueFeatures) {
+        if (!f.properties) continue;
+        f.properties.sunScore = 0;
+        f.properties.directSun = 0;
+        f.properties.futureSun = 0;
+        f.properties.skyExposure = Number(f.properties.skyExposure ?? 1);
+        f.properties.sunUntil = null;
       }
       const source = map.getSource("venues") as mapboxgl.GeoJSONSource;
       source.setData(venueDataRef.current);
       updateVenuesList();
+      return;
     }
-  }, [currentTime, updateVenuesList]);
+
+    for (const feature of visibleVenueFeatures) {
+      if (!feature.properties) continue;
+
+      const coords = (feature.geometry as GeoJSON.Point).coordinates as [
+        number,
+        number,
+      ];
+      const nearbyBuildings = filterBuildingsByProximity(coords, buildings, 220);
+      const metrics = scoreVenueForTimeWindow(
+        coords,
+        nearbyBuildings,
+        currentTime,
+        sunset
+      );
+
+      feature.properties.sunScore = metrics.sunScore;
+      feature.properties.directSun = metrics.directSun;
+      feature.properties.futureSun = metrics.futureSun;
+      feature.properties.skyExposure = metrics.skyExposure;
+      feature.properties.sunUntil = metrics.sunUntil;
+    }
+
+    if (venueDataRef.current) {
+      const source = map.getSource("venues") as mapboxgl.GeoJSONSource;
+      source.setData(venueDataRef.current);
+      updateVenuesList();
+    }
+  }, [currentTime, sunset, updateShadowOverlay, updateVenuesList]);
 
   // ===================== EFFECTS =====================
 
@@ -342,6 +556,14 @@ export default function Map() {
     mapRef.current = map;
 
     map.on("style.load", () => {
+      setMapReady(true);
+      if (!map.getSource("shadow-polygons")) {
+        map.addSource("shadow-polygons", {
+          type: "geojson",
+          data: createEmptyFeatureCollection(),
+        });
+      }
+
       const layers = map.getStyle().layers;
       let labelLayerId: string | undefined;
       if (layers) {
@@ -351,6 +573,18 @@ export default function Map() {
             break;
           }
         }
+      }
+
+      if (!map.getLayer("shadow-polygons")) {
+        map.addLayer({
+          id: "shadow-polygons",
+          type: "fill",
+          source: "shadow-polygons",
+          paint: {
+            "fill-color": "#312E81",
+            "fill-opacity": shadowOverlayOn ? 0.22 : 0,
+          },
+        });
       }
 
       map.addLayer(
@@ -419,6 +653,8 @@ export default function Map() {
             cuisine: props.cuisine === "null" ? null : props.cuisine,
             website: props.website === "null" ? null : props.website,
             sunScore: Number(props.sunScore),
+            directSun: Number(props.directSun),
+            sunUntil: props.sunUntil === "null" ? null : props.sunUntil,
           })
         )
         .addTo(map);
@@ -450,7 +686,12 @@ export default function Map() {
           if (map.getSource("venues")) return;
 
           for (const f of geojson.features) {
-            f.properties.sunScore = 1;
+            f.properties.sunScore = 0;
+            f.properties.directSun = 0;
+            f.properties.futureSun = 0;
+            f.properties.skyExposure = 1;
+            f.properties.sunUntil = null;
+            f.properties.inView = false;
           }
 
           venueDataRef.current = geojson;
@@ -473,8 +714,10 @@ export default function Map() {
                 "interpolate",
                 ["linear"],
                 ["get", "sunScore"],
-                0, "#818CF8",
-                1, "#F59E0B",
+                0, "#6366F1",
+                50, "#A78BFA",
+                75, "#F59E0B",
+                100, "#FDE68A",
               ],
               "circle-opacity": 0.9,
               "circle-stroke-width": 1.5,
@@ -482,13 +725,16 @@ export default function Map() {
                 "interpolate",
                 ["linear"],
                 ["get", "sunScore"],
-                0, "rgba(129,140,248,0.3)",
-                1, "rgba(245,158,11,0.3)",
+                0, "rgba(99,102,241,0.45)",
+                50, "rgba(167,139,250,0.45)",
+                75, "rgba(245,158,11,0.45)",
+                100, "rgba(253,230,138,0.5)",
               ],
             },
           });
 
           updateVenuesList();
+          scoreVenues();
         });
     };
 
@@ -497,13 +743,42 @@ export default function Map() {
     } else {
       map.on("style.load", onStyleLoad);
     }
-  }, [updateVenuesList]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Update lighting + score when time changes
   useEffect(() => {
     updateLighting(currentTime);
     scoreVenues();
   }, [currentTime, updateLighting, scoreVenues]);
+
+  useEffect(() => {
+    if (!mapReady) return;
+    scoreVenues();
+  }, [mapReady, scoreVenues]);
+
+  useEffect(() => {
+    if (!mapReady) return;
+    const map = mapRef.current;
+    if (!map) return;
+
+    map.on("moveend", scoreVenues);
+
+    return () => {
+      map.off("moveend", scoreVenues);
+    };
+  }, [mapReady, scoreVenues]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !map.getLayer("shadow-polygons")) return;
+
+    map.setPaintProperty(
+      "shadow-polygons",
+      "fill-opacity",
+      shadowOverlayOn ? 0.22 : 0
+    );
+  }, [mapReady, shadowOverlayOn]);
 
   // Play animation
   useEffect(() => {
@@ -610,7 +885,13 @@ export default function Map() {
 
     new mapboxgl.Popup({ offset: 15 })
       .setLngLat(venue.coordinates)
-      .setHTML(createPopupHTML(venue))
+      .setHTML(
+        createPopupHTML({
+          ...venue,
+          directSun: venue.directSun,
+          sunUntil: venue.sunUntil,
+        })
+      )
       .addTo(map);
   };
 
@@ -635,82 +916,126 @@ export default function Map() {
     { key: "restaurant", label: "Restaurants" },
     { key: "cafe", label: "Cafes" },
   ];
+  const hasActiveFilters =
+    searchQuery.trim().length > 0 || activeFilter !== "all" || sunOnly;
+  const hasVenueData = venueDataRef.current !== null;
 
   return (
     <div className="app-container">
       {/* ========== SIDEBAR ========== */}
       <aside className="sidebar">
-        <div className="sidebar-header">
-          <div className="sidebar-title">Los Angeles</div>
-          <h1
-            className="sidebar-brand"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Sunny Bars
-          </h1>
-          <p className="sidebar-tagline">Find your place in the sun</p>
-        </div>
-
-        <div className="search-container">
-          <div className="search-wrapper">
-            <svg
-              className="search-icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+        <div className="sidebar-top">
+          <div className="sidebar-header">
+            <div className="sidebar-title">Los Angeles</div>
+            <h1
+              className="sidebar-brand"
+              style={{ fontFamily: "var(--font-display)" }}
             >
-              <circle cx="11" cy="11" r="8" />
-              <path d="m21 21-4.35-4.35" />
-            </svg>
-            <input
-              className="search-input"
-              type="text"
-              placeholder="Search venues..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
+              Sunny Bars
+            </h1>
+            <p className="sidebar-tagline">Find your place in the sun</p>
           </div>
-        </div>
 
-        <div className="filter-bar">
-          {filters.map((f) => (
-            <button
-              key={f.key}
-              className={`filter-pill${activeFilter === f.key ? " active" : ""}`}
-              onClick={() => setActiveFilter(f.key)}
+          <div className="search-container">
+            <div className="search-wrapper">
+              <svg
+                className="search-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+              </svg>
+              <input
+                className="search-input"
+                type="text"
+                placeholder="Search this map view..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+          </div>
+
+          <div className="filter-bar">
+            {filters.map((f) => (
+              <button
+                key={f.key}
+                className={`filter-pill${activeFilter === f.key ? " active" : ""}`}
+                onClick={() => setActiveFilter(f.key)}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="stats-bar">
+            <div className="stats-counts">
+              <span className="stat-sun">{sunCount} in sun</span>
+              <span className="stat-shade">{shadeCount} in shade</span>
+            </div>
+            <div
+              className="sun-only-toggle"
+              onClick={() => setSunOnly(!sunOnly)}
             >
-              {f.label}
-            </button>
-          ))}
-        </div>
+              <span>Sun only</span>
+              <div className={`toggle-switch${sunOnly ? " active" : ""}`} />
+            </div>
+          </div>
 
-        <div className="stats-bar">
-          <div className="stats-counts">
-            <span className="stat-sun">{sunCount} in sun</span>
-            <span className="stat-shade">{shadeCount} in shade</span>
+          <div className="score-explainer">
+            <div className="score-explainer-title">
+              Ranked in this map view
+            </div>
+            <p className="score-explainer-copy">
+              Score = 60% sun right now, 25% next 90 minutes, 15% open sky from
+              surrounding buildings. The selected date changes the sun angle, so
+              3 PM in winter and 3 PM in summer cast different shadows.
+            </p>
           </div>
-          <div
-            className="sun-only-toggle"
-            onClick={() => setSunOnly(!sunOnly)}
-          >
-            <span>Sun only</span>
-            <div className={`toggle-switch${sunOnly ? " active" : ""}`} />
-          </div>
+
+          {bestVenue ? (
+            <div className="top-pick-card">
+              <div className="top-pick-label">Best right now</div>
+              <div className="top-pick-name">{bestVenue.name}</div>
+              <div className="top-pick-meta">
+                {Math.round(bestVenue.sunScore)}/100 score
+                {bestVenue.sunUntil ? ` · sunny until ${bestVenue.sunUntil}` : ""}
+              </div>
+              <div className="top-pick-breakdown">
+                <span>Now {Math.round(bestVenue.directSun * 100)}%</span>
+                <span>Next {Math.round(bestVenue.futureSun * 100)}%</span>
+                <span>Open sky {Math.round(bestVenue.skyExposure * 100)}%</span>
+              </div>
+            </div>
+          ) : (
+            <div className="top-pick-card empty">
+              <div className="top-pick-label">Best right now</div>
+              <div className="top-pick-name">Move the map to explore patios</div>
+              <div className="top-pick-meta">
+                Rankings only show venues inside the current map view.
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="venue-list" ref={venueListRef}>
           {filteredVenues.length === 0 ? (
             <div className="empty-state">
-              {venues.length === 0
+              {!hasVenueData
                 ? "Loading venues..."
-                : "No venues match your filters"}
+                : venues.length === 0
+                  ? "No venues in this map view yet. Pan or zoom to a busier block."
+                : hasActiveFilters
+                  ? "No venues match these filters in the current view."
+                  : "No venues in this map view yet. Pan or zoom to a busier block."}
             </div>
           ) : (
             filteredVenues.map((venue, index) => {
-              const sunny = venue.sunScore >= 0.5;
+              const sunny = venue.directSun >= 0.5;
               return (
                 <div
                   key={venue.id}
@@ -730,23 +1055,24 @@ export default function Map() {
                       {venue.amenity}
                       {venue.cuisine ? ` · ${venue.cuisine}` : ""}
                     </div>
+                    <div className="venue-supporting">
+                      Score {Math.round(venue.sunScore)}
+                      {venue.sunUntil ? ` · sunny until ${venue.sunUntil}` : ""}
+                      {!venue.sunUntil
+                        ? ` · open sky ${Math.round(venue.skyExposure * 100)}%`
+                        : ""}
+                    </div>
                   </div>
-                  <span
-                    className={`venue-status ${sunny ? "sunny" : "shaded"}`}
-                  >
-                    {sunny ? "Sun" : "Shade"}
-                  </span>
-                  <svg
-                    className="venue-chevron"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="m9 18 6-6-6-6" />
-                  </svg>
+                  <div className="venue-side">
+                    <span
+                      className={`venue-status ${sunny ? "sunny" : "shaded"}`}
+                    >
+                      {sunny ? "Sun now" : "Shade now"}
+                    </span>
+                    <div className="venue-score-number">
+                      {Math.round(venue.sunScore)}
+                    </div>
+                  </div>
                 </div>
               );
             })
@@ -757,6 +1083,35 @@ export default function Map() {
       {/* ========== MAP ========== */}
       <main className="map-section">
         <div ref={mapContainer} className="map-container" />
+
+        <div className="sun-context-card">
+          <div className="sun-context-row">
+            <div>
+              <div className="sun-context-label">
+                {getSeasonLabel(selectedDate)} sun simulation
+              </div>
+              <div className="sun-context-meta">
+                {formatDateLabel(selectedDate)} · {formatTime(currentTime)}
+              </div>
+            </div>
+            <button
+              className={`shadow-toggle-btn${shadowOverlayOn ? " active" : ""}`}
+              onClick={() => setShadowOverlayOn((value) => !value)}
+              type="button"
+            >
+              {shadowOverlayOn ? "Hide shadows" : "Show shadows"}
+            </button>
+          </div>
+          <div className="sun-context-stats">
+            <span>Sun {formatSunDirection(sunPosition.azimuth)}</span>
+            <span>Altitude {formatSunAltitude(sunPosition.altitude)}</span>
+            <span>
+              {sunPosition.altitude > 0
+                ? "Shadows update with season + hour"
+                : "Sun below horizon"}
+            </span>
+          </div>
+        </div>
 
         <div className="time-controls animate-slide-up">
           <div className="time-display-row">

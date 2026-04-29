@@ -125,6 +125,59 @@ export function scoreSunlight(
 }
 
 /**
+ * Estimate how open the sky feels from a venue based on nearby building height,
+ * distance, and direction around the point.
+ *
+ * The score is intentionally approximate: 1.0 means mostly open sky, while 0.0
+ * means the point is boxed in by tall nearby buildings on many sides.
+ */
+export function estimateSkyExposure(
+  point: [number, number],
+  buildings: BuildingFootprint[],
+  radiusMeters: number = 180,
+  sectorCount: number = 12
+): number {
+  if (buildings.length === 0) return 1;
+
+  const [pLng, pLat] = point;
+  const cosLat = Math.cos((pLat * Math.PI) / 180);
+  const sectorObstruction = new Array(sectorCount).fill(0);
+
+  for (const building of buildings) {
+    const centroid = computePolygonCentroid(building.polygon);
+    if (!centroid) continue;
+
+    const [cLng, cLat] = centroid;
+    const eastMeters = (cLng - pLng) * METERS_PER_DEG_LAT * cosLat;
+    const northMeters = (cLat - pLat) * METERS_PER_DEG_LAT;
+    const distance = Math.hypot(eastMeters, northMeters);
+
+    if (distance === 0 || distance > radiusMeters * 1.35) continue;
+
+    const angle = Math.atan2(northMeters, eastMeters);
+    const sectorIndex = Math.min(
+      sectorCount - 1,
+      Math.floor(((angle + Math.PI) / (Math.PI * 2)) * sectorCount)
+    );
+
+    const elevationAngle = Math.atan2(Math.max(building.height, 1), distance);
+    const normalizedElevation = Math.min(elevationAngle / (Math.PI / 3), 1);
+    const proximityWeight = Math.max(0.2, 1 - distance / (radiusMeters * 1.35));
+    const obstruction = normalizedElevation * proximityWeight;
+
+    sectorObstruction[sectorIndex] = Math.max(
+      sectorObstruction[sectorIndex],
+      obstruction
+    );
+  }
+
+  const averageObstruction =
+    sectorObstruction.reduce((sum, value) => sum + value, 0) / sectorCount;
+
+  return clamp01(1 - averageObstruction);
+}
+
+/**
  * Filter buildings to only those within `radiusMeters` of the point.
  * Uses a cheap bounding-box prefilter on each building's centroid.
  *
@@ -193,4 +246,23 @@ function isPointInPolygon(
   }
 
   return inside;
+}
+
+function computePolygonCentroid(
+  polygon: [number, number][]
+): [number, number] | null {
+  if (polygon.length === 0) return null;
+
+  let lng = 0;
+  let lat = 0;
+  for (const [vertexLng, vertexLat] of polygon) {
+    lng += vertexLng;
+    lat += vertexLat;
+  }
+
+  return [lng / polygon.length, lat / polygon.length];
+}
+
+function clamp01(value: number): number {
+  return Math.max(0, Math.min(1, value));
 }
