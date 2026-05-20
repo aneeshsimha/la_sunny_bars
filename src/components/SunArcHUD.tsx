@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useMemo } from "react";
 import SunCalc from "suncalc";
 
 // SVG viewport dimensions
@@ -14,7 +14,6 @@ const HORIZON_Y = H - 16;
 const APEX_Y = 10;
 
 interface Props {
-  date: Date;
   currentTime: Date;
   sunrise: Date;
   sunset: Date;
@@ -68,7 +67,6 @@ function samplePath(
 }
 
 export default function SunArcHUD({
-  date,
   currentTime,
   sunrise,
   sunset,
@@ -79,20 +77,18 @@ export default function SunArcHUD({
   const svgRef = useRef<SVGSVGElement>(null);
   const dragging = useRef(false);
 
-  // Build the arc path points
-  const samples = samplePath(sunrise, sunset, lat, lng);
-
-  // Azimuth range across the day
-  const azMin = samples[0].azimuth;
-  const azMax = samples[samples.length - 1].azimuth;
-  // Max altitude (solar noon)
-  const altMax = Math.max(...samples.map((s) => s.altitude), 0.01);
-
-  const points = samples.map((s) =>
-    projectPosition(s.azimuth, s.altitude, azMin, azMax, altMax)
-  );
-
-  const polylinePoints = points.map((p) => `${p.x},${p.y}`).join(" ");
+  // Build the arc path points — only recompute when the day changes, not on every currentTime tick
+  const { azMin, azMax, altMax, points, polylinePoints } = useMemo(() => {
+    const samples = samplePath(sunrise, sunset, lat, lng);
+    const azMin = samples[0].azimuth;
+    const azMax = samples[samples.length - 1].azimuth;
+    const altMax = Math.max(...samples.map((s) => s.altitude), 0.01);
+    const points = samples.map((s) =>
+      projectPosition(s.azimuth, s.altitude, azMin, azMax, altMax)
+    );
+    const polylinePoints = points.map((p) => `${p.x},${p.y}`).join(" ");
+    return { azMin, azMax, altMax, points, polylinePoints };
+  }, [sunrise, sunset, lat, lng]);
 
   // Current sun position
   const currentPos = SunCalc.getPosition(currentTime, lat, lng);
@@ -131,8 +127,9 @@ export default function SunArcHUD({
     onScrub(xToTime(getSvgX(e)));
   };
 
-  const handlePointerUp = () => {
+  const handlePointerUp = (e: React.PointerEvent<SVGSVGElement>) => {
     dragging.current = false;
+    e.currentTarget.releasePointerCapture(e.pointerId);
   };
 
   // Format for tick labels

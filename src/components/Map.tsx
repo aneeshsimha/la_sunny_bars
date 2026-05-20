@@ -1115,7 +1115,6 @@ export default function Map() {
         </div>
 
         <SunArcHUD
-          date={selectedDate}
           currentTime={currentTime}
           sunrise={sunrise}
           sunset={sunset}
