@@ -12,6 +12,7 @@ import {
   scoreSunlight,
 } from "@/lib/shadows";
 import { getTimeOfDayPalette, type Palette } from "@/lib/timeOfDay";
+import { openTableUrl, resyUrl } from "@/lib/reservations";
 
 // ===================== CONSTANTS =====================
 
@@ -118,6 +119,10 @@ function createPopupHTML(props: {
       ${props.amenity}${props.cuisine ? ` · ${props.cuisine}` : ""}
     </div>
     ${props.website ? `<a href="${props.website}" target="_blank" rel="noopener" style="color:#F59E0B;text-decoration:none;font-size:12px">Visit Website &#8594;</a><br/>` : ""}
+    <div style="margin-top:4px;display:flex;gap:8px">
+      <a href="${openTableUrl(props.name)}" target="_blank" rel="noopener" style="color:#F59E0B;text-decoration:none;font-size:12px">Reserve · OpenTable &#8594;</a>
+      <a href="${resyUrl(props.name)}" target="_blank" rel="noopener" style="color:#F59E0B;text-decoration:none;font-size:12px">Reserve · Resy &#8594;</a>
+    </div>
     <div style="margin-top:8px;color:rgba(28,25,23,0.85);font-size:12px">
       Sun score <strong>${Math.round(props.sunScore)}</strong>/100
       ${props.sunUntil ? ` · sunny until ${props.sunUntil}` : ""}
