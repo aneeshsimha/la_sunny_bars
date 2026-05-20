@@ -11,6 +11,7 @@ import {
   filterBuildingsByProximity,
   scoreSunlight,
 } from "@/lib/shadows";
+import { getTimeOfDayPalette, type Palette } from "@/lib/timeOfDay";
 
 // ===================== CONSTANTS =====================
 
@@ -42,7 +43,7 @@ interface VenueFeature {
   coordinates: [number, number];
 }
 
-type AmenityFilter = "all" | "bar" | "restaurant" | "cafe";
+type AmenityFilter = "all" | "bar" | "restaurant" | "cafe" | "best";
 
 // ===================== HELPERS =====================
 
@@ -50,22 +51,6 @@ function sunToMapboxLight(sunPos: { azimuth: number; altitude: number }) {
   const azimuthDeg = (sunPos.azimuth * 180) / Math.PI + 180;
   const altitudeDeg = Math.max(0, (sunPos.altitude * 180) / Math.PI);
   return [1.15, azimuthDeg, altitudeDeg] as [number, number, number];
-}
-
-function sunIntensity(altitudeDeg: number): number {
-  if (altitudeDeg <= 0) return 0.1;
-  // Higher intensity for more dramatic sunlit vs shadow contrast
-  return 0.35 + 0.45 * Math.min(altitudeDeg / 90, 1);
-}
-
-function sunColor(altitudeDeg: number): string {
-  if (altitudeDeg <= 0) return "#1a1a2e";
-  // Keep the light warm/golden — sunrise orange → midday golden-yellow (not white)
-  const t = Math.min(altitudeDeg / 50, 1);
-  const r = 255;
-  const g = Math.round(159 + (226 - 159) * t); // caps at 226 (warm yellow, not white)
-  const b = Math.round(50 + (100 - 50) * t);   // stays low to keep it golden
-  return `rgb(${r}, ${g}, ${b})`;
 }
 
 function formatTime(date: Date): string {
@@ -129,11 +114,11 @@ function createPopupHTML(props: {
   const sunny = (props.directSun ?? props.sunScore) >= 0.5;
   return `<div style="font-size:13px;min-width:160px">
     <div style="font-size:15px;font-weight:600;margin-bottom:6px">${props.name}</div>
-    <div style="text-transform:capitalize;color:rgba(250,250,249,0.5);margin-bottom:4px">
+    <div style="text-transform:capitalize;color:rgba(28,25,23,0.6);margin-bottom:4px">
       ${props.amenity}${props.cuisine ? ` · ${props.cuisine}` : ""}
     </div>
     ${props.website ? `<a href="${props.website}" target="_blank" rel="noopener" style="color:#F59E0B;text-decoration:none;font-size:12px">Visit Website &#8594;</a><br/>` : ""}
-    <div style="margin-top:8px;color:rgba(250,250,249,0.82);font-size:12px">
+    <div style="margin-top:8px;color:rgba(28,25,23,0.85);font-size:12px">
       Sun score <strong>${Math.round(props.sunScore)}</strong>/100
       ${props.sunUntil ? ` · sunny until ${props.sunUntil}` : ""}
     </div>
@@ -278,6 +263,7 @@ export default function Map() {
   const [sunset, setSunset] = useState<Date>(new Date());
   const [currentTime, setCurrentTime] = useState<Date>(new Date());
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isLiveMode, setIsLiveMode] = useState(true);
 
   // UI state
   const [venues, setVenues] = useState<VenueFeature[]>([]);
@@ -306,6 +292,8 @@ export default function Map() {
       list = list.filter((v) => {
         if (activeFilter === "bar")
           return v.amenity === "bar" || v.amenity === "pub";
+        if (activeFilter === "best")
+          return v.outdoor_seating && v.outdoor_seating !== "no" && v.sunScore >= 60;
         return v.amenity === activeFilter;
       });
     }
@@ -331,9 +319,18 @@ export default function Map() {
     [venues]
   );
 
+  const bestCount = useMemo(
+    () => venues.filter((v) => v.outdoor_seating && v.outdoor_seating !== "no" && v.sunScore >= 60).length,
+    [venues]
+  );
+
   const bestVenue = useMemo(() => filteredVenues[0] ?? null, [filteredVenues]);
   const sunPosition = useMemo(
     () => SunCalc.getPosition(currentTime, LA_LAT, LA_LNG),
+    [currentTime]
+  );
+  const palette = useMemo(
+    () => getTimeOfDayPalette(currentTime, LA_LAT, LA_LNG),
     [currentTime]
   );
 
@@ -370,20 +367,48 @@ export default function Map() {
     []
   );
 
-  const updateLighting = useCallback((time: Date) => {
+  const updateLighting = useCallback((time: Date, palette: Palette) => {
     const map = mapRef.current;
     if (!map || !map.isStyleLoaded()) return;
 
     const sunPos = SunCalc.getPosition(time, LA_LAT, LA_LNG);
     const position = sunToMapboxLight(sunPos);
-    const altDeg = position[2];
 
     map.setLight({
       anchor: "map",
       position: position,
-      intensity: sunIntensity(altDeg),
-      color: sunColor(altDeg),
+      intensity: palette.lightIntensity,
+      color: palette.lightColor,
     });
+  }, []);
+
+  const applyPalette = useCallback((palette: Palette) => {
+    const map = mapRef.current;
+    if (!map) return;
+
+    if (map.getLayer("3d-buildings")) {
+      map.setPaintProperty(
+        "3d-buildings",
+        "fill-extrusion-color",
+        palette.buildingColor
+      );
+    }
+    if (map.getLayer("shadow-polygons")) {
+      map.setPaintProperty(
+        "shadow-polygons",
+        "fill-color",
+        palette.shadowColor
+      );
+    }
+
+    const section = mapContainer.current?.parentElement;
+    if (section) {
+      section.style.setProperty("--map-tint-color", palette.tintColor);
+      section.style.setProperty(
+        "--map-tint-opacity",
+        String(palette.tintOpacity)
+      );
+    }
   }, []);
 
   const updateVenuesList = useCallback(() => {
@@ -545,12 +570,13 @@ export default function Map() {
 
     const map = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/mapbox/dark-v11",
+      style: "mapbox://styles/mapbox/light-v11",
       center: [LA_LNG, LA_LAT],
       zoom: 14,
       pitch: 45,
       bearing: -17.6,
       antialias: true,
+      maxPitch: 75,
     });
 
     mapRef.current = map;
@@ -581,8 +607,8 @@ export default function Map() {
           type: "fill",
           source: "shadow-polygons",
           paint: {
-            "fill-color": "#312E81",
-            "fill-opacity": shadowOverlayOn ? 0.22 : 0,
+            "fill-color": "#1A0F5C",
+            "fill-opacity": shadowOverlayOn ? 0.32 : 0,
           },
         });
       }
@@ -596,7 +622,7 @@ export default function Map() {
           type: "fill-extrusion",
           minzoom: 12,
           paint: {
-            "fill-extrusion-color": "#C8AD8A",
+            "fill-extrusion-color": "#D4B896",
             "fill-extrusion-height": [
               "interpolate",
               ["linear"],
@@ -630,6 +656,7 @@ export default function Map() {
     });
 
     map.addControl(new mapboxgl.NavigationControl(), "top-right");
+    map.touchZoomRotate.enableRotation();
 
     // Venue click on map
     map.on("click", "venue-dots", (e) => {
@@ -698,6 +725,31 @@ export default function Map() {
           map.addSource("venues", { type: "geojson", data: geojson });
 
           map.addLayer({
+            id: "venue-sun-glow",
+            type: "circle",
+            source: "venues",
+            paint: {
+              "circle-radius": [
+                "interpolate",
+                ["linear"],
+                ["zoom"],
+                10, 5,
+                14, 10,
+                18, 18,
+              ],
+              "circle-color": "#FCD34D",
+              "circle-opacity": [
+                "interpolate",
+                ["linear"],
+                ["get", "directSun"],
+                0, 0,
+                1, 0.22,
+              ],
+              "circle-blur": 1,
+            },
+          });
+
+          map.addLayer({
             id: "venue-dots",
             type: "circle",
             source: "venues",
@@ -706,9 +758,9 @@ export default function Map() {
                 "interpolate",
                 ["linear"],
                 ["zoom"],
-                10, 3,
-                14, 6,
-                18, 10,
+                10, 2,
+                14, 3.5,
+                18, 6,
               ],
               "circle-color": [
                 "interpolate",
@@ -720,7 +772,7 @@ export default function Map() {
                 100, "#FDE68A",
               ],
               "circle-opacity": 0.9,
-              "circle-stroke-width": 1.5,
+              "circle-stroke-width": 1,
               "circle-stroke-color": [
                 "interpolate",
                 ["linear"],
@@ -748,9 +800,10 @@ export default function Map() {
 
   // Update lighting + score when time changes
   useEffect(() => {
-    updateLighting(currentTime);
+    updateLighting(currentTime, palette);
+    applyPalette(palette);
     scoreVenues();
-  }, [currentTime, updateLighting, scoreVenues]);
+  }, [currentTime, palette, updateLighting, applyPalette, scoreVenues]);
 
   useEffect(() => {
     if (!mapReady) return;
@@ -776,7 +829,7 @@ export default function Map() {
     map.setPaintProperty(
       "shadow-polygons",
       "fill-opacity",
-      shadowOverlayOn ? 0.22 : 0
+      shadowOverlayOn ? 0.32 : 0
     );
   }, [mapReady, shadowOverlayOn]);
 
@@ -814,6 +867,17 @@ export default function Map() {
     setCurrentTime(newTime);
   }, [sliderValue, isPlaying, sunrise, sunset]);
 
+  // Live clock — update time every 30s when in live mode and not playing
+  useEffect(() => {
+    if (!isLiveMode || isPlaying) return;
+
+    const interval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 30_000);
+
+    return () => clearInterval(interval);
+  }, [isLiveMode, isPlaying]);
+
   // Scroll to selected venue in list
   useEffect(() => {
     if (selectedVenueId && venueListRef.current) {
@@ -832,6 +896,7 @@ export default function Map() {
     const val = Number(e.target.value);
     setSliderValue(val);
     setIsPlaying(false);
+    setIsLiveMode(false);
 
     const totalRange = sunset.getTime() - sunrise.getTime();
     const newTime = new Date(sunrise.getTime() + (val / 1000) * totalRange);
@@ -854,6 +919,7 @@ export default function Map() {
 
   const handleNowClick = () => {
     setIsPlaying(false);
+    setIsLiveMode(true);
     const now = new Date();
     setSelectedDate(now);
     const { sunrise: sr, sunset: ss } = computeSunTimes(now);
@@ -912,6 +978,7 @@ export default function Map() {
 
   const filters: { key: AmenityFilter; label: string }[] = [
     { key: "all", label: "All" },
+    { key: "best", label: "Best" },
     { key: "bar", label: "Bars" },
     { key: "restaurant", label: "Restaurants" },
     { key: "cafe", label: "Cafes" },
@@ -1083,12 +1150,13 @@ export default function Map() {
       {/* ========== MAP ========== */}
       <main className="map-section">
         <div ref={mapContainer} className="map-container" />
+        <div className="map-tint" aria-hidden />
 
         <div className="sun-context-card">
           <div className="sun-context-row">
             <div>
               <div className="sun-context-label">
-                {getSeasonLabel(selectedDate)} sun simulation
+                {palette.label} · {getSeasonLabel(selectedDate)} sun simulation
               </div>
               <div className="sun-context-meta">
                 {formatDateLabel(selectedDate)} · {formatTime(currentTime)}
@@ -1132,12 +1200,27 @@ export default function Map() {
               )}
             </button>
 
-            <span
-              className="time-display"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              {formatTime(currentTime)}
-            </span>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <span
+                className="time-display"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                {formatTime(currentTime)}
+              </span>
+              {isLiveMode && (
+                <span
+                  style={{
+                    fontSize: "9px",
+                    fontWeight: "600",
+                    letterSpacing: "0.1em",
+                    color: "var(--color-sun)",
+                    animation: "pulse 2s ease-in-out infinite",
+                  }}
+                >
+                  ● LIVE
+                </span>
+              )}
+            </div>
 
             <button className="now-btn" onClick={handleNowClick}>
               Now

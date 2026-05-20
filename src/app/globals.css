@@ -4,11 +4,11 @@
    ========================================================== */
 
 :root {
-  --color-bg: #0C0A09;
-  --color-surface: #1C1917;
-  --color-surface-elevated: #292524;
-  --color-border: rgba(255, 255, 255, 0.06);
-  --color-border-hover: rgba(255, 255, 255, 0.12);
+  --color-bg: #FEF9EE;
+  --color-surface: #FEF3C7;
+  --color-surface-elevated: #FDE68A;
+  --color-border: rgba(28, 25, 23, 0.08);
+  --color-border-hover: rgba(28, 25, 23, 0.16);
 
   --color-sun: #F59E0B;
   --color-sun-soft: #FBBF24;
@@ -16,9 +16,9 @@
   --color-shade: #818CF8;
   --color-shade-glow: rgba(129, 140, 248, 0.15);
 
-  --color-text: #FAFAF9;
-  --color-text-secondary: rgba(250, 250, 249, 0.6);
-  --color-text-muted: rgba(250, 250, 249, 0.35);
+  --color-text: #1C1917;
+  --color-text-secondary: rgba(28, 25, 23, 0.65);
+  --color-text-muted: rgba(28, 25, 23, 0.4);
 
   --sidebar-width: 380px;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -47,8 +47,8 @@ body {
 
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.15); }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.2); }
 
 /* ============ LAYOUT ============ */
 
@@ -75,7 +75,7 @@ body {
   top: 0;
   z-index: 3;
   background:
-    linear-gradient(180deg, rgba(12, 10, 9, 0.98), rgba(12, 10, 9, 0.94));
+    linear-gradient(180deg, rgba(254, 249, 238, 0.98), rgba(254, 249, 238, 0.94));
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
@@ -430,8 +430,23 @@ body {
 
 /* ============ MAP SECTION ============ */
 
-.map-section { position: relative; overflow: hidden; }
+.map-section {
+  position: relative;
+  overflow: hidden;
+  --map-tint-color: rgba(0, 0, 0, 0);
+  --map-tint-opacity: 0;
+}
 .map-container { width: 100%; height: 100%; }
+
+.map-tint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--map-tint-color);
+  opacity: var(--map-tint-opacity);
+  transition: background 0.6s ease, opacity 0.6s ease;
+  z-index: 1;
+}
 
 .sun-context-card {
   position: absolute;
@@ -441,7 +456,7 @@ body {
   padding: 14px 16px;
   border-radius: 16px;
   border: 1px solid var(--color-border);
-  background: rgba(12, 10, 9, 0.78);
+  background: rgba(254, 249, 238, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: 10;
@@ -512,7 +527,7 @@ body {
   transform: translateX(-50%);
   width: calc(100% - 48px);
   max-width: 500px;
-  background: rgba(12, 10, 9, 0.82);
+  background: rgba(254, 249, 238, 0.95);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--color-border);
@@ -706,7 +721,7 @@ body {
 .mapboxgl-popup-anchor-right .mapboxgl-popup-tip { border-left-color: var(--color-surface) !important; }
 
 .mapboxgl-ctrl-group {
-  background: rgba(12,10,9,0.8) !important;
+  background: rgba(254,249,238,0.9) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--color-border) !important;
@@ -715,13 +730,13 @@ body {
 }
 
 .mapboxgl-ctrl-group button { background: transparent !important; }
-.mapboxgl-ctrl-group button:hover { background: var(--color-surface) !important; }
+.mapboxgl-ctrl-group button:hover { background: rgba(253, 230, 138, 0.5) !important; }
 .mapboxgl-ctrl-group button + button { border-top-color: var(--color-border) !important; }
 
 .mapboxgl-ctrl-compass .mapboxgl-ctrl-icon,
 .mapboxgl-ctrl-zoom-in .mapboxgl-ctrl-icon,
 .mapboxgl-ctrl-zoom-out .mapboxgl-ctrl-icon {
-  filter: invert(0.85);
+  filter: none;
 }
 
 /* ============ UTILITIES ============ */
@@ -760,6 +775,11 @@ body {
 @keyframes slideUp {
   from { opacity: 0; transform: translateX(-50%) translateY(16px); }
   to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
 .animate-slide-up {
