@@ -637,14 +637,6 @@ body {
   flex: 1;
   height: 4px;
   border-radius: 2px;
-  background: linear-gradient(
-    to right,
-    #EA580C,
-    #F59E0B 25%,
-    #FDE68A 50%,
-    #F59E0B 75%,
-    #EA580C
-  );
   outline: none;
   cursor: pointer;
 }
