@@ -11,6 +11,7 @@ import {
   filterBuildingsByProximity,
   scoreSunlight,
 } from "@/lib/shadows";
+import { type ScoringMode, modeSortKey, modeLabel } from "@/lib/scoringMode";
 
 // ===================== CONSTANTS =====================
 
@@ -287,6 +288,7 @@ export default function Map() {
   const [selectedVenueId, setSelectedVenueId] = useState<number | null>(null);
   const [mapReady, setMapReady] = useState(false);
   const [shadowOverlayOn, setShadowOverlayOn] = useState(true);
+  const [scoringMode, setScoringMode] = useState<ScoringMode>('sun');
 
   // ===================== COMPUTED =====================
 
@@ -315,11 +317,12 @@ export default function Map() {
     }
 
     return [...list].sort((a, b) => {
-      if (b.sunScore !== a.sunScore) return b.sunScore - a.sunScore;
+      const keyDiff = modeSortKey(b.sunScore, scoringMode) - modeSortKey(a.sunScore, scoringMode);
+      if (keyDiff !== 0) return keyDiff;
       if (b.directSun !== a.directSun) return b.directSun - a.directSun;
       return a.name.localeCompare(b.name);
     });
-  }, [venues, searchQuery, activeFilter, sunOnly]);
+  }, [venues, searchQuery, activeFilter, sunOnly, scoringMode]);
 
   const sunCount = useMemo(
     () => venues.filter((v) => v.directSun >= 0.5).length,
@@ -977,11 +980,27 @@ export default function Map() {
               <span className="stat-sun">{sunCount} in sun</span>
               <span className="stat-shade">{shadeCount} in shade</span>
             </div>
+            <div className="mode-toggle">
+              <button
+                className={scoringMode === 'sun' ? 'active' : ''}
+                onClick={() => setScoringMode('sun')}
+                type="button"
+              >
+                {modeLabel('sun')}
+              </button>
+              <button
+                className={scoringMode === 'shade' ? 'active' : ''}
+                onClick={() => setScoringMode('shade')}
+                type="button"
+              >
+                {modeLabel('shade')}
+              </button>
+            </div>
             <div
               className="sun-only-toggle"
               onClick={() => setSunOnly(!sunOnly)}
             >
-              <span>Sun only</span>
+              <span>{scoringMode === 'shade' ? 'Shade only' : 'Sun only'}</span>
               <div className={`toggle-switch${sunOnly ? " active" : ""}`} />
             </div>
           </div>
