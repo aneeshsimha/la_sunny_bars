@@ -56,10 +56,12 @@ export function findWeatherAt(
   return nearest;
 }
 
+// Overcast sky transmits ~30% of direct irradiance; coefficient 0.7 gives 1.0 at 0% and 0.3 at 100%.
 export function cloudFactor(cloudCoverPct: number): number {
   return 1 - (cloudCoverPct / 100) * 0.7;
 }
 
+// Approximate Fitzpatrick Type II burn time (numerator ≈ 200 min·UV-units). 0.5 floor caps near-zero UV at 400 min.
 export function burnMinutes(uvIndex: number): number {
   if (uvIndex === 0) return Infinity;
   return Math.round(200 / Math.max(uvIndex, 0.5));

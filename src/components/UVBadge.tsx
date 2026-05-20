@@ -8,7 +8,7 @@ interface UVBadgeProps {
 }
 
 export default function UVBadge({ uvIndex, cloudCoverPct }: UVBadgeProps) {
-  if (uvIndex === null && cloudCoverPct === null) return null;
+  if (uvIndex === null || uvIndex === 0) return null;
 
   const pillStyle: React.CSSProperties = {
     display: "inline-flex",
