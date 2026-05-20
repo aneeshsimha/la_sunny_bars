@@ -14,6 +14,7 @@ import {
 import { getTimeOfDayPalette, type Palette } from "@/lib/timeOfDay";
 import { openTableUrl, resyUrl } from "@/lib/reservations";
 import { loadTreesAsBuildings } from "@/lib/trees";
+import { goldenHourGradient } from "@/lib/sliderGradient";
 
 // ===================== CONSTANTS =====================
 
@@ -343,6 +344,11 @@ export default function Map() {
   const palette = useMemo(
     () => getTimeOfDayPalette(currentTime, LA_LAT, LA_LNG),
     [currentTime]
+  );
+
+  const sliderGradient = useMemo(
+    () => goldenHourGradient(sunrise, sunset, sunrise, sunset),
+    [sunrise, sunset]
   );
 
   // ===================== CALLBACKS =====================
@@ -1275,6 +1281,7 @@ export default function Map() {
               max={1000}
               value={sliderValue}
               onChange={handleSliderChange}
+              style={{ background: sliderGradient }}
             />
             <span className="slider-label">{formatTimeShort(sunset)}</span>
           </div>
