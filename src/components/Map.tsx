@@ -313,7 +313,9 @@ export default function Map() {
     }
 
     if (sunOnly) {
-      list = list.filter((v) => v.directSun >= 0.5);
+      list = list.filter((v) =>
+        scoringMode === 'shade' ? v.directSun < 0.5 : v.directSun >= 0.5
+      );
     }
 
     return [...list].sort((a, b) => {
@@ -980,11 +982,12 @@ export default function Map() {
               <span className="stat-sun">{sunCount} in sun</span>
               <span className="stat-shade">{shadeCount} in shade</span>
             </div>
-            <div className="mode-toggle">
+            <div className="mode-toggle" role="group" aria-label="Ranking mode">
               <button
                 className={scoringMode === 'sun' ? 'active' : ''}
                 onClick={() => setScoringMode('sun')}
                 type="button"
+                aria-pressed={scoringMode === 'sun'}
               >
                 {modeLabel('sun')}
               </button>
@@ -992,6 +995,7 @@ export default function Map() {
                 className={scoringMode === 'shade' ? 'active' : ''}
                 onClick={() => setScoringMode('shade')}
                 type="button"
+                aria-pressed={scoringMode === 'shade'}
               >
                 {modeLabel('shade')}
               </button>
