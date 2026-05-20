@@ -1213,7 +1213,7 @@ export default function Map() {
           sunset={sunset}
           lat={LA_LAT}
           lng={LA_LNG}
-          onScrub={(t) => { setCurrentTime(t); setIsPlaying(false); }}
+          onScrub={(t) => { setCurrentTime(t); setIsLiveMode(false); }}
         />
 
         <div className="time-controls animate-slide-up">
