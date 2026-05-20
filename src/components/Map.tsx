@@ -13,6 +13,7 @@ import {
 } from "@/lib/shadows";
 import { getTimeOfDayPalette, type Palette } from "@/lib/timeOfDay";
 import { openTableUrl, resyUrl } from "@/lib/reservations";
+import { loadTreesAsBuildings } from "@/lib/trees";
 
 // ===================== CONSTANTS =====================
 
@@ -219,7 +220,10 @@ function createEmptyFeatureCollection(): GeoJSON.FeatureCollection<GeoJSON.Polyg
   };
 }
 
-function extractRenderedBuildings(map: mapboxgl.Map): BuildingFootprint[] {
+function extractRenderedBuildings(
+  map: mapboxgl.Map,
+  extraBuildings: BuildingFootprint[] = []
+): BuildingFootprint[] {
   const buildingFeatures = map.queryRenderedFeatures({
     layers: ["3d-buildings"],
   });
@@ -248,7 +252,7 @@ function extractRenderedBuildings(map: mapboxgl.Map): BuildingFootprint[] {
     }
   }
 
-  return buildings;
+  return [...buildings, ...extraBuildings];
 }
 
 // ===================== COMPONENT =====================
@@ -260,6 +264,7 @@ export default function Map() {
   const venueDataRef = useRef<GeoJSON.FeatureCollection | null>(null);
   const venueListRef = useRef<HTMLDivElement>(null);
   const playIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const treesRef = useRef<BuildingFootprint[]>([]);
 
   // Time state
   const [selectedDate, setSelectedDate] = useState<Date>(() => new Date());
@@ -278,6 +283,7 @@ export default function Map() {
   const [selectedVenueId, setSelectedVenueId] = useState<number | null>(null);
   const [mapReady, setMapReady] = useState(false);
   const [shadowOverlayOn, setShadowOverlayOn] = useState(true);
+  const [treesLoaded, setTreesLoaded] = useState(false);
 
   // ===================== COMPUTED =====================
 
@@ -502,7 +508,7 @@ export default function Map() {
       )
     );
 
-    const buildings = extractRenderedBuildings(map);
+    const buildings = extractRenderedBuildings(map, treesRef.current);
     updateShadowOverlay(buildings, sunPos);
 
     for (const f of venueDataRef.current.features) {
@@ -558,6 +564,14 @@ export default function Map() {
   }, [currentTime, sunset, updateShadowOverlay, updateVenuesList]);
 
   // ===================== EFFECTS =====================
+
+  // Load tree canopy footprints once at mount
+  useEffect(() => {
+    loadTreesAsBuildings().then((trees) => {
+      treesRef.current = trees;
+      setTreesLoaded(true);
+    });
+  }, []);
 
   // Initialize map
   useEffect(() => {
@@ -813,7 +827,7 @@ export default function Map() {
   useEffect(() => {
     if (!mapReady) return;
     scoreVenues();
-  }, [mapReady, scoreVenues]);
+  }, [mapReady, treesLoaded, scoreVenues]);
 
   useEffect(() => {
     if (!mapReady) return;
