@@ -97,8 +97,13 @@ export default async function NeighborhoodPage({
 
   // Read venues at build time from the public directory.
   const geojsonPath = path.join(process.cwd(), "public", "data", "venues.geojson");
-  const raw = await fs.readFile(geojsonPath, "utf-8");
-  const geojson = JSON.parse(raw) as { features: VenueFeature[] };
+  let geojson: { features: VenueFeature[] };
+  try {
+    const raw = await fs.readFile(geojsonPath, "utf-8");
+    geojson = JSON.parse(raw) as { features: VenueFeature[] };
+  } catch {
+    notFound();
+  }
 
   // Filter to venues within this neighborhood's bounding box.
   const inBbox = geojson.features.filter((f) => {
@@ -109,13 +114,10 @@ export default async function NeighborhoodPage({
   // Compute sun altitude for the neighborhood center at build time.
   const buildTime = new Date();
   const [centerLng, centerLat] = neighborhood.center;
-  const sunPos = SunCalc.getPosition(buildTime, centerLat, centerLng) as {
-    altitude: number;
-    azimuth: number;
-  };
+  const { altitude } = SunCalc.getPosition(buildTime, centerLat, centerLng);
 
   // Score and sort venues.
-  const score = computePlaceholderScore(sunPos.altitude);
+  const score = computePlaceholderScore(altitude);
   const scored: ScoredVenue[] = inBbox
     .filter((f) => f.properties.name)
     .map((f) => ({
@@ -126,7 +128,7 @@ export default async function NeighborhoodPage({
     .sort((a, b) => b.score - a.score)
     .slice(0, 10);
 
-  const sunUp = sunPos.altitude > 0;
+  const sunUp = altitude > 0;
   const buildTimeStr = buildTime.toLocaleString("en-US", {
     timeZone: "America/Los_Angeles",
     dateStyle: "medium",
