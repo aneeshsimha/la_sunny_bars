@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState, useCallback, useMemo } from "react";
+import SunArcHUD from "./SunArcHUD";
 import mapboxgl from "mapbox-gl";
 import SunCalc from "suncalc";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -1112,6 +1113,16 @@ export default function Map() {
             </span>
           </div>
         </div>
+
+        <SunArcHUD
+          date={selectedDate}
+          currentTime={currentTime}
+          sunrise={sunrise}
+          sunset={sunset}
+          lat={LA_LAT}
+          lng={LA_LNG}
+          onScrub={(t) => { setCurrentTime(t); setIsPlaying(false); }}
+        />
 
         <div className="time-controls animate-slide-up">
           <div className="time-display-row">
