@@ -22,30 +22,30 @@ function treeToFootprint(lng: number, lat: number): BuildingFootprint {
   return { polygon, height: 8 };
 }
 
-// Module-level cache — loaded once per browser session
-let cachedTrees: BuildingFootprint[] | null = null;
+// Promise-based cache — deduplicates concurrent calls before the fetch resolves
+let cache: Promise<BuildingFootprint[]> | null = null;
 
-/** Load trees from /data/trees.geojson and convert to BuildingFootprint octagons. */
-export async function loadTreesAsBuildings(): Promise<BuildingFootprint[]> {
-  if (cachedTrees !== null) return cachedTrees;
-
+async function fetchAndParse(): Promise<BuildingFootprint[]> {
   const response = await fetch("/data/trees.geojson");
   if (!response.ok) {
     console.warn(`Failed to load trees.geojson: ${response.status}`);
-    cachedTrees = [];
-    return cachedTrees;
+    return [];
   }
 
   const geojson = await response.json();
   const features: Array<{ geometry: { type: string; coordinates: [number, number] } }> =
     geojson.features ?? [];
 
-  cachedTrees = features
+  return features
     .filter((f) => f.geometry?.type === "Point")
     .map((f) => {
       const [lng, lat] = f.geometry.coordinates;
       return treeToFootprint(lng, lat);
     });
+}
 
-  return cachedTrees;
+/** Load trees from /data/trees.geojson and convert to BuildingFootprint octagons. */
+export function loadTreesAsBuildings(): Promise<BuildingFootprint[]> {
+  if (!cache) cache = fetchAndParse();
+  return cache;
 }

@@ -292,6 +292,7 @@ export default function Map() {
   const [selectedVenueId, setSelectedVenueId] = useState<number | null>(null);
   const [mapReady, setMapReady] = useState(false);
   const [shadowOverlayOn, setShadowOverlayOn] = useState(true);
+  const [treesLoaded, setTreesLoaded] = useState(false);
 
   // ===================== COMPUTED =====================
 
@@ -538,6 +539,7 @@ export default function Map() {
   useEffect(() => {
     loadTreesAsBuildings().then((trees) => {
       treesRef.current = trees;
+      setTreesLoaded(true);
     });
   }, []);
 
@@ -767,7 +769,7 @@ export default function Map() {
   useEffect(() => {
     if (!mapReady) return;
     scoreVenues();
-  }, [mapReady, scoreVenues]);
+  }, [mapReady, treesLoaded, scoreVenues]);
 
   useEffect(() => {
     if (!mapReady) return;
