@@ -1,0 +1,257 @@
+/* Neighborhood pages — warm amber palette matching globals.css */
+
+.nbhd-root {
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body), sans-serif;
+  overflow-y: auto;
+}
+
+/* ---- Nav bar ---- */
+
+.nbhd-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.nbhd-nav-back {
+  font-size: 13px;
+  color: var(--color-sun);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: opacity 0.15s ease;
+}
+
+.nbhd-nav-back:hover { opacity: 0.75; }
+
+.nbhd-nav-sep {
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.nbhd-nav-current {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+/* ---- Hero ---- */
+
+.nbhd-hero {
+  padding: 48px 32px 32px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nbhd-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-sun);
+  margin-bottom: 8px;
+}
+
+.nbhd-title {
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: -0.5px;
+  font-family: var(--font-display), serif;
+  line-height: 1.1;
+}
+
+.nbhd-subtitle {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.nbhd-map-link {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 8px 20px;
+  background: var(--color-sun);
+  color: var(--color-bg);
+  font-size: 12.5px;
+  font-weight: 600;
+  border-radius: 20px;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: opacity 0.15s ease;
+}
+
+.nbhd-map-link:hover { opacity: 0.85; }
+
+/* ---- Venue list ---- */
+
+.nbhd-section {
+  padding: 32px;
+  max-width: 720px;
+}
+
+.nbhd-section-heading {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-sun-soft);
+  margin-bottom: 20px;
+}
+
+.nbhd-venue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nbhd-venue-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  border-left: 3px solid var(--color-sun);
+}
+
+.nbhd-venue-card.no-sun {
+  border-left-color: var(--color-shade);
+}
+
+.nbhd-rank {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  min-width: 24px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.nbhd-venue-info { flex: 1; min-width: 0; }
+
+.nbhd-venue-name {
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nbhd-venue-meta {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+  text-transform: capitalize;
+}
+
+.nbhd-score {
+  font-size: 24px;
+  font-weight: 300;
+  font-family: var(--font-display), serif;
+  color: var(--color-sun);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04em;
+}
+
+.nbhd-score.no-sun {
+  color: var(--color-text-muted);
+}
+
+.nbhd-empty {
+  padding: 48px 32px;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.nbhd-notice {
+  padding: 0 32px 32px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  font-style: italic;
+  line-height: 1.5;
+  max-width: 680px;
+}
+
+/* ---- Index page grid ---- */
+
+.nbhd-index-hero {
+  padding: 48px 32px 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nbhd-index-title {
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  font-family: var(--font-display), serif;
+}
+
+.nbhd-index-sub {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.nbhd-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 32px;
+}
+
+.nbhd-card {
+  display: block;
+  padding: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.nbhd-card:hover {
+  border-color: var(--color-sun);
+  background: var(--color-surface-elevated);
+}
+
+.nbhd-card-label {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-sun);
+  margin-bottom: 8px;
+}
+
+.nbhd-card-name {
+  font-size: 20px;
+  font-weight: 300;
+  font-family: var(--font-display), serif;
+  line-height: 1.2;
+}
+
+.nbhd-card-link {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 600px) {
+  .nbhd-hero,
+  .nbhd-nav,
+  .nbhd-section,
+  .nbhd-notice,
+  .nbhd-index-hero {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .nbhd-grid { padding: 16px; }
+  .nbhd-title { font-size: 30px; }
+  .nbhd-index-title { font-size: 28px; }
+}

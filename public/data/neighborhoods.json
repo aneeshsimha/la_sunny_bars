@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "silver-lake",
+    "name": "Silver Lake",
+    "bbox": [-118.295, 34.069, -118.259, 34.099],
+    "center": [-118.277, 34.084]
+  },
+  {
+    "slug": "venice",
+    "name": "Venice",
+    "bbox": [-118.48, 33.985, -118.445, 34.015],
+    "center": [-118.462, 34.0]
+  },
+  {
+    "slug": "dtla",
+    "name": "Downtown LA",
+    "bbox": [-118.268, 34.033, -118.232, 34.063],
+    "center": [-118.25, 34.048]
+  },
+  {
+    "slug": "weho",
+    "name": "West Hollywood",
+    "bbox": [-118.4, 34.075, -118.36, 34.095],
+    "center": [-118.38, 34.085]
+  },
+  {
+    "slug": "santa-monica",
+    "name": "Santa Monica",
+    "bbox": [-118.518, 33.996, -118.468, 34.032],
+    "center": [-118.493, 34.014]
+  },
+  {
+    "slug": "echo-park",
+    "name": "Echo Park",
+    "bbox": [-118.278, 34.067, -118.252, 34.083],
+    "center": [-118.265, 34.075]
+  },
+  {
+    "slug": "los-feliz",
+    "name": "Los Feliz",
+    "bbox": [-118.308, 34.097, -118.269, 34.115],
+    "center": [-118.289, 34.106]
+  },
+  {
+    "slug": "hollywood",
+    "name": "Hollywood",
+    "bbox": [-118.345, 34.088, -118.31, 34.108],
+    "center": [-118.328, 34.098]
+  },
+  {
+    "slug": "koreatown",
+    "name": "Koreatown",
+    "bbox": [-118.32, 34.055, -118.286, 34.072],
+    "center": [-118.303, 34.063]
+  },
+  {
+    "slug": "beverly-hills",
+    "name": "Beverly Hills",
+    "bbox": [-118.421, 34.056, -118.386, 34.082],
+    "center": [-118.404, 34.069]
+  }
+]
