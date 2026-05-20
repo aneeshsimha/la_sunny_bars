@@ -16,6 +16,7 @@ import { getTimeOfDayPalette, type Palette } from "@/lib/timeOfDay";
 import { openTableUrl, resyUrl } from "@/lib/reservations";
 import { loadTreesAsBuildings } from "@/lib/trees";
 import { goldenHourGradient } from "@/lib/sliderGradient";
+import { type ScoringMode, modeSortKey, modeLabel } from "@/lib/scoringMode";
 
 // ===================== CONSTANTS =====================
 
@@ -286,6 +287,7 @@ export default function Map() {
   const [mapReady, setMapReady] = useState(false);
   const [shadowOverlayOn, setShadowOverlayOn] = useState(true);
   const [treesLoaded, setTreesLoaded] = useState(false);
+  const [scoringMode, setScoringMode] = useState<ScoringMode>('sun');
 
   // ===================== COMPUTED =====================
 
@@ -312,15 +314,18 @@ export default function Map() {
     }
 
     if (sunOnly) {
-      list = list.filter((v) => v.directSun >= 0.5);
+      list = list.filter((v) =>
+        scoringMode === 'shade' ? v.directSun < 0.5 : v.directSun >= 0.5
+      );
     }
 
     return [...list].sort((a, b) => {
-      if (b.sunScore !== a.sunScore) return b.sunScore - a.sunScore;
+      const keyDiff = modeSortKey(b.sunScore, scoringMode) - modeSortKey(a.sunScore, scoringMode);
+      if (keyDiff !== 0) return keyDiff;
       if (b.directSun !== a.directSun) return b.directSun - a.directSun;
       return a.name.localeCompare(b.name);
     });
-  }, [venues, searchQuery, activeFilter, sunOnly]);
+  }, [venues, searchQuery, activeFilter, sunOnly, scoringMode]);
 
   const sunCount = useMemo(
     () => venues.filter((v) => v.directSun >= 0.5).length,
@@ -1070,11 +1075,29 @@ export default function Map() {
               <span className="stat-sun">{sunCount} in sun</span>
               <span className="stat-shade">{shadeCount} in shade</span>
             </div>
+            <div className="mode-toggle" role="group" aria-label="Ranking mode">
+              <button
+                className={scoringMode === 'sun' ? 'active' : ''}
+                onClick={() => setScoringMode('sun')}
+                type="button"
+                aria-pressed={scoringMode === 'sun'}
+              >
+                {modeLabel('sun')}
+              </button>
+              <button
+                className={scoringMode === 'shade' ? 'active' : ''}
+                onClick={() => setScoringMode('shade')}
+                type="button"
+                aria-pressed={scoringMode === 'shade'}
+              >
+                {modeLabel('shade')}
+              </button>
+            </div>
             <div
               className="sun-only-toggle"
               onClick={() => setSunOnly(!sunOnly)}
             >
-              <span>Sun only</span>
+              <span>{scoringMode === 'shade' ? 'Shade only' : 'Sun only'}</span>
               <div className={`toggle-switch${sunOnly ? " active" : ""}`} />
             </div>
           </div>
