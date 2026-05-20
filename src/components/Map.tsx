@@ -126,8 +126,6 @@ function createPopupHTML(props: {
   sunScore: number;
   directSun?: number;
   sunUntil?: string | null;
-  lat: number;
-  lng: number;
 }): string {
   const sunny = (props.directSun ?? props.sunScore) >= 0.5;
   return `<div style="font-size:13px;min-width:160px">
@@ -662,8 +660,6 @@ export default function Map() {
             sunScore: Number(props.sunScore),
             directSun: Number(props.directSun),
             sunUntil: props.sunUntil === "null" ? null : props.sunUntil,
-            lat: coords[1],
-            lng: coords[0],
           })
         )
         .addTo(map);
@@ -899,8 +895,6 @@ export default function Map() {
           ...venue,
           directSun: venue.directSun,
           sunUntil: venue.sunUntil,
-          lat: venue.coordinates[1],
-          lng: venue.coordinates[0],
         })
       )
       .addTo(map);
