@@ -11,6 +11,9 @@ import {
   filterBuildingsByProximity,
   scoreSunlight,
 } from "@/lib/shadows";
+import { cloudFactor } from "@/lib/weather";
+import { useWeather } from "@/hooks/useWeather";
+import UVBadge from "@/components/UVBadge";
 
 // ===================== CONSTANTS =====================
 
@@ -155,7 +158,8 @@ function scoreVenueForTimeWindow(
   coordinates: [number, number],
   buildings: BuildingFootprint[],
   startTime: Date,
-  sunsetTime: Date
+  sunsetTime: Date,
+  cloudFactorValue: number = 1
 ) {
   const directSun = scoreSunlight(
     coordinates,
@@ -211,7 +215,8 @@ function scoreVenueForTimeWindow(
     (directSun * METRIC_WEIGHTS.directSun +
       futureSun * METRIC_WEIGHTS.futureSun +
       skyExposure * METRIC_WEIGHTS.skyExposure) *
-    100;
+    100 *
+    cloudFactorValue;
 
   return {
     directSun,
@@ -270,6 +275,7 @@ export default function Map() {
   const venueDataRef = useRef<GeoJSON.FeatureCollection | null>(null);
   const venueListRef = useRef<HTMLDivElement>(null);
   const playIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const weatherRef = useRef<import("@/lib/weather").HourlyWeather | null>(null);
 
   // Time state
   const [selectedDate, setSelectedDate] = useState<Date>(() => new Date());
@@ -287,6 +293,15 @@ export default function Map() {
   const [selectedVenueId, setSelectedVenueId] = useState<number | null>(null);
   const [mapReady, setMapReady] = useState(false);
   const [shadowOverlayOn, setShadowOverlayOn] = useState(true);
+
+  // Weather — fetched once on mount, cached in module scope
+  const { weather } = useWeather(LA_LAT, LA_LNG, currentTime);
+
+  // Keep a ref so scoreVenues (a useCallback) can read the latest weather
+  // without being added to its dep array (which would cause re-scoring storms)
+  useEffect(() => {
+    weatherRef.current = weather;
+  }, [weather]);
 
   // ===================== COMPUTED =====================
 
@@ -498,6 +513,10 @@ export default function Map() {
       return;
     }
 
+    const currentCloudFactor = cloudFactor(
+      weatherRef.current?.cloudCoverPct ?? 0
+    );
+
     for (const feature of visibleVenueFeatures) {
       if (!feature.properties) continue;
 
@@ -510,7 +529,8 @@ export default function Map() {
         coords,
         nearbyBuildings,
         currentTime,
-        sunset
+        sunset,
+        currentCloudFactor
       );
 
       feature.properties.sunScore = metrics.sunScore;
@@ -1111,6 +1131,10 @@ export default function Map() {
                 : "Sun below horizon"}
             </span>
           </div>
+          <UVBadge
+            uvIndex={weather?.uvIndex ?? null}
+            cloudCoverPct={weather?.cloudCoverPct ?? null}
+          />
         </div>
 
         <div className="time-controls animate-slide-up">
