@@ -25,18 +25,11 @@ export function bindStores(map: mapboxgl.Map): () => void {
     const sunPos = SunCalc.getPosition(state.currentTime, LA_LAT, LA_LNG);
     updateSunLight(map, sunPos.azimuth, sunPos.altitude);
 
-    // Kick the scoring worker with the new sun position and push results to
-    // venueStore; venueLayer will react via the scores subscription below.
-    import("@/worker/client").then(({ getDefaultScoringClient }) => {
-      const client = getDefaultScoringClient();
-      client
-        .score({ azimuth: sunPos.azimuth, altitude: sunPos.altitude })
-        .then((scores) => {
-          useVenueStore.getState().updateScores(scores);
-        })
-        .catch(() => {
-          // Worker may not be initialized yet — scores stay stale, that's OK.
-        });
+    // Re-score every venue (now + 90 min ahead) and merge into the store.
+    // venueLayer reacts via the scores subscription below; the venue list /
+    // cards read the merged directSun/futureSun/sunScore off the venue objects.
+    import("@/worker/scoreAndApply").then(({ scoreAndApply }) => {
+      scoreAndApply(state.currentTime);
     });
   });
 

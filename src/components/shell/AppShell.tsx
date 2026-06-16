@@ -4,13 +4,18 @@ import { useRef, useEffect, useState, useCallback } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { createMap } from "@/map/createMap";
 import { addBuildingLayer } from "@/map/layers/buildingLayer";
-import { addVenueLayer } from "@/map/layers/venueLayer";
+import { addVenueLayer, setVenueSourceData } from "@/map/layers/venueLayer";
 import { addShadowLayer } from "@/map/layers/shadowLayer";
 import { addUserLayer } from "@/map/layers/userLayer";
 import { bindStores } from "@/map/bindStores";
 import { useUIStore } from "@/state/uiStore";
 import { useTimeStore } from "@/state/timeStore";
 import { useLocationStore } from "@/state/locationStore";
+import { useVenueStore } from "@/state/venueStore";
+import { loadVenueFeatures } from "@/data/venueLoad";
+import { loadAllOccluders } from "@/data/loaders";
+import { getDefaultScoringClient } from "@/worker/client";
+import { scoreAndApply } from "@/worker/scoreAndApply";
 import { neighborhoods } from "@/lib/neighborhoods";
 import MapContainer from "./MapContainer";
 import GeolocateButton from "@/components/geolocation/GeolocateButton";
@@ -19,8 +24,6 @@ import NeighborhoodSelector from "@/components/NeighborhoodSelector";
 import type mapboxgl from "mapbox-gl";
 
 interface AppShellProps {
-  /** Neighborhood slug used to fetch venues on mount */
-  neighborhoodSlug?: string;
   /** Content rendered inside the sidebar */
   sidebarContent?: React.ReactNode;
   /** Overlays rendered inside the map section (time controls, HUD, etc.) */
@@ -30,7 +33,6 @@ interface AppShellProps {
 }
 
 export default function AppShell({
-  neighborhoodSlug,
   sidebarContent,
   mapOverlays,
   bottomSheet,
@@ -48,6 +50,8 @@ export default function AppShell({
   const setFocusedNeighborhood = useUIStore((s) => s.setFocusedNeighborhood);
   const focusedNeighborhood = useUIStore((s) => s.focusedNeighborhood);
   const setSunTimes = useTimeStore((s) => s.setSunTimes);
+  const setSliderValue = useTimeStore((s) => s.setSliderValue);
+  const setCurrentTime = useTimeStore((s) => s.setCurrentTime);
   const isPlanningMode = useTimeStore((s) => s.isPlanningMode);
 
   const storeSlug = useLocationStore((s) => s.neighborhoodSlug);
@@ -77,46 +81,26 @@ export default function AppShell({
 
           setMapReady(true);
 
-          // Compute sun times for today and seed the store
+          // Seed time-of-day: sun times for today + position the slider at "now"
+          // (clamped into the daylight window). Venue loading + scoring is driven
+          // by the slug effect below once mapReady flips true.
           import("suncalc").then(({ default: SunCalc }) => {
             const now = new Date();
             const times = SunCalc.getTimes(now, 34.0195, -118.4912);
             setSunTimes(times.sunrise, times.sunset);
+
+            let target = now;
+            if (now < times.sunrise || now > times.sunset) {
+              target = new Date(times.sunrise);
+              target.setHours(16, 0, 0, 0);
+              if (target < times.sunrise) target = times.sunrise;
+              if (target > times.sunset) target = times.sunset;
+            }
+            const range = times.sunset.getTime() - times.sunrise.getTime();
+            const elapsed = target.getTime() - times.sunrise.getTime();
+            setSliderValue(range > 0 ? Math.round((elapsed / range) * 1000) : 500);
+            setCurrentTime(target);
           });
-
-          // Initialize the scoring worker with occluders for the current neighborhood.
-          // loadAllOccluders combines buildings + trees/awnings; trees.json 404s are
-          // swallowed inside loadTreeOccluders. Falls back to [] if no slug given.
-          import("@/worker/client").then(({ getDefaultScoringClient }) => {
-            const client = getDefaultScoringClient();
-            const occluderPromise = neighborhoodSlug
-              ? import("@/data/loaders").then(({ loadAllOccluders }) =>
-                  loadAllOccluders(neighborhoodSlug).catch(
-                    (): import("@/data/loaders").Occluder[] => []
-                  )
-                )
-              : Promise.resolve<import("@/data/loaders").Occluder[]>([]);
-
-            occluderPromise.then((occluders) => {
-              client.init(occluders, []).catch(() => {
-                // Worker may already be initialized — ignore double-init errors.
-              });
-            });
-          });
-
-          // If a neighborhood slug was provided, fetch its venues.
-          if (neighborhoodSlug) {
-            fetch(`/data/venues.geojson`)
-              .then((res) => res.json())
-              .then((geojson: GeoJSON.FeatureCollection) => {
-                if (!map.getSource("venues")) return;
-                const source = map.getSource("venues") as import("mapbox-gl").GeoJSONSource;
-                source.setData(geojson);
-              })
-              .catch(() => {
-                // Venue data not available — map still functional.
-              });
-          }
         });
       })
       .catch(() => {
@@ -184,54 +168,54 @@ export default function AppShell({
     window.history.replaceState(null, "", "?n=" + storeSlug);
   }, [storeSlug]);
 
-  // Handle neighborhood switch: fly map, reload occluders + worker, reload venues
+  // Load a neighborhood's venues + occluders: populate the store, feed the map
+  // source, (re)initialize the scoring worker with the venue coords, and score.
+  const loadNeighborhood = useCallback(async (slug: string) => {
+    setNeighborhoodLoading(true);
+    const [venues, occluders] = await Promise.all([
+      loadVenueFeatures(slug),
+      loadAllOccluders(slug).catch((): import("@/data/loaders").Occluder[] => []),
+    ]);
+
+    useVenueStore.getState().setVenues(venues);
+    useVenueStore.getState().setSelectedVenueId(null);
+
+    const map = mapRef.current;
+    if (map) setVenueSourceData(map, venues);
+
+    const client = getDefaultScoringClient();
+    await client
+      .init(
+        occluders,
+        venues.map((v) => ({ id: v.id, coords: v.coordinates }))
+      )
+      .catch(() => {
+        // Worker may already be initialized — ignore double-init errors.
+      });
+
+    await scoreAndApply(useTimeStore.getState().currentTime);
+    setNeighborhoodLoading(false);
+  }, []);
+
+  // Load venues whenever the map becomes ready or the active neighborhood changes.
+  useEffect(() => {
+    if (!mapReady || !storeSlug) return;
+    loadNeighborhood(storeSlug);
+  }, [mapReady, storeSlug, loadNeighborhood]);
+
+  // Handle neighborhood switch: update the store slug + fly the map. The effect
+  // above reloads venues/occluders/scores in response to the slug change.
   const handleNeighborhoodSelect = useCallback(
     (slug: string) => {
       setNeighborhoodSlug(slug);
-
-      // Fly to neighborhood center
       const nb = neighborhoods.find((n) => n.slug === slug);
       const map = mapRef.current;
       if (nb && map) {
         const [lng, lat] = nb.center;
         map.flyTo({ center: [lng, lat], zoom: 14, duration: 1000, pitch: 45 });
       }
-
-      if (!mapReady) return;
-
-      setNeighborhoodLoading(true);
-
-      Promise.all([
-        import("@/data/loaders").then(({ loadAllOccluders }) =>
-          loadAllOccluders(slug).catch(
-            (): import("@/data/loaders").Occluder[] => []
-          )
-        ),
-        fetch(`/data/${slug}/venues.json`)
-          .then((res) => (res.ok ? res.json() : null))
-          .catch(() => null),
-      ]).then(([occluders, venueData]) => {
-        // Re-init scoring worker with new occluders
-        import("@/worker/client").then(({ getDefaultScoringClient }) => {
-          const client = getDefaultScoringClient();
-          client.init(occluders, []).catch(() => {
-            // Ignore double-init; worker will be re-used.
-          });
-        });
-
-        // Update venue layer with new neighborhood data
-        const mapInstance = mapRef.current;
-        if (mapInstance && venueData) {
-          const source = mapInstance.getSource("venues") as import("mapbox-gl").GeoJSONSource | undefined;
-          if (source) {
-            source.setData(venueData);
-          }
-        }
-
-        setNeighborhoodLoading(false);
-      });
     },
-    [mapReady, setNeighborhoodSlug]
+    [setNeighborhoodSlug]
   );
 
   return (

@@ -1,7 +1,7 @@
 import type { ConfidenceLevel } from '@/engine/confidence';
 
 export interface VenueFeature {
-  id: number;
+  id: string;
   name: string;
   amenity: string;
   cuisine: string | null;

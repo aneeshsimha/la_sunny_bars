@@ -1184,3 +1184,251 @@ body {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
 }
+
+/* ============ NEIGHBORHOOD SELECTOR (cream chip, top-center) ============ */
+
+.neighborhood-selector {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 14;
+  font-family: inherit;
+}
+
+.neighborhood-selector__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 15px;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  background: rgba(254, 249, 238, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 6px 20px rgba(28, 25, 23, 0.18);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.neighborhood-selector__name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.neighborhood-selector__count {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.neighborhood-selector__caret {
+  font-size: 10px;
+  color: var(--color-text-muted);
+  transition: transform 0.15s ease;
+}
+
+.neighborhood-selector__menu {
+  position: absolute;
+  top: 46px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  max-height: 340px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 7px;
+  list-style: none;
+  background: rgba(254, 249, 238, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(28, 25, 23, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px -16px rgba(28, 25, 23, 0.4);
+  animation: lsbRise 0.2s ease;
+}
+
+.neighborhood-selector__option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13.5px;
+  color: var(--color-text);
+  user-select: none;
+  transition: background 0.1s ease;
+}
+
+.neighborhood-selector__option:hover {
+  background: rgba(28, 25, 23, 0.05);
+}
+
+.neighborhood-selector__option.active {
+  background: rgba(245, 158, 11, 0.12);
+  font-weight: 700;
+}
+
+.neighborhood-selector__option-count {
+  font-size: 11.5px;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes lsbRise {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* ============ VENUE DETAIL PANEL ============ */
+
+.venue-detail-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 372px;
+  z-index: 20;
+  overflow-y: auto;
+  background: rgba(254, 249, 238, 0.99);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-left: 1px solid rgba(28, 25, 23, 0.1);
+  box-shadow: -20px 0 50px -20px rgba(28, 25, 23, 0.4);
+  animation: detailRise 0.25s ease;
+}
+
+@keyframes detailRise {
+  from { opacity: 0; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.venue-detail {
+  position: relative;
+  padding: 24px 24px 30px;
+}
+
+.venue-detail-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(28, 25, 23, 0.07);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.venue-detail-close:hover {
+  background: rgba(28, 25, 23, 0.13);
+  color: var(--color-text);
+}
+
+.venue-detail-name {
+  font-family: var(--font-display), serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.05;
+  padding-right: 30px;
+}
+
+.venue-detail-type {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin-top: 5px;
+  text-transform: capitalize;
+}
+
+.venue-detail-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.venue-detail-status.sunny { color: #B45309; }
+.venue-detail-status.shaded { color: #4F46E5; }
+
+.venue-detail-score {
+  margin-top: 14px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: linear-gradient(150deg, var(--color-surface), var(--color-bg));
+  border: 1px solid var(--color-border);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.venue-detail-score strong {
+  font-family: var(--font-display), serif;
+  font-weight: 500;
+  font-size: 28px;
+  color: var(--color-text);
+  margin-right: 2px;
+}
+
+.venue-detail-breakdown {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.venue-detail-breakdown span {
+  flex: 1;
+  padding: 11px 8px;
+  border-radius: 12px;
+  background: var(--color-surface);
+  text-align: center;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.venue-detail-reservations {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.venue-detail-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 16px;
+  border-radius: 12px;
+  background: var(--color-text);
+  color: var(--color-bg);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.venue-detail-link[href^="http"]:not(:first-child),
+.venue-detail-reservations .venue-detail-link {
+  background: transparent;
+  border: 1px solid var(--color-border-hover);
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .venue-detail-panel {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    border-left: none;
+    z-index: 210;
+  }
+}

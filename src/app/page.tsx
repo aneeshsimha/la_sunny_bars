@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic";
 
-import AppShell from "@/components/shell/AppShell";
+import AppRoot from "@/components/shell/AppRoot";
 
 export default function Home() {
-  return <AppShell />;
+  return <AppRoot />;
 }

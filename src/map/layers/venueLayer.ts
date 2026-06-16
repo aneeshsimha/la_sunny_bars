@@ -9,7 +9,7 @@ export function addVenueLayer(
     type: "FeatureCollection",
     features: venues.map((v) => ({
       type: "Feature",
-      id: String(v.id),
+      id: v.id,
       properties: {
         name: v.name,
         amenity: v.amenity,
@@ -98,6 +98,33 @@ export function addVenueLayer(
       },
     } as mapboxgl.AnyLayer);
   }
+}
+
+/** Replace the "venues" source data with the given venue features. */
+export function setVenueSourceData(
+  map: mapboxgl.Map,
+  venues: VenueFeature[]
+): void {
+  const source = map.getSource("venues") as mapboxgl.GeoJSONSource | undefined;
+  if (!source) return;
+  const geojson: GeoJSON.FeatureCollection<GeoJSON.Point> = {
+    type: "FeatureCollection",
+    features: venues.map((v) => ({
+      type: "Feature",
+      id: v.id,
+      properties: {
+        name: v.name,
+        amenity: v.amenity,
+        cuisine: v.cuisine,
+        outdoor_seating: v.outdoor_seating,
+        website: v.website,
+        osm_id: v.id,
+        seatingType: v.seatingType ?? "",
+      },
+      geometry: { type: "Point", coordinates: v.coordinates },
+    })),
+  };
+  source.setData(geojson);
 }
 
 export function updateVenueScores(

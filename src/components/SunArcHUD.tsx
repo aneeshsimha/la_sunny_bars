@@ -132,9 +132,14 @@ export default function SunArcHUD({
     e.currentTarget.releasePointerCapture(e.pointerId);
   };
 
-  // Format for tick labels
+  // Format for tick labels (always LA time)
   const fmt = (d: Date) =>
-    d.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true });
+    d.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+      timeZone: "America/Los_Angeles",
+    });
 
   // Dome semicircle path: left horizon → arc up → right horizon
   const domeD = `M ${PAD_X} ${HORIZON_Y} Q ${W / 2} ${APEX_Y - 10} ${W - PAD_X} ${HORIZON_Y}`;

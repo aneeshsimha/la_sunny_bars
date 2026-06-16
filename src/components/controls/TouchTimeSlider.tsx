@@ -4,24 +4,13 @@ import { useMemo, useRef, useCallback } from "react";
 import SunCalc from "suncalc";
 import { useTimeStore } from "@/state/timeStore";
 import { goldenHourGradient } from "@/lib/sliderGradient";
+import { formatLATime, formatLATimeShort } from "@/lib/formatTime";
 
 const LA_LAT = 34.0195;
 const LA_LNG = -118.4912;
 
-function formatTime(date: Date): string {
-  return date.toLocaleTimeString("en-US", {
-    hour: "numeric",
-    minute: "2-digit",
-    hour12: true,
-  });
-}
-
-function formatTimeShort(date: Date): string {
-  const h = date.getHours();
-  const ampm = h >= 12 ? "p" : "a";
-  const hour = h % 12 || 12;
-  return `${hour}${ampm}`;
-}
+const formatTime = formatLATime;
+const formatTimeShort = formatLATimeShort;
 
 interface SnapMarker {
   label: string;

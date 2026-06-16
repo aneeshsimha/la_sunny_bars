@@ -2,14 +2,7 @@
 
 import { useTimeStore } from "@/state/timeStore";
 import { useVenueStore } from "@/state/venueStore";
-
-function formatTime(date: Date): string {
-  return date.toLocaleTimeString("en-US", {
-    hour: "numeric",
-    minute: "2-digit",
-    hour12: true,
-  });
-}
+import { formatLATime as formatTime } from "@/lib/formatTime";
 
 export default function SunContextCard() {
   const sunrise = useTimeStore((s) => s.sunrise);
