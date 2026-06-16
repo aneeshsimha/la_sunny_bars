@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T18:28:02.151Z",
+  "generatedAt": "2026-06-16T19:04:50.604Z",
   "neighborhoods": [
     {
       "slug": "silver-lake",
@@ -29,7 +29,7 @@
       "slug": "santa-monica",
       "name": "Santa Monica",
       "venueCount": 235,
-      "buildingCount": 0
+      "buildingCount": 12214
     },
     {
       "slug": "echo-park",
