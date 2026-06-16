@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T19:04:50.604Z",
+  "generatedAt": "2026-06-16T19:06:23.376Z",
   "neighborhoods": [
     {
       "slug": "silver-lake",
@@ -53,7 +53,7 @@
       "slug": "koreatown",
       "name": "Koreatown",
       "venueCount": 174,
-      "buildingCount": 0
+      "buildingCount": 4869
     },
     {
       "slug": "beverly-hills",
