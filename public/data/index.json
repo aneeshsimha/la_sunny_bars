@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T18:14:00.476Z",
+  "generatedAt": "2026-06-16T18:28:02.151Z",
   "neighborhoods": [
     {
       "slug": "silver-lake",
@@ -59,7 +59,7 @@
       "slug": "beverly-hills",
       "name": "Beverly Hills",
       "venueCount": 101,
-      "buildingCount": 0
+      "buildingCount": 9156
     }
   ]
 }
