@@ -54,7 +54,7 @@ out skel qt;`;
 }
 
 async function fetchBuildings(): Promise<void> {
-  console.log(`Fetching buildings for ${neighborhood.name} (bbox: ${bbox.join(', ')})...`);
+  console.log(`Fetching buildings for ${neighborhood!.name} (bbox: ${bbox.join(', ')})...`);
 
   const query = buildQuery(south, west, north, east);
 
