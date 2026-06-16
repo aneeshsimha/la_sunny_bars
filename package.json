@@ -6,26 +6,42 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "fetch-venues": "tsx scripts/fetch-venues.ts"
+    "lint": "eslint src scripts next.config.ts",
+    "fetch-venues": "tsx scripts/fetch-venues.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "pipeline": "npx tsx pipeline/build-all.ts",
+    "pipeline:neighborhood": "npx tsx pipeline/build-neighborhood.ts",
+    "validate": "npx tsx scripts/validate-scores.ts",
+    "analyze": "ANALYZE=true npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "flatbush": "^4.6.2",
     "mapbox-gl": "^3.20.0",
     "next": "^16.1.7",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "suncalc": "^1.9.0"
+    "suncalc": "^1.9.0",
+    "zustand": "^5.0.14"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^16.2.9",
     "@types/mapbox-gl": "^3.4.1",
     "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@types/suncalc": "^1.9.2",
+    "@vitest/coverage-v8": "^4.1.8",
+    "@vitest/ui": "^4.1.8",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.1.7",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.8"
   }
 }

@@ -1,0 +1,5867 @@
+{
+  "slug": "santa-monica",
+  "generatedAt": "2026-06-16T17:22:39.796Z",
+  "count": 235,
+  "venues": [
+    {
+      "id": "osm/node/437773582",
+      "name": "Father's Office",
+      "coords": [
+        -118.4984834,
+        34.029328
+      ],
+      "amenity": "pub",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": "https://fathersoffice.com/",
+      "phone": "+1-310-736-2224",
+      "opening_hours": "Mo-Th 17:00-22:00; Fr 12:00-23:00; Sa,Su 12:00-22:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": []
+    },
+    {
+      "id": "osm/node/439817143",
+      "name": "Cafe Berlina",
+      "coords": [
+        -118.486294,
+        34.0286219
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "no",
+      "website": "https://cafeberlina.com/",
+      "phone": null,
+      "opening_hours": "Mo-Fr 07:00-15:00; Sa 08:00-14:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/439949411",
+      "name": "Art's Table",
+      "coords": [
+        -118.4986661,
+        34.0290582
+      ],
+      "amenity": "restaurant",
+      "cuisine": "american;seafood;salad",
+      "outdoor_seating": "unknown",
+      "website": "https://www.artstablesm.com/",
+      "phone": "+1-310-395-2500",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/439949561",
+      "name": "Louise's Trattoria",
+      "coords": [
+        -118.4985782,
+        34.0292668
+      ],
+      "amenity": "restaurant",
+      "cuisine": "italian",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/439949564",
+      "name": "Rosti",
+      "coords": [
+        -118.4991961,
+        34.0291387
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": "Mo-Th 11:30-21:00; Fr 11:30-22:00; Sa 11:00-22:00; Su 11:00-21:30",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/439949776",
+      "name": "Starbucks",
+      "coords": [
+        -118.501788,
+        34.0270545
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "yes",
+      "website": "https://www.starbucks.com/store-locator/store/12170/7th-montana-701-montana-avenue-santa-monica-ca-904031403-us",
+      "phone": "+1 310-394-8020",
+      "opening_hours": "Mo-Fr 05:00-20:00; Sa-Su 05:30-20:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": "patio",
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/537893661",
+      "name": "Fromin's Deli",
+      "coords": [
+        -118.484024,
+        34.0302224
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/623431546",
+      "name": "El Cholo",
+      "coords": [
+        -118.4920773,
+        34.0244137
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/640768126",
+      "name": "Tacos por Favor",
+      "coords": [
+        -118.4801728,
+        34.0197502
+      ],
+      "amenity": "restaurant",
+      "cuisine": "mexican",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/688280156",
+      "name": "Bagel Nosh",
+      "coords": [
+        -118.486351,
+        34.0291121
+      ],
+      "amenity": "cafe",
+      "cuisine": "bagel",
+      "outdoor_seating": "unknown",
+      "website": "https://www.bagelnoshdeli.com/",
+      "phone": null,
+      "opening_hours": "Mo-Fr 06:30-14:30; Sa-Su 07:30-15:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/1028734933",
+      "name": "La Vecchia Cucina",
+      "coords": [
+        -118.4831006,
+        34.0012922
+      ],
+      "amenity": "restaurant",
+      "cuisine": "italian",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/1028757160",
+      "name": "Hermanito",
+      "coords": [
+        -118.489507,
+        34.0181495
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/1028757169",
+      "name": "Bodega",
+      "coords": [
+        -118.4893192,
+        34.0183407
+      ],
+      "amenity": "bar",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Cocktails",
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/1028757198",
+      "name": "Solidarity",
+      "coords": [
+        -118.491143,
+        34.0190477
+      ],
+      "amenity": "restaurant",
+      "cuisine": "polish",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/1028757208",
+      "name": "Fritto Misto",
+      "coords": [
+        -118.4901507,
+        34.015495
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/1028759135",
+      "name": "Lattitude Thai",
+      "coords": [
+        -118.4731401,
+        34.0043291
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/1028759145",
+      "name": "Poom Thai",
+      "coords": [
+        -118.4806164,
+        34.0101431
+      ],
+      "amenity": "restaurant",
+      "cuisine": "thai",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/1028759192",
+      "name": "Jameson's Pub",
+      "coords": [
+        -118.482601,
+        34.0007973
+      ],
+      "amenity": "pub",
+      "cuisine": "irish",
+      "outdoor_seating": "unknown",
+      "website": "http://www.jamesonsirishpub.com/",
+      "phone": "+1-424-330-0069",
+      "opening_hours": "Mo-Su 09:00-24:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": []
+    },
+    {
+      "id": "osm/node/1028770779",
+      "name": "Sushi Hanashi",
+      "coords": [
+        -118.482404,
+        34.0115909
+      ],
+      "amenity": "restaurant",
+      "cuisine": "japanese",
+      "outdoor_seating": "no",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/1060439328",
+      "name": "Cafe Lovi",
+      "coords": [
+        -118.479159,
+        34.0265784
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/1084058035",
+      "name": "Uppers Cafe",
+      "coords": [
+        -118.477578,
+        34.0278713
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/1086097965",
+      "name": "Chez Jay",
+      "coords": [
+        -118.4932511,
+        34.010464
+      ],
+      "amenity": "restaurant",
+      "cuisine": "steak_house;steak;seafood",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": "+1-310-395-1741",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/1792518214",
+      "name": "Ye Olde King's Head",
+      "coords": [
+        -118.497164,
+        34.0146174
+      ],
+      "amenity": "pub",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": []
+    },
+    {
+      "id": "osm/node/1887254620",
+      "name": "Nostalgia Bar and Lounge",
+      "coords": [
+        -118.4767172,
+        34.0154517
+      ],
+      "amenity": "bar",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Cocktails",
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/2048544111",
+      "name": "UCLA Hospital Cafeteria",
+      "coords": [
+        -118.486804,
+        34.0277262
+      ],
+      "amenity": "restaurant",
+      "cuisine": "american",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/2048544118",
+      "name": "Cafe zella",
+      "coords": [
+        -118.4873958,
+        34.0284866
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": "https://www.cafezella.com/",
+      "phone": "+1 310 260 9479",
+      "opening_hours": "Mo-Fr 07:00-18:00; Sa-Su 08:00-17:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/2048544120",
+      "name": "Silver Lake Ramen",
+      "coords": [
+        -118.496907,
+        34.0165861
+      ],
+      "amenity": "restaurant",
+      "cuisine": "noodle",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/2048544134",
+      "name": "Chandni",
+      "coords": [
+        -118.483952,
+        34.0310158
+      ],
+      "amenity": "restaurant",
+      "cuisine": "indian",
+      "outdoor_seating": "unknown",
+      "website": "https://chandnivegrestaurant.com/",
+      "phone": "+1 310 828 7060",
+      "opening_hours": "Mo-Fr 11:30-14:30; Sa-Su 12:00-15:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/2048544139",
+      "name": "iSno",
+      "coords": [
+        -118.4977947,
+        34.0170953
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": "Su-Th 12:00-22:00; Fr,Sa 12:00-23:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/2570992272",
+      "name": "Cafe Gratitude",
+      "coords": [
+        -118.4737828,
+        33.9980134
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": "+1 424 231 8000",
+      "opening_hours": "Su-Th 08:00-22:00, Fr-Sa 08:00-23:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/2622898579",
+      "name": "Bay Cities Italian Deli",
+      "coords": [
+        -118.4891866,
+        34.0179803
+      ],
+      "amenity": "restaurant",
+      "cuisine": "deli;bakery",
+      "outdoor_seating": "unknown",
+      "website": "https://www.baycitiesitaliandeli.com/",
+      "phone": "+1-310-395-8279",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/3439710000",
+      "name": "Mariasol",
+      "coords": [
+        -118.499717,
+        34.0076808
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/3439778857",
+      "name": "Big Dean's OceanFront Cafe",
+      "coords": [
+        -118.4955622,
+        34.0102984
+      ],
+      "amenity": "bar",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": "+1-310-393-2666",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Cocktails",
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/3439778858",
+      "name": "Carousel Cafe",
+      "coords": [
+        -118.4957541,
+        34.0104907
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": "+1-310-451-4277",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/3812003952",
+      "name": "Santa Monica Seafood",
+      "coords": [
+        -118.4923317,
+        34.0236798
+      ],
+      "amenity": "restaurant",
+      "cuisine": "seafood",
+      "outdoor_seating": "unknown",
+      "website": "https://smseafoodmarket.com",
+      "phone": "+1 310-393-5244",
+      "opening_hours": "Mo-Su 09:00-20:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/3812008265",
+      "name": "Primo Passo Coffee",
+      "coords": [
+        -118.5015341,
+        34.0267828
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "yes",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": "patio",
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/4121804017",
+      "name": "Amai Coffee",
+      "coords": [
+        -118.4727503,
+        34.0179452
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "no",
+      "website": null,
+      "phone": null,
+      "opening_hours": "Mo-Fr 07:00-16:00; Sa,Su 08:00-16:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/4234987094",
+      "name": "Wallflower",
+      "coords": [
+        -118.471871,
+        33.9994239
+      ],
+      "amenity": "restaurant",
+      "cuisine": "indonesian",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/4259746596",
+      "name": "Tsukiji Sushi",
+      "coords": [
+        -118.480579,
+        33.9992944
+      ],
+      "amenity": "restaurant",
+      "cuisine": "sushi",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/4259756489",
+      "name": "Thai Dishes on Broadway",
+      "coords": [
+        -118.4959319,
+        34.0133887
+      ],
+      "amenity": "restaurant",
+      "cuisine": "thai",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": "+1-310-394-6189",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/4335584291",
+      "name": "Dogtown Coffee",
+      "coords": [
+        -118.4886953,
+        34.0071466
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/4417369197",
+      "name": "Nonstop Sushi",
+      "coords": [
+        -118.4751072,
+        34.0062995
+      ],
+      "amenity": "restaurant",
+      "cuisine": "sushi",
+      "outdoor_seating": "no",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/4438142789",
+      "name": "Del Frisco's Grille",
+      "coords": [
+        -118.4948839,
+        34.0116704
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "yes",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": "patio",
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/4450652129",
+      "name": "Samosa House Santa Monica",
+      "coords": [
+        -118.486422,
+        34.0048822
+      ],
+      "amenity": "restaurant",
+      "cuisine": "indian",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": "Mo-Su 11:00-22:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/4494944890",
+      "name": "BOA Steakhouse",
+      "coords": [
+        -118.4980051,
+        34.0143126
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": "Mo-Th 17:30-22:00; Fr 17:30-22:30; Sa 17:00-22:30; Su 17:00-22:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/4551228289",
+      "name": "Flake",
+      "coords": [
+        -118.473793,
+        33.9983802
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/4777195221",
+      "name": "Shoop's",
+      "coords": [
+        -118.48568,
+        34.0038525
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/4817064723",
+      "name": "Enterprise cafe",
+      "coords": [
+        -118.4810008,
+        33.9987048
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/4891612668",
+      "name": "Bar Chloe",
+      "coords": [
+        -118.4956736,
+        34.0139844
+      ],
+      "amenity": "bar",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Cocktails",
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/5003990303",
+      "name": "T's Thai Restaurant",
+      "coords": [
+        -118.4977918,
+        34.0188421
+      ],
+      "amenity": "restaurant",
+      "cuisine": "thai",
+      "outdoor_seating": "unknown",
+      "website": "http://tsthaiforyou.com/",
+      "phone": "+1-310-395-4106",
+      "opening_hours": "Mo-Th 11:00-22:00, Fr-Sa 11:00-22:30, Su 12:00-22:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/5032115122",
+      "name": "Hillstone Restaurant",
+      "coords": [
+        -118.4999472,
+        34.0175838
+      ],
+      "amenity": "restaurant",
+      "cuisine": "american",
+      "outdoor_seating": "unknown",
+      "website": "https://hillstonerestaurant.com/locations/santamonica/",
+      "phone": "+1-310-576-7558",
+      "opening_hours": "Mo-We,Su 11:30-21:00; Th-Sa 11:30-22:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/5101862545",
+      "name": "Starbucks",
+      "coords": [
+        -118.491556,
+        34.0106867
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "unknown",
+      "website": "https://www.starbucks.com/store-locator/store/1007343/olympic-main-1705-ocean-ave-unit-c-santa-monica-ca-904013526-us",
+      "phone": "+1 310-458-2802",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/5101864952",
+      "name": "The Coffee Bean & Tea Leaf",
+      "coords": [
+        -118.4979242,
+        34.0087833
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/5111888228",
+      "name": "The Cheesecake Factory",
+      "coords": [
+        -118.494667,
+        34.0139822
+      ],
+      "amenity": "restaurant",
+      "cuisine": "american",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/5111896523",
+      "name": "Johnny Rockets",
+      "coords": [
+        -118.493953,
+        34.013189
+      ],
+      "amenity": "restaurant",
+      "cuisine": "burger",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/5111900621",
+      "name": "Crepe Maker",
+      "coords": [
+        -118.4938079,
+        34.0133867
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/5124572428",
+      "name": "Dayglo",
+      "coords": [
+        -118.472977,
+        33.9985064
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/5124574923",
+      "name": "Star of Siam",
+      "coords": [
+        -118.470105,
+        34.002612
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/5125094821",
+      "name": "Groundwork Coffee",
+      "coords": [
+        -118.470184,
+        34.0002766
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/5215424223",
+      "name": "Water Grill",
+      "coords": [
+        -118.4976284,
+        34.0139725
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/5216141539",
+      "name": "Ugo",
+      "coords": [
+        -118.495989,
+        34.0155255
+      ],
+      "amenity": "cafe",
+      "cuisine": "burger;italian;sandwich;ice_cream",
+      "outdoor_seating": "yes",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": "patio",
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/5308753005",
+      "name": "Dialogue Restaurant",
+      "coords": [
+        -118.4966829,
+        34.0168342
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/5308835516",
+      "name": "Uovo",
+      "coords": [
+        -118.4982872,
+        34.0157086
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/5308846421",
+      "name": "Bar Monette",
+      "coords": [
+        -118.4978552,
+        34.0144044
+      ],
+      "amenity": "bar",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Cocktails",
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/5444373917",
+      "name": "Marmalade Cafe",
+      "coords": [
+        -118.493647,
+        34.0178936
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/5458174065",
+      "name": "Blue Plate Taco",
+      "coords": [
+        -118.4959203,
+        34.0125873
+      ],
+      "amenity": "restaurant",
+      "cuisine": "mexican",
+      "outdoor_seating": "unknown",
+      "website": "https://www.blueplatesantamonica.com/",
+      "phone": "+1-310-458-2985",
+      "opening_hours": "Mo-Fr 11:30-22:00; Sa-Su 11:00-22:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/5458174079",
+      "name": "SUGARFISH by sushi nozawa",
+      "coords": [
+        -118.4972129,
+        34.015386
+      ],
+      "amenity": "restaurant",
+      "cuisine": "sushi;japanese",
+      "outdoor_seating": "unknown",
+      "website": "https://sugarfishsushi.com/",
+      "phone": "+1-310-393-3338",
+      "opening_hours": "Mo-Sa 11:30-22:00; Su 12:00-21:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/5475557224",
+      "name": "Tar and Roses",
+      "coords": [
+        -118.493019,
+        34.0179731
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/5540580323",
+      "name": "Benny's Tacos",
+      "coords": [
+        -118.4933692,
+        34.0233884
+      ],
+      "amenity": "restaurant",
+      "cuisine": "mexican",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": "+1-818-612-3875",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/5589649319",
+      "name": "Cabo Cantina",
+      "coords": [
+        -118.4983271,
+        34.0173005
+      ],
+      "amenity": "restaurant",
+      "cuisine": "mexican",
+      "outdoor_seating": "yes",
+      "website": null,
+      "phone": null,
+      "opening_hours": "Mo-Su 16:00-20:00,22:30-24:00 open \"Happy Hour \";PH closed",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": "patio",
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/5788749274",
+      "name": "Fritto Misto",
+      "coords": [
+        -118.492359,
+        34.0184299
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6096814327",
+      "name": "goodboybob coffee",
+      "coords": [
+        -118.4761783,
+        34.0281368
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "unknown",
+      "website": "https://goodboybob.com/",
+      "phone": "+1-424-581-7014",
+      "opening_hours": "Mo-Su 07:00-17:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/6099921321",
+      "name": "California Pizza Kitchen",
+      "coords": [
+        -118.4996915,
+        34.0177637
+      ],
+      "amenity": "restaurant",
+      "cuisine": "pizza",
+      "outdoor_seating": "unknown",
+      "website": "https://order.cpk.com",
+      "phone": "+1-310-393-9335",
+      "opening_hours": "Mo-Th & Su 11:00 to 22:00 Fr-Sa 11:00 to 23:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6099996319",
+      "name": "The Bungalow",
+      "coords": [
+        -118.5015515,
+        34.0175344
+      ],
+      "amenity": "restaurant",
+      "cuisine": "american;small_plates",
+      "outdoor_seating": "yes",
+      "website": "https://www.thebungalow.com/thebungalowsm/",
+      "phone": "+1-310-899-8530",
+      "opening_hours": "Mo-Fr 17:00-02:00; Sa 12:00-02:00; Su 12:00-22:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": "patio",
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6100016226",
+      "name": "FIG",
+      "coords": [
+        -118.5011791,
+        34.0181143
+      ],
+      "amenity": "restaurant",
+      "cuisine": "bistro;seasonal;farm-to-table",
+      "outdoor_seating": "unknown",
+      "website": "https://www.figsantamonica.com/",
+      "phone": "+1-310-319-3111",
+      "opening_hours": "Mo-Su 07:00-11:00, Sa,Su 11:30-15:00, Tu-Sa 17:00-22:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6107947447",
+      "name": "The Gaslite",
+      "coords": [
+        -118.482238,
+        34.0318667
+      ],
+      "amenity": "bar",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": "https://thegaslite.com/",
+      "phone": "+1-310-829-2382",
+      "opening_hours": "Mo-Su 16:00-26:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Cocktails",
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6171102185",
+      "name": "The Chestnut Club",
+      "coords": [
+        -118.4860858,
+        34.0242093
+      ],
+      "amenity": "bar",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Cocktails",
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6600053327",
+      "name": "Elephante",
+      "coords": [
+        -118.4978879,
+        34.015358
+      ],
+      "amenity": "restaurant",
+      "cuisine": "italian",
+      "outdoor_seating": "unknown",
+      "website": "https://www.elephantela.com/",
+      "phone": "+1-424-320-2384",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6600055249",
+      "name": "The Coco Club",
+      "coords": [
+        -118.49904,
+        34.0152529
+      ],
+      "amenity": "bar",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": "https://www.shangrila-hotel.com/dining.html",
+      "phone": "+1-310-394-2791",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Cocktails",
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6600418515",
+      "name": "HiHo Cheeseburger",
+      "coords": [
+        -118.4982257,
+        34.0156574
+      ],
+      "amenity": "restaurant",
+      "cuisine": "new_american;american;burger",
+      "outdoor_seating": "unknown",
+      "website": "https://www.hiho.la/",
+      "phone": "+1-310-469-7250",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6622667117",
+      "name": "Ivy at the Shore",
+      "coords": [
+        -118.495445,
+        34.0122487
+      ],
+      "amenity": "restaurant",
+      "cuisine": "american",
+      "outdoor_seating": "unknown",
+      "website": "https://theivyrestaurants.com/ivy-at-the-shore/",
+      "phone": "+1-310-393-3113",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6622700150",
+      "name": "Ma'kai Restaurant & Lounge",
+      "coords": [
+        -118.4965036,
+        34.0129878
+      ],
+      "amenity": "restaurant",
+      "cuisine": "sushi;asian;japanese",
+      "outdoor_seating": "unknown",
+      "website": "https://www.makailounge.com/",
+      "phone": "+1-310-434-1511",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6622714842",
+      "name": "North Italia",
+      "coords": [
+        -118.49611,
+        34.0138839
+      ],
+      "amenity": "restaurant",
+      "cuisine": "italian",
+      "outdoor_seating": "unknown",
+      "website": "https://www.northitaliarestaurant.com/locations/santa-monica-ca/",
+      "phone": "+1-310-382-2460",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6622714854",
+      "name": "SoCal Vibes Co. Surf Club",
+      "coords": [
+        -118.4960365,
+        34.0133081
+      ],
+      "amenity": "pub",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": "https://www.socalvibesco.com",
+      "phone": "+1-424-688-7634",
+      "opening_hours": "Mo,Su 11:00-22:00; Tu-Th 11:00-23:00; Fr,Sa 11:00-01:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": []
+    },
+    {
+      "id": "osm/node/6622747029",
+      "name": "KazuNori",
+      "coords": [
+        -118.4957991,
+        34.0131113
+      ],
+      "amenity": "restaurant",
+      "cuisine": "sushi;japanese;asian",
+      "outdoor_seating": "unknown",
+      "website": "https://www.handrollbar.com/locations/santa-monica/",
+      "phone": "+1-424-999-4594",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6622855535",
+      "name": "Red O - Taste of Mexico",
+      "coords": [
+        -118.4950722,
+        34.0118329
+      ],
+      "amenity": "restaurant",
+      "cuisine": "mexican",
+      "outdoor_seating": "yes",
+      "website": "https://www.redorestaurant.com/",
+      "phone": "+1-310-458-1600",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": "patio",
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6622855913",
+      "name": "Bruno's Italian Restaurant",
+      "coords": [
+        -118.4939081,
+        34.0102988
+      ],
+      "amenity": "restaurant",
+      "cuisine": "italian",
+      "outdoor_seating": "unknown",
+      "website": "https://brunossantamonica.com/",
+      "phone": "+1-310-395-5589",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6622856060",
+      "name": "Casa Martin",
+      "coords": [
+        -118.4937874,
+        34.0102076
+      ],
+      "amenity": "restaurant",
+      "cuisine": "mexican",
+      "outdoor_seating": "unknown",
+      "website": "https://www.casamartinsm.com/",
+      "phone": "+1-310-663-1732",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6644552485",
+      "name": "Azulé Taqueria",
+      "coords": [
+        -118.4969782,
+        34.0166569
+      ],
+      "amenity": "restaurant",
+      "cuisine": "mexican",
+      "outdoor_seating": "unknown",
+      "website": "https://azuletaqueria.com",
+      "phone": "+1 310 598 5598",
+      "opening_hours": "Mo-Su 11:00-22:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6702620627",
+      "name": "Johnny Rockets",
+      "coords": [
+        -118.4972178,
+        34.0163739
+      ],
+      "amenity": "restaurant",
+      "cuisine": "burger",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": "Mo-Th, Su 08:00-23:00; Fr, Sa 08:00-00:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6835949718",
+      "name": "1 Pico",
+      "coords": [
+        -118.4918495,
+        34.0067713
+      ],
+      "amenity": "restaurant",
+      "cuisine": "seafood",
+      "outdoor_seating": "unknown",
+      "website": "https://www.shuttersonthebeach.com/dining/1-pico",
+      "phone": "+1-310-587-1717",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6835949882",
+      "name": "Coast",
+      "coords": [
+        -118.4917337,
+        34.0066513
+      ],
+      "amenity": "restaurant",
+      "cuisine": "american",
+      "outdoor_seating": "unknown",
+      "website": "https://www.shuttersonthebeach.com/dining/coast",
+      "phone": "+1-310-587-1707",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6949976090",
+      "name": "Ippudo",
+      "coords": [
+        -118.496444,
+        34.0145817
+      ],
+      "amenity": "restaurant",
+      "cuisine": "ramen",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6949976091",
+      "name": "Espresso Cielo",
+      "coords": [
+        -118.4959329,
+        34.0141577
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": "+1-310-260-1268",
+      "opening_hours": "Mo-Su 07:00-17:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/6965181985",
+      "name": "Sweetfin",
+      "coords": [
+        -118.489359,
+        34.0187355
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/6965182785",
+      "name": "Blue Bottle Coffee",
+      "coords": [
+        -118.484871,
+        34.0035146
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/7361695485",
+      "name": "La Fiesta Brava",
+      "coords": [
+        -118.477414,
+        33.9967455
+      ],
+      "amenity": "restaurant",
+      "cuisine": "mexican",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": "+1-310-399-8005",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/8294497873",
+      "name": "Circle Bar",
+      "coords": [
+        -118.4806475,
+        33.9988606
+      ],
+      "amenity": "bar",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Cocktails",
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/8321135717",
+      "name": "Jinky's Café",
+      "coords": [
+        -118.4957366,
+        34.0140335
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/8321579217",
+      "name": "Joe's Pizza",
+      "coords": [
+        -118.496294,
+        34.0130785
+      ],
+      "amenity": "restaurant",
+      "cuisine": "pizza",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/8723792762",
+      "name": "Birdie G's",
+      "coords": [
+        -118.4685749,
+        34.027128
+      ],
+      "amenity": "restaurant",
+      "cuisine": "american",
+      "outdoor_seating": "unknown",
+      "website": "https://www.birdiegsla.com",
+      "phone": "+1-310-310-3616",
+      "opening_hours": "Mo-Su 17:00-21:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/8958963550",
+      "name": "Santa Monica Brew Works",
+      "coords": [
+        -118.476763,
+        34.0254853
+      ],
+      "amenity": "pub",
+      "cuisine": null,
+      "outdoor_seating": "yes",
+      "website": "https://www.santamonicabrewworks.com/",
+      "phone": "+1 310 828-7629",
+      "opening_hours": "Mo-Fr 17:00-22:30; Sa 12:00-22:00; Su 12:00-20:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": "patio",
+      "drinkTypes": []
+    },
+    {
+      "id": "osm/node/8968918699",
+      "name": "Cult",
+      "coords": [
+        -118.494769,
+        34.0143265
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/8968918703",
+      "name": "Britannia",
+      "coords": [
+        -118.49547,
+        34.0160095
+      ],
+      "amenity": "pub",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": []
+    },
+    {
+      "id": "osm/node/8968918705",
+      "name": "Barney's Beanery",
+      "coords": [
+        -118.4962926,
+        34.0160006
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/8968918708",
+      "name": "The Albright",
+      "coords": [
+        -118.4966598,
+        34.0097898
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/8968918710",
+      "name": "Seaside on the Pier",
+      "coords": [
+        -118.496481,
+        34.0099877
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": "https://www.seasideonthepier.com",
+      "phone": "+1 310 857 5073",
+      "opening_hours": "Mo-Fr 11:00-19:00; Sa-Su 11:00-20:30",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9007608739",
+      "name": "Winston Pies",
+      "coords": [
+        -118.4926582,
+        34.009791
+      ],
+      "amenity": "cafe",
+      "cuisine": "pie",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/9007608753",
+      "name": "Cha Cha Chicken",
+      "coords": [
+        -118.4903748,
+        34.0071522
+      ],
+      "amenity": "restaurant",
+      "cuisine": "caribbean",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9008819957",
+      "name": "Thai Vegan",
+      "coords": [
+        -118.4859317,
+        34.0040634
+      ],
+      "amenity": "restaurant",
+      "cuisine": "thai",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9212925717",
+      "name": "Harvelle",
+      "coords": [
+        -118.4945589,
+        34.0156806
+      ],
+      "amenity": "bar",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": "Mo-Su 20:00-02:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Cocktails",
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9280781008",
+      "name": "Mon Roll House",
+      "coords": [
+        -118.4931962,
+        34.0149486
+      ],
+      "amenity": "restaurant",
+      "cuisine": "sushi",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9280781011",
+      "name": "Capital One Cafe",
+      "coords": [
+        -118.4935932,
+        34.0153055
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop;tea",
+      "outdoor_seating": "unknown",
+      "website": "https://www.capitalone.com/local/losangeles-santamonica/",
+      "phone": "+1-818-539-2384",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/9280781012",
+      "name": "Massilia",
+      "coords": [
+        -118.493986,
+        34.0156056
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9280781013",
+      "name": "Benihana",
+      "coords": [
+        -118.493848,
+        34.0154889
+      ],
+      "amenity": "restaurant",
+      "cuisine": "japanese;teppanyaki;steak",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9280781016",
+      "name": "Mercado",
+      "coords": [
+        -118.4948377,
+        34.0159324
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9280888317",
+      "name": "Starbucks",
+      "coords": [
+        -118.4965242,
+        34.0157956
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "unknown",
+      "website": "https://www.starbucks.com/store-locator/store/12818/3rd-santa-monica-3rd-st-prom-1356-third-street-promenade-santa-monica-ca-904011",
+      "phone": "+1 310-458-0266",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/9280888342",
+      "name": "CAVA",
+      "coords": [
+        -118.498151,
+        34.0155988
+      ],
+      "amenity": "restaurant",
+      "cuisine": "mediterranean",
+      "outdoor_seating": "unknown",
+      "website": "https://cava.com",
+      "phone": "+1-310-237-5591",
+      "opening_hours": "Mo-Su 10:45-22:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9280888348",
+      "name": "The Independence",
+      "coords": [
+        -118.4954605,
+        34.0137786
+      ],
+      "amenity": "pub",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": []
+    },
+    {
+      "id": "osm/node/9280888349",
+      "name": "Interactive Cafe",
+      "coords": [
+        -118.4952862,
+        34.0139231
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/9280888351",
+      "name": "Lanea",
+      "coords": [
+        -118.4951977,
+        34.0139954
+      ],
+      "amenity": "bar",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Cocktails",
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9280924539",
+      "name": "Stefano's Pizzeria",
+      "coords": [
+        -118.4976815,
+        34.0167844
+      ],
+      "amenity": "restaurant",
+      "cuisine": "pizza",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9576842812",
+      "name": "West 4th and Jane",
+      "coords": [
+        -118.49462,
+        34.0157356
+      ],
+      "amenity": "pub",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": []
+    },
+    {
+      "id": "osm/node/9576863037",
+      "name": "Rita's Gate of India",
+      "coords": [
+        -118.4933968,
+        34.0162692
+      ],
+      "amenity": "restaurant",
+      "cuisine": "indian",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9694113780",
+      "name": "18th Street Cafe",
+      "coords": [
+        -118.4808679,
+        34.0256334
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9694122484",
+      "name": "Starbucks",
+      "coords": [
+        -118.4916864,
+        34.0242483
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "unknown",
+      "website": "https://www.starbucks.com/store-locator/store/1006914/wilshire-11-th-1030-wilshire-blvd-santa-monica-ca-904011907-us",
+      "phone": "+1 310-917-1514",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/9725324466",
+      "name": "Sam's Bagels",
+      "coords": [
+        -118.495986,
+        34.031719
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/9742291199",
+      "name": "Pink Daisy Cafe",
+      "coords": [
+        -118.4956853,
+        34.0162361
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/9750179096",
+      "name": "Citrin",
+      "coords": [
+        -118.491406,
+        34.024461
+      ],
+      "amenity": "restaurant",
+      "cuisine": "american;fine_dining",
+      "outdoor_seating": "unknown",
+      "website": "https://www.citrinandmelisse.com",
+      "phone": "+1-310-395-0881",
+      "opening_hours": "Tu-Th 18:00-21:00; Fr-Sa 17:30-21:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9750179101",
+      "name": "Huckleberry",
+      "coords": [
+        -118.4920939,
+        34.0239153
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9750362249",
+      "name": "Rock'n'Pies Pizza Co.",
+      "coords": [
+        -118.4910166,
+        34.0247742
+      ],
+      "amenity": "restaurant",
+      "cuisine": "pizza",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9750530094",
+      "name": "Boba Tea & Me",
+      "coords": [
+        -118.4889082,
+        34.0264633
+      ],
+      "amenity": "cafe",
+      "cuisine": "bubble_tea",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/9750530097",
+      "name": "Sushi King",
+      "coords": [
+        -118.4888631,
+        34.0265006
+      ],
+      "amenity": "restaurant",
+      "cuisine": "sushi",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9750613485",
+      "name": "10 Speed Coffee",
+      "coords": [
+        -118.480341,
+        34.0286814
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "yes",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": "patio",
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/9750616202",
+      "name": "Thai Vegan",
+      "coords": [
+        -118.4773478,
+        34.031106
+      ],
+      "amenity": "restaurant",
+      "cuisine": "thai",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9753410368",
+      "name": "The Curious Palate",
+      "coords": [
+        -118.4930394,
+        34.0137749
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9762912117",
+      "name": "Lemonade",
+      "coords": [
+        -118.4974316,
+        34.0174405
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": "https://lemonadela.com",
+      "phone": "+1-310-409-2435",
+      "opening_hours": "Mo-Su 10:00-21:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9795107330",
+      "name": "Waterman's Cafe",
+      "coords": [
+        -118.4914469,
+        34.0144315
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "no",
+      "website": null,
+      "phone": null,
+      "opening_hours": "Mo-Su 06:00-11:30; Mo, Th-Su 17:30-21:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/9851482470",
+      "name": "Lee's",
+      "coords": [
+        -118.4832413,
+        34.0257362
+      ],
+      "amenity": "restaurant",
+      "cuisine": "chinese",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9887754903",
+      "name": "Perry's Café & Rentals",
+      "coords": [
+        -118.48834,
+        34.0022454
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": "https://perryscafe.com/",
+      "phone": "+1 310 452 7609",
+      "opening_hours": "Mo-Fr 09:30-19:30; Sa-Su 09:00-20:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9906973038",
+      "name": "Blue Daisy",
+      "coords": [
+        -118.4916978,
+        34.0168529
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9906973040",
+      "name": "Crimson",
+      "coords": [
+        -118.4913572,
+        34.0167218
+      ],
+      "amenity": "restaurant",
+      "cuisine": "mediterranean",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9906973041",
+      "name": "The Hive",
+      "coords": [
+        -118.4912445,
+        34.0168129
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/9906973044",
+      "name": "Xuntos",
+      "coords": [
+        -118.4936987,
+        34.0174443
+      ],
+      "amenity": "restaurant",
+      "cuisine": "spanish",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9906973050",
+      "name": "Mikomi Sushi",
+      "coords": [
+        -118.4983188,
+        34.0188769
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": "Mo-Th 11:30-22:00; Fr 11:30-23:00; Sa 12:00-23:00; Su 12:00-22:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9906973053",
+      "name": "Osteria del Fornaio",
+      "coords": [
+        -118.4982482,
+        34.0195698
+      ],
+      "amenity": "restaurant",
+      "cuisine": "italian",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": "Su-Th 15:00-21:00; Fr,Sa 15:00-22:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9906973057",
+      "name": "The Whaler",
+      "coords": [
+        -118.4964265,
+        34.0129844
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/9906973058",
+      "name": "Meat on Ocean",
+      "coords": [
+        -118.4961496,
+        34.0127468
+      ],
+      "amenity": "restaurant",
+      "cuisine": "steak_house",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10085738616",
+      "name": "Bruxie",
+      "coords": [
+        -118.495759,
+        34.0151719
+      ],
+      "amenity": "restaurant",
+      "cuisine": "belgian",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10085753421",
+      "name": "The Coffee Bean & Tea Leaf",
+      "coords": [
+        -118.4974279,
+        34.016577
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/10247574003",
+      "name": "Dr. T House",
+      "coords": [
+        -118.4726697,
+        34.018149
+      ],
+      "amenity": "cafe",
+      "cuisine": "bubble_tea",
+      "outdoor_seating": "yes",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": "patio",
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/10282971628",
+      "name": "Tartine Santa Monica",
+      "coords": [
+        -118.482121,
+        34.030118
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": "https://tartinebakery.com/los-angeles/santa-monica",
+      "phone": "+1-424-238-8125",
+      "opening_hours": "Mo-Su 08:00-16:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/10294383019",
+      "name": "Venice Beach Wines",
+      "coords": [
+        -118.4731874,
+        33.9986965
+      ],
+      "amenity": "bar",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Cocktails",
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10294383020",
+      "name": "Wabi",
+      "coords": [
+        -118.4732596,
+        33.9983322
+      ],
+      "amenity": "restaurant",
+      "cuisine": "sushi",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10294383022",
+      "name": "Cinque Terre",
+      "coords": [
+        -118.4733471,
+        33.9986255
+      ],
+      "amenity": "cafe",
+      "cuisine": "italian",
+      "outdoor_seating": "yes",
+      "website": "https://cinqueterrewest.com/",
+      "phone": "+13103941315",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": "patio",
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/10294383023",
+      "name": "American Beauty",
+      "coords": [
+        -118.4745406,
+        33.9980983
+      ],
+      "amenity": "restaurant",
+      "cuisine": "steak_house",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10294383030",
+      "name": "The Firehouse",
+      "coords": [
+        -118.4776559,
+        33.9963389
+      ],
+      "amenity": "restaurant",
+      "cuisine": "breakfast;burger",
+      "outdoor_seating": "unknown",
+      "website": "https://www.thefirehousevenice.com/",
+      "phone": "+1-310-396-6810",
+      "opening_hours": "Tu-Th 09:00-17:00; Fr 09:00-21:00; Su 08:00-18:00; Sa 08:00-21:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10301566273",
+      "name": "Socalo",
+      "coords": [
+        -118.480055,
+        34.0284324
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10301705594",
+      "name": "King and Queen Cantina",
+      "coords": [
+        -118.4974665,
+        34.0143303
+      ],
+      "amenity": "restaurant",
+      "cuisine": "mexican",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10301705595",
+      "name": "Jinky's Coffee",
+      "coords": [
+        -118.4968037,
+        34.0149013
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/10301705597",
+      "name": "The Misfit Restaurant + Bar",
+      "coords": [
+        -118.4966298,
+        34.0154437
+      ],
+      "amenity": "restaurant",
+      "cuisine": "american",
+      "outdoor_seating": "unknown",
+      "website": "http://www.themisfitrestaurant.com/",
+      "phone": "+1-310-656-9800",
+      "opening_hours": "Mo-We 12:00-00:00; Th-Fr 12:00-01:00; Sa 11:00-01:00; Su 10:30-23:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10553101383",
+      "name": "Elabrew Coffee",
+      "coords": [
+        -118.4731086,
+        34.0300885
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": "Mo 07:30-15:00; Tu-Th 07:30-15:30; Fr 08:00-15:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/10790742928",
+      "name": "Campos",
+      "coords": [
+        -118.4692258,
+        34.0194641
+      ],
+      "amenity": "restaurant",
+      "cuisine": "mexican",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10790742938",
+      "name": "Salt and Tart",
+      "coords": [
+        -118.4751385,
+        34.0271083
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10790742940",
+      "name": "Starbucks",
+      "coords": [
+        -118.4748682,
+        34.0273185
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "unknown",
+      "website": "https://www.starbucks.com/store-locator/store/15617/colorado-cloverfield-2200-colorado-blvd-101-santa-monica-ca-904043571-u",
+      "phone": "+1 310-453-6745",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/10790742947",
+      "name": "Tiato",
+      "coords": [
+        -118.4691578,
+        34.0319684
+      ],
+      "amenity": "restaurant",
+      "cuisine": "asian",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10853295621",
+      "name": "The Coffee Spot",
+      "coords": [
+        -118.4711389,
+        34.0178095
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/10924950147",
+      "name": "Layla Bagels",
+      "coords": [
+        -118.468048,
+        34.0116228
+      ],
+      "amenity": "cafe",
+      "cuisine": "bagel",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/10925637605",
+      "name": "Gnarwhal Coffee Co.",
+      "coords": [
+        -118.4794331,
+        33.9980674
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/10925637705",
+      "name": "pasjoli",
+      "coords": [
+        -118.4820211,
+        34.0002326
+      ],
+      "amenity": "restaurant",
+      "cuisine": "french",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": "Mo-Th,Su 17:00-21:30; Fr-Sa 17:00-22:30",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10925656505",
+      "name": "The Courtyard Kitchen",
+      "coords": [
+        -118.4973406,
+        34.0306851
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": "patio",
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10938996326",
+      "name": "Cobi's",
+      "coords": [
+        -118.488163,
+        34.0061975
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": "Mo-We 17:00-22:00; Th-Fr 17:00-23:00; Sa 10:30-15:00,17:00-23:00; Su 10:30-15:00,17:00-22:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10938996339",
+      "name": "Kafe K",
+      "coords": [
+        -118.4870582,
+        34.0055241
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/10938996347",
+      "name": "Alfalfa",
+      "coords": [
+        -118.4862791,
+        34.0047286
+      ],
+      "amenity": "restaurant",
+      "cuisine": "salad",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10938996348",
+      "name": "Urban Skillet",
+      "coords": [
+        -118.4863274,
+        34.0047784
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10938996351",
+      "name": "Narita Vegan Sushi",
+      "coords": [
+        -118.4859741,
+        34.0040297
+      ],
+      "amenity": "restaurant",
+      "cuisine": "sushi",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10938996354",
+      "name": "JINYA Ramen Bar",
+      "coords": [
+        -118.4856066,
+        34.003806
+      ],
+      "amenity": "restaurant",
+      "cuisine": "ramen",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10938996361",
+      "name": "The Galley",
+      "coords": [
+        -118.4851625,
+        34.0033704
+      ],
+      "amenity": "restaurant",
+      "cuisine": "steak_house",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10938996365",
+      "name": "The Place To Be",
+      "coords": [
+        -118.4847895,
+        34.0029971
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/10938996373",
+      "name": "The Victorian",
+      "coords": [
+        -118.4833917,
+        34.0015107
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": "https://www.thevictorian.com/",
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10938996377",
+      "name": "Go Get Em Tiger",
+      "coords": [
+        -118.483045,
+        34.0016657
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/10938996390",
+      "name": "Chinois on Main",
+      "coords": [
+        -118.4821919,
+        34.0008166
+      ],
+      "amenity": "restaurant",
+      "cuisine": "asian;french",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10938996393",
+      "name": "Lula",
+      "coords": [
+        -118.4822075,
+        34.000419
+      ],
+      "amenity": "restaurant",
+      "cuisine": "mexican",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10938996394",
+      "name": "Crudo e Nudo",
+      "coords": [
+        -118.4821293,
+        34.0003541
+      ],
+      "amenity": "restaurant",
+      "cuisine": "seafood",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10938996400",
+      "name": "Starbucks",
+      "coords": [
+        -118.4808866,
+        33.9995354
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "unknown",
+      "website": "https://www.starbucks.com/store-locator/store/1033896/pickup-main-ashland-2901-main-st-santa-monica-ca-904055315-us",
+      "phone": "+1 310-929-8353",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/10938996404",
+      "name": "Groundwork",
+      "coords": [
+        -118.4810617,
+        33.9992863
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/10939018016",
+      "name": "The Anchor",
+      "coords": [
+        -118.4788617,
+        33.9970363
+      ],
+      "amenity": "restaurant",
+      "cuisine": "seafood",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10958652688",
+      "name": "Chulita",
+      "coords": [
+        -118.4730271,
+        33.998761
+      ],
+      "amenity": "restaurant",
+      "cuisine": "mexican",
+      "outdoor_seating": "unknown",
+      "website": "https://www.chulita.com/",
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10969850882",
+      "name": "Mixt",
+      "coords": [
+        -118.4951464,
+        34.0166479
+      ],
+      "amenity": "restaurant",
+      "cuisine": "salad;sandwich",
+      "outdoor_seating": "unknown",
+      "website": "https://www.mixt.com/locations/",
+      "phone": null,
+      "opening_hours": "Mo-Su 10:30-20:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/10983247100",
+      "name": "Coffee Commissary",
+      "coords": [
+        -118.4854355,
+        34.0240974
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/11093982507",
+      "name": "Isla Santa Monica",
+      "coords": [
+        -118.4855245,
+        34.0038024
+      ],
+      "amenity": "restaurant",
+      "cuisine": "seafood;french",
+      "outdoor_seating": "unknown",
+      "website": "https://www.isla-la.com/",
+      "phone": "+1-310-310-2137",
+      "opening_hours": "We-Su 10:30-22:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/11162008282",
+      "name": "Colapasta",
+      "coords": [
+        -118.4960994,
+        34.0190335
+      ],
+      "amenity": "restaurant",
+      "cuisine": "italian",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/11315868234",
+      "name": "Piccolo Santa Monica",
+      "coords": [
+        -118.4804016,
+        34.0104373
+      ],
+      "amenity": "restaurant",
+      "cuisine": "italian",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/11315868247",
+      "name": "Satdha",
+      "coords": [
+        -118.4802043,
+        34.0097838
+      ],
+      "amenity": "restaurant",
+      "cuisine": "thai",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/11497641915",
+      "name": "Melisse",
+      "coords": [
+        -118.4913669,
+        34.0245176
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": "https://www.citrinandmelisse.com/",
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/11571542269",
+      "name": "Casa Martin",
+      "coords": [
+        -118.4978038,
+        34.0173175
+      ],
+      "amenity": "restaurant",
+      "cuisine": "mexican",
+      "outdoor_seating": "unknown",
+      "website": "https://www.casamartinsm.com/",
+      "phone": "+1-424-268-4756",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/11657397169",
+      "name": "Basement Tavern",
+      "coords": [
+        -118.4832635,
+        34.0013135
+      ],
+      "amenity": "bar",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Cocktails",
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/11657406067",
+      "name": "Mel's Drive-In",
+      "coords": [
+        -118.4866588,
+        34.0151812
+      ],
+      "amenity": "restaurant",
+      "cuisine": "american",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/11657472969",
+      "name": "Harvelle‘s",
+      "coords": [
+        -118.4935419,
+        34.0146645
+      ],
+      "amenity": "pub",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": []
+    },
+    {
+      "id": "osm/node/11739643453",
+      "name": "Sol Agave",
+      "coords": [
+        -118.4918594,
+        34.0091761
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": "https://www.solagave.com/santa-monica",
+      "phone": "+1 424-238-8076",
+      "opening_hours": "Mo 11:00-21:00; Tu-Fr 11:00-22:00; Sa-Su 10:00-22:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/11819502353",
+      "name": "Kappo Miyabi",
+      "coords": [
+        -118.4935928,
+        34.020052
+      ],
+      "amenity": "restaurant",
+      "cuisine": "sushi",
+      "outdoor_seating": "unknown",
+      "website": "https://kappomiyabisantamonica.com/",
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/11868074161",
+      "name": "Manchego",
+      "coords": [
+        -118.4846075,
+        34.0028077
+      ],
+      "amenity": "restaurant",
+      "cuisine": "spanish",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/11987949432",
+      "name": "Sugar Palm",
+      "coords": [
+        -118.4903548,
+        34.0081705
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/12060144635",
+      "name": "Bludso's BBQ",
+      "coords": [
+        -118.485978,
+        34.0240911
+      ],
+      "amenity": "restaurant",
+      "cuisine": "barbecue",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/12075446727",
+      "name": "Kai Ramen",
+      "coords": [
+        -118.5013908,
+        34.0273838
+      ],
+      "amenity": "restaurant",
+      "cuisine": "ramen",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/12075446728",
+      "name": "Buena Vida Tea Bar & Garden",
+      "coords": [
+        -118.5009889,
+        34.0272938
+      ],
+      "amenity": "cafe",
+      "cuisine": "Pastries",
+      "outdoor_seating": "yes",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": "patio",
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/12075446729",
+      "name": "Breakfast By Salt's Cure",
+      "coords": [
+        -118.5013824,
+        34.0269812
+      ],
+      "amenity": "restaurant",
+      "cuisine": "breakfast",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/12082232969",
+      "name": "Orto Santa Monica",
+      "coords": [
+        -118.4939731,
+        34.0171841
+      ],
+      "amenity": "restaurant",
+      "cuisine": "italian",
+      "outdoor_seating": "unknown",
+      "website": "https://ortosantamonica.com/",
+      "phone": "+1-424-433-8100",
+      "opening_hours": "Tu-Sa 12:00-14:30; Su-Th 17:00-22:00; Fr-Sa 17:00-22:30",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/12111053592",
+      "name": "Little Bean Cold Brew",
+      "coords": [
+        -118.4840736,
+        34.0118818
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/12111053593",
+      "name": "Boba Lab",
+      "coords": [
+        -118.4839699,
+        34.0119331
+      ],
+      "amenity": "cafe",
+      "cuisine": "bubble_tea",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/12369188094",
+      "name": "JuneShine",
+      "coords": [
+        -118.4809366,
+        33.9991061
+      ],
+      "amenity": "bar",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Cocktails",
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/12422981101",
+      "name": "1212 Santa Monica",
+      "coords": [
+        -118.4990568,
+        34.0178412
+      ],
+      "amenity": "restaurant",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": "https://www.1212santamonica.com/",
+      "phone": null,
+      "opening_hours": "Mo-Th 17:00-22:00; Fr 17:00-00:00; Sa 11:00-00:00; Su 11:00-22:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/12706486334",
+      "name": "The Penthouse",
+      "coords": [
+        -118.5011637,
+        34.0187198
+      ],
+      "amenity": "restaurant",
+      "cuisine": "american",
+      "outdoor_seating": "no",
+      "website": "https://www.penthouserestaurant.com",
+      "phone": "+1 310-393-8080",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/13061250893",
+      "name": "Tartine",
+      "coords": [
+        -118.4728661,
+        34.0046096
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "yes",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": "patio",
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/13073505408",
+      "name": "Saint Maxime coffee",
+      "coords": [
+        -118.4722358,
+        33.998914
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop;tea",
+      "outdoor_seating": "unknown",
+      "website": "https://www.instagram.com/saintmaxime.la",
+      "phone": null,
+      "opening_hours": "We-Su 08:00-14:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/13129073967",
+      "name": "Bluestone Lane",
+      "coords": [
+        -118.495846,
+        34.0214021
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": "Mo-Su 06:00-16:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/node/13337367416",
+      "name": "Fogo de Chão",
+      "coords": [
+        -118.4949716,
+        34.0116871
+      ],
+      "amenity": "restaurant",
+      "cuisine": "brazilian;steak_house",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/13337568019",
+      "name": "Jade Rabbit",
+      "coords": [
+        -118.4775372,
+        34.0309142
+      ],
+      "amenity": "restaurant",
+      "cuisine": "chinese",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/node/13619564488",
+      "name": "HomeState",
+      "coords": [
+        -118.4945526,
+        34.0218806
+      ],
+      "amenity": "restaurant",
+      "cuisine": "tex-mex",
+      "outdoor_seating": "yes",
+      "website": "https://www.myhomestate.com/santa-monica/",
+      "phone": "+1-310-438-6779",
+      "opening_hours": "08:00-21:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": "patio",
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/way/265349101",
+      "name": "Cafe Demitasse",
+      "coords": [
+        -118.49944101999999,
+        34.01874126
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": "https://cafedemitasse.com/",
+      "phone": "+1-310-260-6308",
+      "opening_hours": "Mo-We 07:00-20:00, Th-Fr 07:00-22:00; Sa-Su 08:00-20:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/way/336889638",
+      "name": "Bubba Gump Shrimp Company",
+      "coords": [
+        -118.49715463076926,
+        34.00970368461539
+      ],
+      "amenity": "restaurant",
+      "cuisine": "seafood",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/way/336894277",
+      "name": "Perry's Cafe",
+      "coords": [
+        -118.50141990000002,
+        34.015508700000005
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": "+1-310-458-3975",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/way/412863499",
+      "name": "Tacos Por Favor",
+      "coords": [
+        -118.47222687777779,
+        34.0041489
+      ],
+      "amenity": "restaurant",
+      "cuisine": "mexican",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/way/413243961",
+      "name": "Perry's Café & Rentals",
+      "coords": [
+        -118.48614039259257,
+        34.00036856296296
+      ],
+      "amenity": "cafe",
+      "cuisine": "burger;mexican",
+      "outdoor_seating": "unknown",
+      "website": "https://perryscafe.com/",
+      "phone": "+1 310 584 9306",
+      "opening_hours": "Mo-Fr 10:30-19:00; Sa-Su 09:30-19:30",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/way/413245184",
+      "name": "Ashland Hill",
+      "coords": [
+        -118.48143994,
+        34.000203455
+      ],
+      "amenity": "pub",
+      "cuisine": "californian",
+      "outdoor_seating": "yes",
+      "website": "https://www.ashlandhill.com",
+      "phone": "+1-310-392-3300",
+      "opening_hours": "Mo-We 11:00-22:00; Th-Fr 11:00-24:00; Sa 09:00-24:00; Su 09:00-22:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": "patio",
+      "drinkTypes": []
+    },
+    {
+      "id": "osm/way/414210386",
+      "name": "La Cabana",
+      "coords": [
+        -118.468163845,
+        34.000876899999994
+      ],
+      "amenity": "restaurant",
+      "cuisine": "mexican",
+      "outdoor_seating": "unknown",
+      "website": "https://www.lacabanavenice.com/",
+      "phone": "+1 310 392 7973",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/way/420440490",
+      "name": "Tallula's",
+      "coords": [
+        -118.51809314444444,
+        34.0280456
+      ],
+      "amenity": "restaurant",
+      "cuisine": "mexican",
+      "outdoor_seating": "no",
+      "website": "https://www.tallulasrestaurant.com/",
+      "phone": "+1-310-526-0027",
+      "opening_hours": "Mo-Th 16:00-22:00; Fr-Su 16:00-21:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/way/420440919",
+      "name": "Golden Bull",
+      "coords": [
+        -118.51777439999998,
+        34.02901855
+      ],
+      "amenity": "restaurant",
+      "cuisine": "steak_house",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/way/422268212",
+      "name": "Back on the Beach",
+      "coords": [
+        -118.51295263846154,
+        34.023775876923075
+      ],
+      "amenity": "restaurant",
+      "cuisine": "american",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/way/439420641",
+      "name": "Urth Caffé",
+      "coords": [
+        -118.48575523636364,
+        34.00436259999999
+      ],
+      "amenity": "cafe",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/way/440292672",
+      "name": "Starbucks",
+      "coords": [
+        -118.48304385714287,
+        34.012074442857134
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "no",
+      "website": "https://www.starbucks.com/store-locator/store/1007336/lincoln-pico-1900-lincoln-blvd-santa-monica-ca-904051315-us",
+      "phone": "+1 310-664-7049",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/way/440298000",
+      "name": "Starbucks",
+      "coords": [
+        -118.47203460769232,
+        34.00349804615384
+      ],
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "no",
+      "website": "https://www.starbucks.com/store-locator/store/15436/lincoln-marine-3020-lincoln-blvd-santa-monica-ca-904055735-us",
+      "phone": "+1 310-392-0134",
+      "opening_hours": "Mo-Su 05:00-21:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Coffee",
+        "Beer"
+      ]
+    },
+    {
+      "id": "osm/way/440344516",
+      "name": "Estate Restaurant + Bar",
+      "coords": [
+        -118.48759568,
+        34.028172960000006
+      ],
+      "amenity": "bar",
+      "cuisine": null,
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Cocktails",
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/way/440858057",
+      "name": "The Lobster",
+      "coords": [
+        -118.4950282346154,
+        34.01105801538461
+      ],
+      "amenity": "restaurant",
+      "cuisine": "seafood",
+      "outdoor_seating": "unknown",
+      "website": "https://thelobster.com/",
+      "phone": "+1-310-458-9294",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    },
+    {
+      "id": "osm/way/440862030",
+      "name": "Pizza Hut",
+      "coords": [
+        -118.46863364444445,
+        34.02014761111111
+      ],
+      "amenity": "restaurant",
+      "cuisine": "pizza",
+      "outdoor_seating": "no",
+      "website": "https://locations.pizzahut.com/ca/santa-monica/2029-pico-blvd",
+      "phone": "+1 310-399-6767",
+      "opening_hours": "Su-Th 10:00-01:00, Fr,Sa 10:00-02:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": [
+        "Beer",
+        "Wine"
+      ]
+    }
+  ]
+}

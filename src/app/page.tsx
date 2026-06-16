@@ -1,7 +1,7 @@
-"use client";
+export const dynamic = "force-dynamic";
 
-import Map from "@/components/Map";
+import AppShell from "@/components/shell/AppShell";
 
 export default function Home() {
-  return <Map />;
+  return <AppShell />;
 }

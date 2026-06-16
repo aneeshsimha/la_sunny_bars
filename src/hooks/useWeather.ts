@@ -12,15 +12,34 @@ function cacheKey(lat: number, lng: number): string {
   return `${lat.toFixed(2)},${lng.toFixed(2)}`;
 }
 
+const MS_PER_DAY = 24 * 60 * 60 * 1000;
+
+function daysFromNow(date: Date): number {
+  const now = new Date();
+  now.setHours(0, 0, 0, 0);
+  const d = new Date(date);
+  d.setHours(0, 0, 0, 0);
+  return (d.getTime() - now.getTime()) / MS_PER_DAY;
+}
+
 export function useWeather(
   lat: number,
   lng: number,
   date: Date
-): { weather: HourlyWeather | null; loading: boolean } {
+): { weather: HourlyWeather | null; loading: boolean; forecastAvailable: boolean } {
   const [forecast, setForecast] = useState<HourlyWeather[] | null>(null);
   const [loading, setLoading] = useState(true);
 
+  const days = daysFromNow(date);
+  const tooFar = days > 14;
+
   useEffect(() => {
+    if (tooFar) {
+      setForecast(null);
+      setLoading(false);
+      return;
+    }
+
     const key = cacheKey(lat, lng);
     const cached = forecastCache.get(key);
     if (cached) {
@@ -48,10 +67,13 @@ export function useWeather(
     return () => {
       cancelled = true;
     };
-  }, [lat, lng]);
+  }, [lat, lng, tooFar]);
 
   const weather =
     forecast !== null ? findWeatherAt(forecast, date) : null;
 
-  return { weather, loading };
+  // forecastAvailable: data was fetched and covers a date within the 7-day window
+  const forecastAvailable = !tooFar && days <= 7 && forecast !== null;
+
+  return { weather, loading, forecastAvailable };
 }

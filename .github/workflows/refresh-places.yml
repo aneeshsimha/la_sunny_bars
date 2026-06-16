@@ -1,0 +1,30 @@
+name: Refresh Places Data
+on:
+  schedule:
+    - cron: '0 8 * * 1'  # Every Monday at 8am UTC
+  workflow_dispatch:
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - name: Re-fetch Places data
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+        run: npx tsx pipeline/match-places.ts --all-neighborhoods
+      - name: Check for changes
+        id: changes
+        run: git diff --quiet public/data/ && echo "changed=false" >> "$GITHUB_OUTPUT" || echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Open PR if data changed
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          title: 'chore: weekly Places data refresh'
+          body: 'Automated weekly refresh of Google Places enrichment data.'
+          branch: 'chore/places-refresh-auto'
+          commit-message: 'chore: refresh Places data'

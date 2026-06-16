@@ -1,0 +1,65 @@
+{
+  "generatedAt": "2026-06-16T17:54:25.905Z",
+  "neighborhoods": [
+    {
+      "slug": "silver-lake",
+      "name": "Silver Lake",
+      "venueCount": 148,
+      "buildingCount": 16482
+    },
+    {
+      "slug": "venice",
+      "name": "Venice",
+      "venueCount": 96,
+      "buildingCount": 19167
+    },
+    {
+      "slug": "dtla",
+      "name": "Downtown LA",
+      "venueCount": 426,
+      "buildingCount": 3857
+    },
+    {
+      "slug": "weho",
+      "name": "West Hollywood",
+      "venueCount": 164,
+      "buildingCount": 9971
+    },
+    {
+      "slug": "santa-monica",
+      "name": "Santa Monica",
+      "venueCount": 235,
+      "buildingCount": 0
+    },
+    {
+      "slug": "echo-park",
+      "name": "Echo Park",
+      "venueCount": 55,
+      "buildingCount": 7428
+    },
+    {
+      "slug": "los-feliz",
+      "name": "Los Feliz",
+      "venueCount": 127,
+      "buildingCount": 9841
+    },
+    {
+      "slug": "hollywood",
+      "name": "Hollywood",
+      "venueCount": 162,
+      "buildingCount": 6291
+    },
+    {
+      "slug": "koreatown",
+      "name": "Koreatown",
+      "venueCount": 174,
+      "buildingCount": 0
+    },
+    {
+      "slug": "beverly-hills",
+      "name": "Beverly Hills",
+      "venueCount": 0,
+      "buildingCount": 0
+    }
+  ]
+}

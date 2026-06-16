@@ -1,31 +1,40 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { promises as fs } from "fs";
+import { readFileSync } from "fs";
 import path from "path";
 import Link from "next/link";
 import { neighborhoods, type Neighborhood } from "@/lib/neighborhoods";
-import SunCalc from "suncalc";
 import "../neighborhoods.css";
 
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
 
-interface VenueFeature {
-  type: "Feature";
-  geometry: { type: "Point"; coordinates: [number, number] };
-  properties: {
-    name: string | null;
-    amenity: string | null;
-    cuisine: string | null;
-    [key: string]: unknown;
-  };
+interface Venue {
+  id: string;
+  name: string;
+  coords: [number, number];
+  amenity: string;
+  cuisine: string | null;
+  outdoor_seating: "yes" | "no" | "unknown" | null;
+  website: string | null;
+  phone: string | null;
+  opening_hours: string | null;
+  placesId: string | null;
+  rating: number | null;
+  priceLevel: number | null;
+  reviewCount: number | null;
+  photoRef: string | null;
+  openNow: boolean | null;
+  seatingType: string | null;
+  drinkTypes: string[];
 }
 
-interface ScoredVenue {
-  name: string;
-  amenity: string;
-  score: number;
+interface VenueManifest {
+  slug: string;
+  generatedAt: string;
+  count: number;
+  venues: Venue[];
 }
 
 // ---------------------------------------------------------------------------
@@ -34,6 +43,20 @@ interface ScoredVenue {
 
 export function generateStaticParams() {
   return neighborhoods.map((n) => ({ slug: n.slug }));
+}
+
+// ---------------------------------------------------------------------------
+// Data loading
+// ---------------------------------------------------------------------------
+
+function loadVenueManifest(slug: string): VenueManifest | null {
+  const filePath = path.join(process.cwd(), "public", "data", slug, "venues.json");
+  try {
+    const raw = readFileSync(filePath, "utf-8");
+    return JSON.parse(raw) as VenueManifest;
+  } catch {
+    return null;
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -48,36 +71,141 @@ export async function generateMetadata({
   const { slug } = await params;
   const neighborhood = neighborhoods.find((n) => n.slug === slug);
   if (!neighborhood) return {};
+
+  const manifest = loadVenueManifest(slug);
+  const venueCount = manifest?.count ?? 0;
+  const description =
+    venueCount > 0
+      ? `Discover ${venueCount} bars and restaurant patios in ${neighborhood.name}, LA — ranked by sun exposure. Find the sunniest outdoor seating near you.`
+      : `Find the best sunny patios and outdoor bars in ${neighborhood.name}, Los Angeles.`;
+
   return {
-    title: `Sunny Bars in ${neighborhood.name} — LA Sunny Bars`,
-    description: `Top sunny bars and restaurant patios in ${neighborhood.name}, Los Angeles. Ranked by sun score at build time.`,
+    title: `Best sunny patios in ${neighborhood.name} — LA Sunny Bars`,
+    description,
+    openGraph: {
+      title: `Best sunny patios in ${neighborhood.name}`,
+      description,
+      url: `/neighborhoods/${slug}`,
+      siteName: "LA Sunny Bars",
+      type: "website",
+    },
+    twitter: {
+      card: "summary",
+      title: `Best sunny patios in ${neighborhood.name}`,
+      description,
+    },
   };
 }
 
 // ---------------------------------------------------------------------------
-// Score computation
-//
-// Building data is not statically available, so we cannot run the full shadow
-// pipeline here. Instead we use sun altitude as a proxy: if the sun is up, every
-// venue in the bbox gets Math.round(50 + altitude_degrees * 0.5); otherwise 0.
-// The real-time per-building score lives on the interactive map at /.
+// Helpers
 // ---------------------------------------------------------------------------
 
-function computePlaceholderScore(
-  altitude: number /* radians */
-): number {
-  if (altitude <= 0) return 0;
-  const altitudeDegrees = altitude * (180 / Math.PI);
-  return Math.round(50 + altitudeDegrees * 0.5);
+function cleanText(value: string | null | undefined): string | null {
+  if (!value || value === "null") return null;
+  const text = value.trim();
+  return text ? text : null;
 }
 
-function isInBbox(
-  lng: number,
-  lat: number,
-  bbox: [number, number, number, number]
-): boolean {
-  const [west, south, east, north] = bbox;
-  return lng >= west && lng <= east && lat >= south && lat <= north;
+function cleanWebsite(value: string | null | undefined): string | null {
+  const website = cleanText(value);
+  if (!website) return null;
+  if (website.startsWith("http://") || website.startsWith("https://")) {
+    return website;
+  }
+  return `https://${website}`;
+}
+
+function titleCaseAmenity(value: string): string {
+  return value
+    .split("_")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+function formatCuisine(value: string | null): string | null {
+  if (!value) return null;
+  return value
+    .split(";")
+    .map((part) => part.replaceAll("_", " "))
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(", ");
+}
+
+function outdoorLabel(value: "yes" | "no" | "unknown"): string {
+  if (value === "yes") return "Confirmed patio";
+  if (value === "no") return "No patio tagged";
+  return "Patio unknown";
+}
+
+function venueRankScore(venue: Venue): number {
+  const amenityPriority: Record<string, number> = {
+    bar: 30,
+    pub: 28,
+    restaurant: 22,
+    cafe: 16,
+  };
+
+  return (
+    (venue.outdoor_seating === "yes" ? 100 : venue.outdoor_seating === "unknown" ? 35 : 0) +
+    (amenityPriority[venue.amenity] ?? 10) +
+    (venue.rating !== null ? Math.round(venue.rating * 4) : 0) +
+    (venue.reviewCount !== null && venue.reviewCount > 50 ? 10 : 0) +
+    (venue.website ? 8 : 0) +
+    (venue.opening_hours ? 6 : 0) +
+    (venue.cuisine ? 4 : 0)
+  );
+}
+
+function formatRating(rating: number | null): string | null {
+  if (rating === null) return null;
+  return rating.toFixed(1);
+}
+
+// ---------------------------------------------------------------------------
+// JSON-LD structured data
+// ---------------------------------------------------------------------------
+
+function buildJsonLd(
+  neighborhood: Neighborhood,
+  topVenues: Venue[]
+): object {
+  const items = topVenues.slice(0, 5).map((v, i) => ({
+    "@type": "LocalBusiness",
+    position: i + 1,
+    name: v.name,
+    servesCuisine: formatCuisine(v.cuisine) ?? undefined,
+    telephone: v.phone ?? undefined,
+    url: cleanWebsite(v.website) ?? undefined,
+    ...(v.rating !== null
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: v.rating,
+            reviewCount: v.reviewCount ?? 1,
+          },
+        }
+      : {}),
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: neighborhood.name,
+      addressRegion: "CA",
+      addressCountry: "US",
+    },
+  }));
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `Best sunny patios in ${neighborhood.name}`,
+    description: `Top bars and restaurant patios in ${neighborhood.name}, Los Angeles, ranked by sun exposure.`,
+    url: `https://lasunnybars.com/neighborhoods/${neighborhood.slug}`,
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item,
+    })),
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -95,116 +223,149 @@ export default async function NeighborhoodPage({
   );
   if (!neighborhood) notFound();
 
-  // Read venues at build time from the public directory.
-  const geojsonPath = path.join(process.cwd(), "public", "data", "venues.geojson");
-  let geojson: { features: VenueFeature[] };
-  try {
-    const raw = await fs.readFile(geojsonPath, "utf-8");
-    geojson = JSON.parse(raw) as { features: VenueFeature[] };
-  } catch {
-    notFound();
-  }
+  const manifest = loadVenueManifest(slug);
+  if (!manifest) notFound();
 
-  // Filter to venues within this neighborhood's bounding box.
-  const inBbox = geojson.features.filter((f) => {
-    const [lng, lat] = f.geometry.coordinates;
-    return isInBbox(lng, lat, neighborhood.bbox);
-  });
+  const allVenues = manifest.venues;
 
-  // Compute sun altitude for the neighborhood center at build time.
-  const buildTime = new Date();
-  const [centerLng, centerLat] = neighborhood.center;
-  const { altitude } = SunCalc.getPosition(buildTime, centerLat, centerLng);
+  const confirmedPatios = allVenues.filter((v) => v.outdoor_seating === "yes").length;
+  const patioUnknown = allVenues.filter((v) => v.outdoor_seating === "unknown").length;
+  const withOpeningHours = allVenues.filter((v) => v.opening_hours).length;
+  const withRatings = allVenues.filter((v) => v.rating !== null).length;
 
-  // Score and sort venues.
-  const score = computePlaceholderScore(altitude);
-  const scored: ScoredVenue[] = inBbox
-    .filter((f) => f.properties.name)
-    .map((f) => ({
-      name: f.properties.name as string,
-      amenity: f.properties.amenity ?? "venue",
-      score,
-    }))
-    .sort((a, b) => b.score - a.score)
+  const topVenues = allVenues
+    .filter((v) => v.outdoor_seating !== "no")
+    .sort((a, b) => {
+      const diff = venueRankScore(b) - venueRankScore(a);
+      if (diff !== 0) return diff;
+      return (a.name ?? "").localeCompare(b.name ?? "");
+    })
     .slice(0, 10);
 
-  const sunUp = altitude > 0;
-  const buildTimeStr = buildTime.toLocaleString("en-US", {
-    timeZone: "America/Los_Angeles",
-    dateStyle: "medium",
-    timeStyle: "short",
-  });
+  const mapHref = `/?focus=${slug}`;
+  const jsonLd = buildJsonLd(neighborhood, topVenues);
 
   return (
-    <div className="nbhd-root">
-      <nav className="nbhd-nav">
-        <Link href="/" className="nbhd-nav-back">
-          ← Live Map
-        </Link>
-        <span className="nbhd-nav-sep">/</span>
-        <Link href="/neighborhoods" className="nbhd-nav-back">
-          Neighborhoods
-        </Link>
-        <span className="nbhd-nav-sep">/</span>
-        <span className="nbhd-nav-current">{neighborhood.name}</span>
-      </nav>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="nbhd-root">
+        <nav className="nbhd-nav">
+          <Link href="/" className="nbhd-nav-back">
+            ← Live Map
+          </Link>
+          <span className="nbhd-nav-sep">/</span>
+          <Link href="/neighborhoods" className="nbhd-nav-back">
+            Neighborhoods
+          </Link>
+          <span className="nbhd-nav-sep">/</span>
+          <span className="nbhd-nav-current">{neighborhood.name}</span>
+        </nav>
 
-      <header className="nbhd-hero">
-        <p className="nbhd-eyebrow">LA Sunny Bars</p>
-        <h1 className="nbhd-title">
-          {sunUp ? "Sunny" : "Shaded"} Bars in {neighborhood.name}
-        </h1>
-        <p className="nbhd-subtitle">
-          {inBbox.length} venue{inBbox.length !== 1 ? "s" : ""} found in{" "}
-          {neighborhood.name}. Top 10 ranked by sun score at build time.
-        </p>
-        <Link href={`/?focus=${slug}`} className="nbhd-map-link">
-          Open on Live Map →
-        </Link>
-      </header>
-
-      <section className="nbhd-section">
-        {scored.length === 0 ? (
-          <p className="nbhd-empty">
-            No named venues found in {neighborhood.name} at build time. Try the{" "}
-            <Link href="/" style={{ color: "var(--color-sun)" }}>
-              live map
-            </Link>
-            .
+        <header className="nbhd-hero">
+          <p className="nbhd-eyebrow">LA Sunny Bars</p>
+          <h1 className="nbhd-title">Best sunny patios in {neighborhood.name}</h1>
+          <p className="nbhd-subtitle">
+            {manifest.count} venue{manifest.count !== 1 ? "s" : ""} in {neighborhood.name} —
+            confirmed patios listed first, ranked by sun exposure and available ratings.
           </p>
-        ) : (
-          <>
-            <h2 className="nbhd-section-heading">Top Venues by Sun Score</h2>
-            <ol className="nbhd-venue-list" style={{ listStyle: "none", margin: 0, padding: 0 }}>
-              {scored.map((v, i) => (
-                <li
-                  key={`${v.name}-${i}`}
-                  className={`nbhd-venue-card${v.score === 0 ? " no-sun" : ""}`}
-                >
-                  <span className="nbhd-rank">{i + 1}</span>
-                  <div className="nbhd-venue-info">
-                    <div className="nbhd-venue-name">{v.name}</div>
-                    <div className="nbhd-venue-meta">{v.amenity}</div>
-                  </div>
-                  <span className={`nbhd-score${v.score === 0 ? " no-sun" : ""}`}>
-                    {v.score}
-                  </span>
-                </li>
-              ))}
-            </ol>
-          </>
-        )}
-      </section>
+          <Link href={mapHref} className="nbhd-map-link">
+            Open on Live Map →
+          </Link>
+        </header>
 
-      <p className="nbhd-notice">
-        Sun scores are a static build-time snapshot computed from sun altitude at{" "}
-        {buildTimeStr} (LA time). Building shadows are not included — for real-time
-        scores see the{" "}
-        <Link href="/" style={{ color: "var(--color-sun)" }}>
-          live map
-        </Link>
-        .
-      </p>
-    </div>
+        <section className="nbhd-stats" aria-label={`${neighborhood.name} venue data summary`}>
+          <div className="nbhd-stat">
+            <span className="nbhd-stat-value">{manifest.count}</span>
+            <span className="nbhd-stat-label">total venues</span>
+          </div>
+          <div className="nbhd-stat">
+            <span className="nbhd-stat-value">{confirmedPatios}</span>
+            <span className="nbhd-stat-label">confirmed patios</span>
+          </div>
+          <div className="nbhd-stat">
+            <span className="nbhd-stat-value">{withRatings}</span>
+            <span className="nbhd-stat-label">with ratings</span>
+          </div>
+          <div className="nbhd-stat">
+            <span className="nbhd-stat-value">{withOpeningHours}</span>
+            <span className="nbhd-stat-label">with hours</span>
+          </div>
+        </section>
+
+        <section className="nbhd-section">
+          {topVenues.length === 0 ? (
+            <p className="nbhd-empty">
+              No likely patio candidates were found in {neighborhood.name}. Try the{" "}
+              <Link href={mapHref} className="nbhd-inline-link">
+                live map
+              </Link>
+              .
+            </p>
+          ) : (
+            <>
+              <h2 className="nbhd-section-heading">Top Venues</h2>
+              <ol className="nbhd-venue-list" style={{ listStyle: "none", margin: 0, padding: 0 }}>
+                {topVenues.map((v, i) => {
+                  const outdoorSeating = v.outdoor_seating ?? "unknown";
+                  const website = cleanWebsite(v.website);
+                  const rating = formatRating(v.rating);
+                  const cuisine = formatCuisine(v.cuisine);
+
+                  return (
+                    <li
+                      key={v.id}
+                      className={`nbhd-venue-card${
+                        outdoorSeating === "unknown" ? " uncertain" : ""
+                      }`}
+                    >
+                      <span className="nbhd-rank">{i + 1}</span>
+                      <div className="nbhd-venue-info">
+                        <div className="nbhd-venue-row">
+                          <div className="nbhd-venue-name">{v.name}</div>
+                          <span className={`nbhd-patio-badge ${outdoorSeating}`}>
+                            {outdoorLabel(outdoorSeating)}
+                          </span>
+                        </div>
+                        <div className="nbhd-venue-meta">
+                          {titleCaseAmenity(v.amenity)}
+                          {cuisine ? ` · ${cuisine}` : ""}
+                          {rating ? ` · ★ ${rating}${v.reviewCount ? ` (${v.reviewCount})` : ""}` : ""}
+                        </div>
+                        <div className="nbhd-venue-detail">
+                          {v.opening_hours ? v.opening_hours : "Hours not listed"}
+                        </div>
+                        {website ? (
+                          <a
+                            href={website}
+                            className="nbhd-venue-link"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Website
+                          </a>
+                        ) : null}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ol>
+            </>
+          )}
+        </section>
+
+        <p className="nbhd-notice">
+          Venue data sourced from OpenStreetMap and enriched with Google Places ratings.{" "}
+          {patioUnknown} venue{patioUnknown !== 1 ? "s" : ""} have unknown patio status — these
+          are included above when ranked highly. For real-time sun and shadow scoring, open the{" "}
+          <Link href={mapHref} className="nbhd-inline-link">
+            live map
+          </Link>
+          .
+        </p>
+      </div>
+    </>
   );
 }

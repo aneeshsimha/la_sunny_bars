@@ -1,0 +1,707 @@
+{
+  "generatedAt": "2026-06-12T21:54:08.889Z",
+  "date": "2026-06-21 (summer solstice)",
+  "neighborhood": "silver-lake",
+  "venueCount": 10,
+  "totalOccluders": 16482,
+  "checks": {
+    "baselineNoOccluders1_0": true,
+    "baselineViolations": 0,
+    "zoomInvariant": true,
+    "zoomViolations": 0
+  },
+  "scores": [
+    {
+      "venueId": "osm/node/1957158147",
+      "name": "La Colombe Coffee Roasters",
+      "coords": [
+        -118.2798212,
+        34.0916276
+      ],
+      "time": "9:00am",
+      "sunAzimuthDeg": -116.89,
+      "sunAltitudeDeg": 2.41,
+      "score": 0,
+      "scoreBaseline": 1,
+      "inSun": false,
+      "candidateOccluderCount": 258
+    },
+    {
+      "venueId": "osm/node/1957158147",
+      "name": "La Colombe Coffee Roasters",
+      "coords": [
+        -118.2798212,
+        34.0916276
+      ],
+      "time": "1:00pm",
+      "sunAzimuthDeg": -86.23,
+      "sunAltitudeDeg": 50.48,
+      "score": 0,
+      "scoreBaseline": 1,
+      "inSun": false,
+      "candidateOccluderCount": 258
+    },
+    {
+      "venueId": "osm/node/1957158147",
+      "name": "La Colombe Coffee Roasters",
+      "coords": [
+        -118.2798212,
+        34.0916276
+      ],
+      "time": "5:00pm",
+      "sunAzimuthDeg": 57.29,
+      "sunAltitudeDeg": 72.29,
+      "score": 1,
+      "scoreBaseline": 1,
+      "inSun": true,
+      "candidateOccluderCount": 258
+    },
+    {
+      "venueId": "osm/node/2388978618",
+      "name": "Coffee Memes",
+      "coords": [
+        -118.2771694,
+        34.0905944
+      ],
+      "time": "9:00am",
+      "sunAzimuthDeg": -116.89,
+      "sunAltitudeDeg": 2.41,
+      "score": 0,
+      "scoreBaseline": 1,
+      "inSun": false,
+      "candidateOccluderCount": 265
+    },
+    {
+      "venueId": "osm/node/2388978618",
+      "name": "Coffee Memes",
+      "coords": [
+        -118.2771694,
+        34.0905944
+      ],
+      "time": "1:00pm",
+      "sunAzimuthDeg": -86.23,
+      "sunAltitudeDeg": 50.49,
+      "score": 1,
+      "scoreBaseline": 1,
+      "inSun": true,
+      "candidateOccluderCount": 265
+    },
+    {
+      "venueId": "osm/node/2388978618",
+      "name": "Coffee Memes",
+      "coords": [
+        -118.2771694,
+        34.0905944
+      ],
+      "time": "5:00pm",
+      "sunAzimuthDeg": 57.3,
+      "sunAltitudeDeg": 72.29,
+      "score": 1,
+      "scoreBaseline": 1,
+      "inSun": true,
+      "candidateOccluderCount": 265
+    },
+    {
+      "venueId": "osm/node/2604732612",
+      "name": "Starbucks",
+      "coords": [
+        -118.290693,
+        34.0697992
+      ],
+      "time": "9:00am",
+      "sunAzimuthDeg": -116.9,
+      "sunAltitudeDeg": 2.39,
+      "score": 0,
+      "scoreBaseline": 1,
+      "inSun": false,
+      "candidateOccluderCount": 52
+    },
+    {
+      "venueId": "osm/node/2604732612",
+      "name": "Starbucks",
+      "coords": [
+        -118.290693,
+        34.0697992
+      ],
+      "time": "1:00pm",
+      "sunAzimuthDeg": -86.26,
+      "sunAltitudeDeg": 50.48,
+      "score": 1,
+      "scoreBaseline": 1,
+      "inSun": true,
+      "candidateOccluderCount": 52
+    },
+    {
+      "venueId": "osm/node/2604732612",
+      "name": "Starbucks",
+      "coords": [
+        -118.290693,
+        34.0697992
+      ],
+      "time": "5:00pm",
+      "sunAzimuthDeg": 57.32,
+      "sunAltitudeDeg": 72.31,
+      "score": 1,
+      "scoreBaseline": 1,
+      "inSun": true,
+      "candidateOccluderCount": 52
+    },
+    {
+      "venueId": "osm/node/2717554656",
+      "name": "The Black Cat",
+      "coords": [
+        -118.279796,
+        34.0921096
+      ],
+      "time": "9:00am",
+      "sunAzimuthDeg": -116.89,
+      "sunAltitudeDeg": 2.41,
+      "score": 0,
+      "scoreBaseline": 1,
+      "inSun": false,
+      "candidateOccluderCount": 262
+    },
+    {
+      "venueId": "osm/node/2717554656",
+      "name": "The Black Cat",
+      "coords": [
+        -118.279796,
+        34.0921096
+      ],
+      "time": "1:00pm",
+      "sunAzimuthDeg": -86.23,
+      "sunAltitudeDeg": 50.48,
+      "score": 1,
+      "scoreBaseline": 1,
+      "inSun": true,
+      "candidateOccluderCount": 262
+    },
+    {
+      "venueId": "osm/node/2717554656",
+      "name": "The Black Cat",
+      "coords": [
+        -118.279796,
+        34.0921096
+      ],
+      "time": "5:00pm",
+      "sunAzimuthDeg": 57.29,
+      "sunAltitudeDeg": 72.29,
+      "score": 0,
+      "scoreBaseline": 1,
+      "inSun": false,
+      "candidateOccluderCount": 262
+    },
+    {
+      "venueId": "osm/node/3013308271",
+      "name": "Handles Coffee",
+      "coords": [
+        -118.2865976,
+        34.0980305
+      ],
+      "time": "9:00am",
+      "sunAzimuthDeg": -116.9,
+      "sunAltitudeDeg": 2.4,
+      "score": 0,
+      "scoreBaseline": 1,
+      "inSun": false,
+      "candidateOccluderCount": 97
+    },
+    {
+      "venueId": "osm/node/3013308271",
+      "name": "Handles Coffee",
+      "coords": [
+        -118.2865976,
+        34.0980305
+      ],
+      "time": "1:00pm",
+      "sunAzimuthDeg": -86.23,
+      "sunAltitudeDeg": 50.48,
+      "score": 1,
+      "scoreBaseline": 1,
+      "inSun": true,
+      "candidateOccluderCount": 97
+    },
+    {
+      "venueId": "osm/node/3013308271",
+      "name": "Handles Coffee",
+      "coords": [
+        -118.2865976,
+        34.0980305
+      ],
+      "time": "5:00pm",
+      "sunAzimuthDeg": 57.26,
+      "sunAltitudeDeg": 72.29,
+      "score": 1,
+      "scoreBaseline": 1,
+      "inSun": true,
+      "candidateOccluderCount": 97
+    },
+    {
+      "venueId": "osm/node/3013308279",
+      "name": "The Kitchen",
+      "coords": [
+        -118.284483,
+        34.0957208
+      ],
+      "time": "9:00am",
+      "sunAzimuthDeg": -116.89,
+      "sunAltitudeDeg": 2.4,
+      "score": 0,
+      "scoreBaseline": 1,
+      "inSun": false,
+      "candidateOccluderCount": 242
+    },
+    {
+      "venueId": "osm/node/3013308279",
+      "name": "The Kitchen",
+      "coords": [
+        -118.284483,
+        34.0957208
+      ],
+      "time": "1:00pm",
+      "sunAzimuthDeg": -86.23,
+      "sunAltitudeDeg": 50.48,
+      "score": 1,
+      "scoreBaseline": 1,
+      "inSun": true,
+      "candidateOccluderCount": 242
+    },
+    {
+      "venueId": "osm/node/3013308279",
+      "name": "The Kitchen",
+      "coords": [
+        -118.284483,
+        34.0957208
+      ],
+      "time": "5:00pm",
+      "sunAzimuthDeg": 57.27,
+      "sunAltitudeDeg": 72.29,
+      "score": 0,
+      "scoreBaseline": 1,
+      "inSun": false,
+      "candidateOccluderCount": 242
+    },
+    {
+      "venueId": "osm/node/3013308280",
+      "name": "Akbar",
+      "coords": [
+        -118.284251,
+        34.0956922
+      ],
+      "time": "9:00am",
+      "sunAzimuthDeg": -116.89,
+      "sunAltitudeDeg": 2.4,
+      "score": 0,
+      "scoreBaseline": 1,
+      "inSun": false,
+      "candidateOccluderCount": 266
+    },
+    {
+      "venueId": "osm/node/3013308280",
+      "name": "Akbar",
+      "coords": [
+        -118.284251,
+        34.0956922
+      ],
+      "time": "1:00pm",
+      "sunAzimuthDeg": -86.23,
+      "sunAltitudeDeg": 50.48,
+      "score": 0,
+      "scoreBaseline": 1,
+      "inSun": false,
+      "candidateOccluderCount": 266
+    },
+    {
+      "venueId": "osm/node/3013308280",
+      "name": "Akbar",
+      "coords": [
+        -118.284251,
+        34.0956922
+      ],
+      "time": "5:00pm",
+      "sunAzimuthDeg": 57.27,
+      "sunAltitudeDeg": 72.29,
+      "score": 1,
+      "scoreBaseline": 1,
+      "inSun": true,
+      "candidateOccluderCount": 266
+    },
+    {
+      "venueId": "osm/node/3119815054",
+      "name": "Sib Song",
+      "coords": [
+        -118.2665697,
+        34.0777342
+      ],
+      "time": "9:00am",
+      "sunAzimuthDeg": -116.89,
+      "sunAltitudeDeg": 2.41,
+      "score": 0,
+      "scoreBaseline": 1,
+      "inSun": false,
+      "candidateOccluderCount": 293
+    },
+    {
+      "venueId": "osm/node/3119815054",
+      "name": "Sib Song",
+      "coords": [
+        -118.2665697,
+        34.0777342
+      ],
+      "time": "1:00pm",
+      "sunAzimuthDeg": -86.24,
+      "sunAltitudeDeg": 50.5,
+      "score": 1,
+      "scoreBaseline": 1,
+      "inSun": true,
+      "candidateOccluderCount": 293
+    },
+    {
+      "venueId": "osm/node/3119815054",
+      "name": "Sib Song",
+      "coords": [
+        -118.2665697,
+        34.0777342
+      ],
+      "time": "5:00pm",
+      "sunAzimuthDeg": 57.35,
+      "sunAltitudeDeg": 72.29,
+      "score": 1,
+      "scoreBaseline": 1,
+      "inSun": true,
+      "candidateOccluderCount": 293
+    },
+    {
+      "venueId": "osm/node/3143527519",
+      "name": "Ondo Coffee",
+      "coords": [
+        -118.294756,
+        34.0839326
+      ],
+      "time": "9:00am",
+      "sunAzimuthDeg": -116.9,
+      "sunAltitudeDeg": 2.39,
+      "score": 0,
+      "scoreBaseline": 1,
+      "inSun": false,
+      "candidateOccluderCount": 74
+    },
+    {
+      "venueId": "osm/node/3143527519",
+      "name": "Ondo Coffee",
+      "coords": [
+        -118.294756,
+        34.0839326
+      ],
+      "time": "1:00pm",
+      "sunAzimuthDeg": -86.25,
+      "sunAltitudeDeg": 50.47,
+      "score": 0,
+      "scoreBaseline": 1,
+      "inSun": false,
+      "candidateOccluderCount": 74
+    },
+    {
+      "venueId": "osm/node/3143527519",
+      "name": "Ondo Coffee",
+      "coords": [
+        -118.294756,
+        34.0839326
+      ],
+      "time": "5:00pm",
+      "sunAzimuthDeg": 57.28,
+      "sunAltitudeDeg": 72.3,
+      "score": 1,
+      "scoreBaseline": 1,
+      "inSun": true,
+      "candidateOccluderCount": 74
+    },
+    {
+      "venueId": "osm/node/4092055892",
+      "name": "Jay's Bar",
+      "coords": [
+        -118.2830176,
+        34.0952957
+      ],
+      "time": "9:00am",
+      "sunAzimuthDeg": -116.89,
+      "sunAltitudeDeg": 2.41,
+      "score": 0,
+      "scoreBaseline": 1,
+      "inSun": false,
+      "candidateOccluderCount": 234
+    },
+    {
+      "venueId": "osm/node/4092055892",
+      "name": "Jay's Bar",
+      "coords": [
+        -118.2830176,
+        34.0952957
+      ],
+      "time": "1:00pm",
+      "sunAzimuthDeg": -86.23,
+      "sunAltitudeDeg": 50.48,
+      "score": 1,
+      "scoreBaseline": 1,
+      "inSun": true,
+      "candidateOccluderCount": 234
+    },
+    {
+      "venueId": "osm/node/4092055892",
+      "name": "Jay's Bar",
+      "coords": [
+        -118.2830176,
+        34.0952957
+      ],
+      "time": "5:00pm",
+      "sunAzimuthDeg": 57.27,
+      "sunAltitudeDeg": 72.29,
+      "score": 1,
+      "scoreBaseline": 1,
+      "inSun": true,
+      "candidateOccluderCount": 234
+    }
+  ],
+  "zoomChecks": [
+    {
+      "venueId": "osm/node/1957158147",
+      "name": "La Colombe Coffee Roasters",
+      "time": "9:00am",
+      "baselineIs1": true,
+      "scoreWithBuildings": 0,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/1957158147",
+      "name": "La Colombe Coffee Roasters",
+      "time": "1:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 0,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/1957158147",
+      "name": "La Colombe Coffee Roasters",
+      "time": "5:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 1,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/2388978618",
+      "name": "Coffee Memes",
+      "time": "9:00am",
+      "baselineIs1": true,
+      "scoreWithBuildings": 0,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/2388978618",
+      "name": "Coffee Memes",
+      "time": "1:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 1,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/2388978618",
+      "name": "Coffee Memes",
+      "time": "5:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 1,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/2604732612",
+      "name": "Starbucks",
+      "time": "9:00am",
+      "baselineIs1": true,
+      "scoreWithBuildings": 0,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/2604732612",
+      "name": "Starbucks",
+      "time": "1:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 1,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/2604732612",
+      "name": "Starbucks",
+      "time": "5:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 1,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/2717554656",
+      "name": "The Black Cat",
+      "time": "9:00am",
+      "baselineIs1": true,
+      "scoreWithBuildings": 0,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/2717554656",
+      "name": "The Black Cat",
+      "time": "1:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 1,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/2717554656",
+      "name": "The Black Cat",
+      "time": "5:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 0,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/3013308271",
+      "name": "Handles Coffee",
+      "time": "9:00am",
+      "baselineIs1": true,
+      "scoreWithBuildings": 0,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/3013308271",
+      "name": "Handles Coffee",
+      "time": "1:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 1,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/3013308271",
+      "name": "Handles Coffee",
+      "time": "5:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 1,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/3013308279",
+      "name": "The Kitchen",
+      "time": "9:00am",
+      "baselineIs1": true,
+      "scoreWithBuildings": 0,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/3013308279",
+      "name": "The Kitchen",
+      "time": "1:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 1,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/3013308279",
+      "name": "The Kitchen",
+      "time": "5:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 0,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/3013308280",
+      "name": "Akbar",
+      "time": "9:00am",
+      "baselineIs1": true,
+      "scoreWithBuildings": 0,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/3013308280",
+      "name": "Akbar",
+      "time": "1:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 0,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/3013308280",
+      "name": "Akbar",
+      "time": "5:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 1,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/3119815054",
+      "name": "Sib Song",
+      "time": "9:00am",
+      "baselineIs1": true,
+      "scoreWithBuildings": 0,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/3119815054",
+      "name": "Sib Song",
+      "time": "1:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 1,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/3119815054",
+      "name": "Sib Song",
+      "time": "5:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 1,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/3143527519",
+      "name": "Ondo Coffee",
+      "time": "9:00am",
+      "baselineIs1": true,
+      "scoreWithBuildings": 0,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/3143527519",
+      "name": "Ondo Coffee",
+      "time": "1:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 0,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/3143527519",
+      "name": "Ondo Coffee",
+      "time": "5:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 1,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/4092055892",
+      "name": "Jay's Bar",
+      "time": "9:00am",
+      "baselineIs1": true,
+      "scoreWithBuildings": 0,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/4092055892",
+      "name": "Jay's Bar",
+      "time": "1:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 1,
+      "zoominvariant": true
+    },
+    {
+      "venueId": "osm/node/4092055892",
+      "name": "Jay's Bar",
+      "time": "5:00pm",
+      "baselineIs1": true,
+      "scoreWithBuildings": 1,
+      "zoominvariant": true
+    }
+  ]
+}
