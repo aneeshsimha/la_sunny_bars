@@ -1127,6 +1127,49 @@ body {
   text-transform: capitalize;
 }
 
+/* ── Shadow simulator toggle ───────────────────────────── */
+
+.shadow-toggle {
+  position: absolute;
+  bottom: 146px;
+  right: 16px;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 158, 11, 0.32);
+  background: rgba(254, 249, 238, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  color: var(--color-text-secondary);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.shadow-toggle:hover {
+  color: var(--color-text);
+}
+
+.shadow-toggle.active {
+  border-color: rgba(129, 140, 248, 0.5);
+  background: rgba(129, 140, 248, 0.16);
+  color: #4338CA;
+}
+
+@media (max-width: 768px) {
+  .shadow-toggle {
+    bottom: auto;
+    top: 132px;
+    right: 14px;
+  }
+}
+
 /* ── Geolocate button ──────────────────────────────────── */
 
 .geolocate-btn {

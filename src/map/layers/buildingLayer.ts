@@ -68,4 +68,11 @@ export function updateSunLight(
     intensity: 0.5,
     color: "white",
   });
+
+  // Move the sky's sun with the real sun so the atmosphere brightens toward it.
+  // sky-atmosphere-sun is [azimuth°, polar°] where polar 0 = zenith, 90 = horizon.
+  if (map.getLayer("sky")) {
+    const polarDeg = Math.min(180, Math.max(0, 90 - altitudeDeg));
+    map.setPaintProperty("sky", "sky-atmosphere-sun", [azimuthDeg, polarDeg]);
+  }
 }

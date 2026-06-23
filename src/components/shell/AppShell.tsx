@@ -181,7 +181,23 @@ export default function AppShell({
     useVenueStore.getState().setSelectedVenueId(null);
 
     const map = mapRef.current;
-    if (map) setVenueSourceData(map, venues);
+    if (map) {
+      setVenueSourceData(map, venues);
+      // Frame the neighborhood so its venues are in view. The map's default
+      // center is generic LA, so without this the viewport-filtered list would
+      // be empty until the user pans to the neighborhood.
+      const nb = neighborhoods.find((n) => n.slug === slug);
+      if (nb) {
+        const [west, south, east, north] = nb.bbox;
+        map.fitBounds(
+          [
+            [west, south],
+            [east, north],
+          ],
+          { padding: { top: 70, bottom: 120, left: 50, right: 50 }, pitch: 45, duration: 600 }
+        );
+      }
+    }
 
     const client = getDefaultScoringClient();
     await client
@@ -203,17 +219,12 @@ export default function AppShell({
     loadNeighborhood(storeSlug);
   }, [mapReady, storeSlug, loadNeighborhood]);
 
-  // Handle neighborhood switch: update the store slug + fly the map. The effect
-  // above reloads venues/occluders/scores in response to the slug change.
+  // Handle neighborhood switch: update the store slug. The effect above reloads
+  // venues/occluders/scores and frames the map (via loadNeighborhood) in
+  // response to the slug change.
   const handleNeighborhoodSelect = useCallback(
     (slug: string) => {
       setNeighborhoodSlug(slug);
-      const nb = neighborhoods.find((n) => n.slug === slug);
-      const map = mapRef.current;
-      if (nb && map) {
-        const [lng, lat] = nb.center;
-        map.flyTo({ center: [lng, lat], zoom: 14, duration: 1000, pitch: 45 });
-      }
     },
     [setNeighborhoodSlug]
   );

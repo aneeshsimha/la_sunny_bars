@@ -1,5 +1,13 @@
 import { VenueFeature, AmenityFilter, SeatingFilter } from "@/state/types";
 import { ScoringMode, modeSortKey } from "@/lib/scoringMode";
+import type { MapBounds } from "@/state/uiStore";
+
+/** True if a venue's [lng, lat] falls within the [west, south, east, north] bbox. */
+export function venueInBounds(venue: VenueFeature, bounds: MapBounds): boolean {
+  const [lng, lat] = venue.coordinates;
+  const [west, south, east, north] = bounds;
+  return lng >= west && lng <= east && lat >= south && lat <= north;
+}
 
 export function hasOutdoorConfidence(
   venue: Pick<VenueFeature, "outdoor_seating">
@@ -20,9 +28,15 @@ export function filterAndSortVenues(
   activeFilter: AmenityFilter,
   sunOnly: boolean,
   scoringMode: ScoringMode,
-  seatingFilter: SeatingFilter = "all"
+  seatingFilter: SeatingFilter = "all",
+  bounds: MapBounds | null = null
 ): VenueFeature[] {
   let list = venues;
+
+  // Only rank venues inside the current map view (updates on zoom/pan).
+  if (bounds) {
+    list = list.filter((v) => venueInBounds(v, bounds));
+  }
 
   if (searchQuery) {
     const q = searchQuery.toLowerCase();

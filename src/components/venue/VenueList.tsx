@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 import { useVenueStore } from "@/state/venueStore";
 import { useFilterStore } from "@/state/filterStore";
+import { useUIStore } from "@/state/uiStore";
 import { VenueFeature } from "@/state/types";
 import { filterAndSortVenues } from "@/components/venue/venueFilters";
 import VenueCard from "@/components/venue/VenueCard";
@@ -16,11 +17,12 @@ export default function VenueList({ onVenueClick }: VenueListProps) {
   const venues = useVenueStore((s) => s.venues);
   const selectedVenueId = useVenueStore((s) => s.selectedVenueId);
   const { searchQuery, activeFilter, seatingFilter, sunOnly, scoringMode } = useFilterStore();
+  const mapBounds = useUIStore((s) => s.mapBounds);
 
   const filteredVenues = useMemo(
     () =>
-      filterAndSortVenues(venues, searchQuery, activeFilter, sunOnly, scoringMode, seatingFilter),
-    [venues, searchQuery, activeFilter, seatingFilter, sunOnly, scoringMode]
+      filterAndSortVenues(venues, searchQuery, activeFilter, sunOnly, scoringMode, seatingFilter, mapBounds),
+    [venues, searchQuery, activeFilter, seatingFilter, sunOnly, scoringMode, mapBounds]
   );
 
   const hasActiveFilters =

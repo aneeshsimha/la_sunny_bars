@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 import { useVenueStore } from "@/state/venueStore";
 import { useFilterStore } from "@/state/filterStore";
+import { useUIStore } from "@/state/uiStore";
 import { VenueFeature } from "@/state/types";
 import { filterAndSortVenues } from "@/components/venue/venueFilters";
 
@@ -13,6 +14,7 @@ interface TopPickCardProps {
 export default function TopPickCard({ onVenueClick }: TopPickCardProps) {
   const venues = useVenueStore((s) => s.venues);
   const { searchQuery, activeFilter, seatingFilter, sunOnly, scoringMode } = useFilterStore();
+  const mapBounds = useUIStore((s) => s.mapBounds);
 
   const bestVenue = useMemo(() => {
     const sorted = filterAndSortVenues(
@@ -21,10 +23,11 @@ export default function TopPickCard({ onVenueClick }: TopPickCardProps) {
       activeFilter,
       sunOnly,
       scoringMode,
-      seatingFilter
+      seatingFilter,
+      mapBounds
     );
     return sorted[0] ?? null;
-  }, [venues, searchQuery, activeFilter, seatingFilter, sunOnly, scoringMode]);
+  }, [venues, searchQuery, activeFilter, seatingFilter, sunOnly, scoringMode, mapBounds]);
 
   if (!bestVenue) {
     return (
