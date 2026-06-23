@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-06-23T00:00:00.000Z",
+  "generatedAt": "2026-06-23T14:00:00.000Z",
   "neighborhoods": [
     {
       "slug": "silver-lake",
       "name": "Silver Lake",
       "venueCount": 148,
-      "buildingCount": 16466
+      "buildingCount": 7720
     },
     {
       "slug": "venice",
       "name": "Venice",
       "venueCount": 96,
-      "buildingCount": 19167
+      "buildingCount": 9415
     },
     {
       "slug": "dtla",
@@ -29,7 +29,7 @@
       "slug": "santa-monica",
       "name": "Santa Monica",
       "venueCount": 235,
-      "buildingCount": 12214
+      "buildingCount": 7862
     },
     {
       "slug": "echo-park",
