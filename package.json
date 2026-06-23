@@ -20,6 +20,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sentry/nextjs": "^10.60.0",
     "@vercel/analytics": "^2.0.1",
     "flatbush": "^4.6.2",
     "mapbox-gl": "^3.20.0",

@@ -87,3 +87,38 @@ If Mapbox usage approaches the free tier ceiling (50k loads/month), migrate to:
 1. Replace `mapbox-gl` with `maplibre-gl` (API-compatible, ~same bundle size)
 2. Serve vector tiles from `api.protomaps.com` (free tier: 200k requests/month) or self-host a PMTiles file from Protomaps builds
 3. Cost after migration: $0 for tiles (Protomaps free tier) + $0 for MapLibre (open source)
+
+---
+
+## ANS-128: Sentry Error Tracking Setup
+
+### One-time account setup
+
+1. Go to https://sentry.io and create a free account (5,000 errors/month on free tier)
+2. Create a new project: **Platform → Next.js**, name it `la-sunny-bars`
+3. Copy the DSN from **Settings → Projects → la-sunny-bars → Client Keys (DSN)**
+
+### Vercel environment variables
+
+In the Vercel dashboard under **Settings → Environment Variables**, add both:
+
+| Variable | Value | Environments |
+|----------|-------|--------------|
+| `SENTRY_DSN` | `https://...@o....ingest.sentry.io/...` | Production, Preview |
+| `NEXT_PUBLIC_SENTRY_DSN` | same DSN as above | Production, Preview |
+
+Both use the same DSN value. The `NEXT_PUBLIC_` prefix makes it available in the client bundle.
+
+### Verify events arrive
+
+1. Deploy to Vercel (or use a preview deployment) with the DSN set
+2. Open the app in the browser and open DevTools console
+3. Run: `throw new Error("sentry-test-la-sunny-bars")` — this triggers a client-side error
+4. In Sentry, go to **Issues** — the error should appear within ~30 seconds
+5. Confirm the issue shows the correct project (`la-sunny-bars`) and environment (`production`/`preview`)
+
+### What is and isn't tracked
+
+- **Tracked**: unhandled JS exceptions and promise rejections on the client; server-side errors in Next.js API routes and server components
+- **Not tracked**: Web Worker errors (workers run in a separate scope; add Sentry manually inside the worker if needed)
+- **Sample rate**: 10% of transactions for performance tracing; 100% of sessions with errors for replay
