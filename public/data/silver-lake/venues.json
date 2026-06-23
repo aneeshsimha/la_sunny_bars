@@ -1,6 +1,6 @@
 {
   "slug": "silver-lake",
-  "generatedAt": "2026-06-12T21:42:51.776Z",
+  "generatedAt": "2026-06-23T15:32:29.031Z",
   "count": 148,
   "venues": [
     {
@@ -23,10 +23,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/2388978618",
@@ -47,11 +44,8 @@
       "reviewCount": null,
       "photoRef": null,
       "openNow": null,
-      "seatingType": "patio",
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "seatingType": null,
+      "drinkTypes": []
     },
     {
       "id": "osm/node/2604732612",
@@ -73,10 +67,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/2717554656",
@@ -98,11 +89,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine",
-        "Craft Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/3013308271",
@@ -124,10 +111,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/3013308279",
@@ -149,10 +133,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/3013308280",
@@ -174,11 +155,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/3119815054",
@@ -200,10 +177,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/3143527519",
@@ -225,10 +199,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4092055892",
@@ -272,10 +243,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4092055895",
@@ -297,10 +265,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4098454491",
@@ -322,10 +287,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4098462580",
@@ -347,10 +309,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4098487069",
@@ -372,11 +331,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4098487070",
@@ -398,10 +353,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4098494396",
@@ -423,10 +375,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4098494398",
@@ -448,10 +397,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4098494399",
@@ -473,10 +419,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4113535400",
@@ -498,10 +441,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4113535401",
@@ -523,10 +463,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4113535402",
@@ -548,10 +485,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4113535403",
@@ -573,10 +507,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4113561297",
@@ -598,11 +529,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4129302505",
@@ -624,10 +551,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4129351421",
@@ -649,10 +573,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4129351423",
@@ -674,10 +595,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4129351424",
@@ -699,10 +617,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4129351427",
@@ -724,10 +639,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4129351428",
@@ -749,10 +661,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4129351430",
@@ -774,10 +683,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4129351431",
@@ -798,11 +704,8 @@
       "reviewCount": null,
       "photoRef": null,
       "openNow": null,
-      "seatingType": "patio",
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "seatingType": null,
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4129351433",
@@ -824,10 +727,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4129351435",
@@ -849,10 +749,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4129351436",
@@ -874,10 +771,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4129351437",
@@ -921,10 +815,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4129351441",
@@ -945,11 +836,8 @@
       "reviewCount": null,
       "photoRef": null,
       "openNow": null,
-      "seatingType": "patio",
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "seatingType": null,
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4129351445",
@@ -971,10 +859,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4129351452",
@@ -996,10 +881,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4166608938",
@@ -1021,10 +903,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4166608942",
@@ -1046,10 +925,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4166615843",
@@ -1071,11 +947,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4259171927",
@@ -1097,10 +969,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4329813198",
@@ -1122,10 +991,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4329836756",
@@ -1147,10 +1013,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4351430423",
@@ -1172,10 +1035,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4566480465",
@@ -1197,10 +1057,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4580768557",
@@ -1222,11 +1079,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4960873321",
@@ -1248,10 +1101,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5278630121",
@@ -1273,10 +1123,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5281387867",
@@ -1298,10 +1145,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5287806625",
@@ -1322,11 +1166,8 @@
       "reviewCount": null,
       "photoRef": null,
       "openNow": null,
-      "seatingType": "patio",
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "seatingType": null,
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5309210186",
@@ -1348,10 +1189,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5436524489",
@@ -1373,10 +1211,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5436524512",
@@ -1398,10 +1233,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5436526925",
@@ -1423,10 +1255,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5436534856",
@@ -1448,10 +1277,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5436538080",
@@ -1473,11 +1299,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5436544256",
@@ -1499,10 +1321,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5436546554",
@@ -1524,10 +1343,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5452727682",
@@ -1549,10 +1365,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5452790966",
@@ -1574,10 +1387,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5452923735",
@@ -1599,10 +1409,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5452950209",
@@ -1624,10 +1431,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5453015517",
@@ -1649,11 +1453,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5453034257",
@@ -1675,11 +1475,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5465474717",
@@ -1701,10 +1497,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5465480293",
@@ -1726,10 +1519,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5465486705",
@@ -1751,10 +1541,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5465490961",
@@ -1776,10 +1563,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5465494845",
@@ -1801,10 +1585,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5465500821",
@@ -1826,10 +1607,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5465591752",
@@ -1851,10 +1629,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5862944051",
@@ -1875,11 +1650,8 @@
       "reviewCount": null,
       "photoRef": null,
       "openNow": null,
-      "seatingType": "patio",
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "seatingType": null,
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5908799143",
@@ -1901,10 +1673,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5908815773",
@@ -1926,11 +1695,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/6505096693",
@@ -1952,10 +1717,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/7391447886",
@@ -1977,10 +1739,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/7439788686",
@@ -2002,10 +1761,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/7472265589",
@@ -2027,10 +1783,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/7501945485",
@@ -2052,10 +1805,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/7578949585",
@@ -2077,10 +1827,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/8140627356",
@@ -2102,10 +1849,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/8290346391",
@@ -2127,10 +1871,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/8294783086",
@@ -2152,10 +1893,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/8340508930",
@@ -2177,10 +1915,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/8435872009",
@@ -2202,10 +1937,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/8450357905",
@@ -2227,10 +1959,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/8450397634",
@@ -2252,10 +1981,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/8455519086",
@@ -2277,10 +2003,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/8455519093",
@@ -2302,10 +2025,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/8455519104",
@@ -2327,10 +2047,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/9874353376",
@@ -2352,10 +2069,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10689723505",
@@ -2377,10 +2091,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10690338505",
@@ -2402,10 +2113,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10815160612",
@@ -2426,11 +2134,8 @@
       "reviewCount": null,
       "photoRef": null,
       "openNow": null,
-      "seatingType": "patio",
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "seatingType": null,
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10927151188",
@@ -2452,10 +2157,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11159391812",
@@ -2477,11 +2179,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11159397217",
@@ -2503,11 +2201,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11378679126",
@@ -2529,10 +2223,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11390840167",
@@ -2554,10 +2245,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11390840168",
@@ -2579,10 +2267,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11391069569",
@@ -2604,10 +2289,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11391069570",
@@ -2629,10 +2311,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11391069572",
@@ -2654,10 +2333,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11391069581",
@@ -2679,10 +2355,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11391069586",
@@ -2704,10 +2377,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11391069592",
@@ -2729,10 +2399,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11391069596",
@@ -2753,11 +2420,8 @@
       "reviewCount": null,
       "photoRef": null,
       "openNow": null,
-      "seatingType": "patio",
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "seatingType": null,
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11391069602",
@@ -2779,10 +2443,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11391069603",
@@ -2804,10 +2465,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11391069604",
@@ -2829,10 +2487,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11391069610",
@@ -2854,10 +2509,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11391069621",
@@ -2879,11 +2531,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11415678173",
@@ -2905,10 +2553,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11768603523",
@@ -2930,10 +2575,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11768603524",
@@ -2955,10 +2597,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11773268804",
@@ -2980,10 +2619,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11773268805",
@@ -3005,10 +2641,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11773268806",
@@ -3030,10 +2663,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11795133870",
@@ -3055,10 +2685,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11795133871",
@@ -3080,10 +2707,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/12120939033",
@@ -3105,10 +2729,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/12596695609",
@@ -3130,10 +2751,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/12596705808",
@@ -3155,10 +2773,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13198713201",
@@ -3180,11 +2795,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13411261924",
@@ -3206,10 +2817,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13883947401",
@@ -3231,10 +2839,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13889958401",
@@ -3256,10 +2861,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/420114002",
@@ -3281,10 +2883,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/420142227",
@@ -3306,10 +2905,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/420143144",
@@ -3331,10 +2927,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/420143148",
@@ -3356,10 +2949,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/420143642",
@@ -3381,10 +2971,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/420148050",
@@ -3406,11 +2993,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/420299058",
@@ -3432,11 +3015,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/426205558",
@@ -3458,10 +3037,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/426230696",
@@ -3483,11 +3059,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/426256015",
@@ -3509,11 +3081,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/426256295",
@@ -3535,10 +3103,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/426706984",
@@ -3559,11 +3124,8 @@
       "reviewCount": null,
       "photoRef": null,
       "openNow": null,
-      "seatingType": "patio",
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "seatingType": null,
+      "drinkTypes": []
     },
     {
       "id": "osm/way/736314539",
@@ -3585,10 +3147,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/886564589",
@@ -3610,10 +3169,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/1267068014",
@@ -3635,10 +3191,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/1267847603",
@@ -3660,10 +3213,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/1269266109",
@@ -3685,10 +3235,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/1269266111",
@@ -3710,10 +3257,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     }
   ]
 }

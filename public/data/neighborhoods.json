@@ -58,5 +58,35 @@
     "name": "Beverly Hills",
     "bbox": [-118.421, 34.056, -118.386, 34.082],
     "center": [-118.404, 34.069]
+  },
+  {
+    "slug": "eagle-rock",
+    "name": "Eagle Rock",
+    "bbox": [-118.222, 34.125, -118.196, 34.149],
+    "center": [-118.209, 34.137]
+  },
+  {
+    "slug": "culver-city",
+    "name": "Culver City",
+    "bbox": [-118.403, 34.001, -118.371, 34.025],
+    "center": [-118.387, 34.013]
+  },
+  {
+    "slug": "mid-wilshire",
+    "name": "Mid-Wilshire",
+    "bbox": [-118.348, 34.057, -118.316, 34.075],
+    "center": [-118.332, 34.066]
+  },
+  {
+    "slug": "sawtelle",
+    "name": "Sawtelle",
+    "bbox": [-118.454, 34.025, -118.427, 34.052],
+    "center": [-118.440, 34.038]
+  },
+  {
+    "slug": "pasadena",
+    "name": "Pasadena",
+    "bbox": [-118.162, 34.139, -118.129, 34.162],
+    "center": [-118.145, 34.150]
   }
 ]

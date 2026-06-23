@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-06-16T19:06:23.376Z",
+  "generatedAt": "2026-06-23T00:00:00.000Z",
   "neighborhoods": [
     {
       "slug": "silver-lake",
       "name": "Silver Lake",
       "venueCount": 148,
-      "buildingCount": 16482
+      "buildingCount": 16466
     },
     {
       "slug": "venice",
@@ -16,7 +16,7 @@
     {
       "slug": "dtla",
       "name": "Downtown LA",
-      "venueCount": 426,
+      "venueCount": 425,
       "buildingCount": 3857
     },
     {
@@ -35,31 +35,61 @@
       "slug": "echo-park",
       "name": "Echo Park",
       "venueCount": 55,
-      "buildingCount": 7428
+      "buildingCount": 7430
     },
     {
       "slug": "los-feliz",
       "name": "Los Feliz",
       "venueCount": 127,
-      "buildingCount": 9841
+      "buildingCount": 9840
     },
     {
       "slug": "hollywood",
       "name": "Hollywood",
       "venueCount": 162,
-      "buildingCount": 6291
+      "buildingCount": 6290
     },
     {
       "slug": "koreatown",
       "name": "Koreatown",
-      "venueCount": 174,
-      "buildingCount": 4869
+      "venueCount": 179,
+      "buildingCount": 4870
     },
     {
       "slug": "beverly-hills",
       "name": "Beverly Hills",
       "venueCount": 101,
       "buildingCount": 9156
+    },
+    {
+      "slug": "eagle-rock",
+      "name": "Eagle Rock",
+      "venueCount": 35,
+      "buildingCount": 8907
+    },
+    {
+      "slug": "culver-city",
+      "name": "Culver City",
+      "venueCount": 81,
+      "buildingCount": 5699
+    },
+    {
+      "slug": "mid-wilshire",
+      "name": "Mid-Wilshire",
+      "venueCount": 28,
+      "buildingCount": 7468
+    },
+    {
+      "slug": "sawtelle",
+      "name": "Sawtelle",
+      "venueCount": 168,
+      "buildingCount": 9025
+    },
+    {
+      "slug": "pasadena",
+      "name": "Pasadena",
+      "venueCount": 202,
+      "buildingCount": 6373
     }
   ]
 }

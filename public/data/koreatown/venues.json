@@ -1,7 +1,7 @@
 {
   "slug": "koreatown",
-  "generatedAt": "2026-06-16T17:57:22.503Z",
-  "count": 174,
+  "generatedAt": "2026-06-23T15:25:06.568Z",
+  "count": 179,
   "venues": [
     {
       "id": "osm/node/408540804",
@@ -23,10 +23,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/609065118",
@@ -48,14 +45,11 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/2165018839",
-      "name": "Mapo",
+      "name": "Mapo Kkak Door Gee",
       "coords": [
         -118.3008469,
         34.0638419
@@ -73,10 +67,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/2165018868",
@@ -98,14 +89,11 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/2165018886",
-      "name": "Yang San Bak",
+      "name": "Chuncheon Dakgalbi Donghae Makguksu 2",
       "coords": [
         -118.3005773,
         34.0639835
@@ -123,10 +111,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/2168231371",
@@ -148,10 +133,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/2247888337",
@@ -173,10 +155,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/2604732612",
@@ -198,10 +177,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/2697735083",
@@ -223,10 +199,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/2697735087",
@@ -248,10 +221,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/2988516857",
@@ -273,11 +243,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/3483251235",
@@ -299,10 +265,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/3795867780",
@@ -324,10 +287,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4047311501",
@@ -349,10 +309,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4487414743",
@@ -374,10 +331,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4542457494",
@@ -399,10 +353,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4679024595",
@@ -424,10 +375,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/4917827021",
@@ -449,35 +397,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
-    },
-    {
-      "id": "osm/node/4973275121",
-      "name": "Gwang Yang BBQ",
-      "coords": [
-        -118.2976868,
-        34.0624902
-      ],
-      "amenity": "restaurant",
-      "cuisine": "korean",
-      "outdoor_seating": "unknown",
-      "website": null,
-      "phone": null,
-      "opening_hours": null,
-      "placesId": null,
-      "rating": null,
-      "priceLevel": null,
-      "reviewCount": null,
-      "photoRef": null,
-      "openNow": null,
-      "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5084829721",
@@ -499,10 +419,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5111888237",
@@ -524,10 +441,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5111896334",
@@ -549,10 +463,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5111896342",
@@ -574,10 +485,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5111896425",
@@ -598,11 +506,8 @@
       "reviewCount": null,
       "photoRef": null,
       "openNow": null,
-      "seatingType": "patio",
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "seatingType": null,
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5111896427",
@@ -624,10 +529,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5111896531",
@@ -649,10 +551,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5111900623",
@@ -674,10 +573,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5112088125",
@@ -699,10 +595,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5112088126",
@@ -724,10 +617,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5112088127",
@@ -749,10 +639,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5112097122",
@@ -774,10 +661,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5112097125",
@@ -799,10 +683,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5112100821",
@@ -824,10 +705,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5112100823",
@@ -849,10 +727,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5112100824",
@@ -874,10 +749,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5112100825",
@@ -899,35 +771,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
-    },
-    {
-      "id": "osm/node/5112100826",
-      "name": "Wako",
-      "coords": [
-        -118.2976308,
-        34.0624771
-      ],
-      "amenity": "restaurant",
-      "cuisine": null,
-      "outdoor_seating": "unknown",
-      "website": null,
-      "phone": null,
-      "opening_hours": null,
-      "placesId": null,
-      "rating": null,
-      "priceLevel": null,
-      "reviewCount": null,
-      "photoRef": null,
-      "openNow": null,
-      "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5112100828",
@@ -939,9 +783,9 @@
       "amenity": "pub",
       "cuisine": "steak_house;pub",
       "outdoor_seating": "unknown",
-      "website": null,
+      "website": "http://www.thehmsbounty.com/",
       "phone": "+1-213-385-7275",
-      "opening_hours": null,
+      "opening_hours": "Mo-Th 12:00-24:00; Fr-Su 12:00-01:00",
       "placesId": null,
       "rating": null,
       "priceLevel": null,
@@ -971,20 +815,17 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5112101621",
-      "name": "Koko Pizza",
+      "name": "Qianlixiang Hot Pot",
       "coords": [
         -118.2977408,
         34.0624706
       ],
       "amenity": "restaurant",
-      "cuisine": "pizza",
+      "cuisine": "chinese",
       "outdoor_seating": "unknown",
       "website": null,
       "phone": null,
@@ -996,24 +837,21 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5112103521",
-      "name": "Neris Filipino Dining",
+      "name": "Neri's",
       "coords": [
         -118.2977664,
         34.0620368
       ],
       "amenity": "restaurant",
-      "cuisine": null,
+      "cuisine": "filipino",
       "outdoor_seating": "unknown",
-      "website": null,
+      "website": "https://www.nerisrestaurant.com/",
       "phone": null,
-      "opening_hours": null,
+      "opening_hours": "Mo-Sa 11:00-19:30; Su off",
       "placesId": null,
       "rating": null,
       "priceLevel": null,
@@ -1021,10 +859,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5112103522",
@@ -1046,10 +881,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5112123926",
@@ -1071,10 +903,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5112204724",
@@ -1096,10 +925,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5112204727",
@@ -1121,10 +947,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5116078823",
@@ -1146,10 +969,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5116078824",
@@ -1171,10 +991,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5286949491",
@@ -1196,10 +1013,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5405879621",
@@ -1221,10 +1035,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5858173888",
@@ -1246,10 +1057,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5908767099",
@@ -1271,10 +1079,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5908799143",
@@ -1296,10 +1101,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5908815773",
@@ -1321,11 +1123,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/5960175000",
@@ -1339,7 +1137,7 @@
       "outdoor_seating": "no",
       "website": "https://www.thenormandieclub.com",
       "phone": "+1-213-263-2709",
-      "opening_hours": "Mo-Su 18:00-02:00",
+      "opening_hours": "18:00-02:00",
       "placesId": null,
       "rating": null,
       "priceLevel": null,
@@ -1347,11 +1145,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/6012797704",
@@ -1373,10 +1167,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/6114613466",
@@ -1397,11 +1188,8 @@
       "reviewCount": null,
       "photoRef": null,
       "openNow": null,
-      "seatingType": "patio",
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "seatingType": null,
+      "drinkTypes": []
     },
     {
       "id": "osm/node/6422154749",
@@ -1423,10 +1211,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/6450245111",
@@ -1448,10 +1233,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/6685169398",
@@ -1473,10 +1255,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/6685169399",
@@ -1498,35 +1277,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
-    },
-    {
-      "id": "osm/node/6685169400",
-      "name": "Seaweed",
-      "coords": [
-        -118.2971571,
-        34.0632247
-      ],
-      "amenity": "restaurant",
-      "cuisine": "korean",
-      "outdoor_seating": "unknown",
-      "website": null,
-      "phone": null,
-      "opening_hours": null,
-      "placesId": null,
-      "rating": null,
-      "priceLevel": null,
-      "reviewCount": null,
-      "photoRef": null,
-      "openNow": null,
-      "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/6685169401",
@@ -1548,10 +1299,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/6685169403",
@@ -1573,10 +1321,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/6685169404",
@@ -1590,7 +1335,7 @@
       "outdoor_seating": "unknown",
       "website": "https://www.chikkoreanrestaurant.com/",
       "phone": "+1-213-480-1799",
-      "opening_hours": null,
+      "opening_hours": "Mo-We 10:00-22:00; Th-Su 10:00-23:00",
       "placesId": null,
       "rating": null,
       "priceLevel": null,
@@ -1598,24 +1343,21 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/6685169405",
-      "name": "Kong Ji",
+      "name": "Tang Huo Kung Fu Spicy Hot Pot",
       "coords": [
         -118.2971518,
         34.0633763
       ],
       "amenity": "restaurant",
-      "cuisine": "korean",
+      "cuisine": "chinese",
       "outdoor_seating": "unknown",
-      "website": null,
-      "phone": null,
-      "opening_hours": null,
+      "website": "https://tanghuokungfula.com/",
+      "phone": "+1-213-915-0177",
+      "opening_hours": "12:00-01:00",
       "placesId": null,
       "rating": null,
       "priceLevel": null,
@@ -1623,10 +1365,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/7387761185",
@@ -1648,10 +1387,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/7399563868",
@@ -1673,10 +1409,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/7399563870",
@@ -1698,14 +1431,11 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/7412915860",
-      "name": "Yup Dduk LA",
+      "name": "Yupdduk LA",
       "coords": [
         -118.3007969,
         34.0639484
@@ -1713,9 +1443,9 @@
       "amenity": "restaurant",
       "cuisine": "korean",
       "outdoor_seating": "unknown",
-      "website": null,
-      "phone": null,
-      "opening_hours": null,
+      "website": "https://www.almghospitality.com/ydla",
+      "phone": "+1 213-263-2355",
+      "opening_hours": "11:00-21:20",
       "placesId": null,
       "rating": null,
       "priceLevel": null,
@@ -1723,10 +1453,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/7431749585",
@@ -1738,9 +1465,9 @@
       "amenity": "restaurant",
       "cuisine": "burger",
       "outdoor_seating": "unknown",
-      "website": null,
-      "phone": null,
-      "opening_hours": "Mo-Su 09:00-21:00; PH closed",
+      "website": "https://www.cassellshamburgers.com/",
+      "phone": "+1 213-387-5502",
+      "opening_hours": "Mo-Th,Su 09:00-21:00; Fr-Sa 09:00-22:00; PH off",
       "placesId": null,
       "rating": null,
       "priceLevel": null,
@@ -1748,10 +1475,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/7502008085",
@@ -1773,10 +1497,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/7590867485",
@@ -1798,10 +1519,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/7590867585",
@@ -1823,10 +1541,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/7590867587",
@@ -1848,10 +1563,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/8707656164",
@@ -1873,10 +1585,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/9589878117",
@@ -1898,10 +1607,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/9655499017",
@@ -1923,10 +1629,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/9655575672",
@@ -1936,11 +1639,11 @@
         34.0634099
       ],
       "amenity": "restaurant",
-      "cuisine": "japanese",
-      "outdoor_seating": "unknown",
+      "cuisine": "japanese;curry",
+      "outdoor_seating": "no",
       "website": "https://ichibanyausa.com/koreatown/",
       "phone": "+1 213-375-7546",
-      "opening_hours": "Mo-Su 11:00-22:00",
+      "opening_hours": "11:00-22:00",
       "placesId": null,
       "rating": null,
       "priceLevel": null,
@@ -1948,10 +1651,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/9658416562",
@@ -1973,10 +1673,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/9921906120",
@@ -1998,10 +1695,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/9968835271",
@@ -2023,10 +1717,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933394741",
@@ -2048,10 +1739,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933394742",
@@ -2073,10 +1761,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933394757",
@@ -2098,10 +1783,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933394759",
@@ -2123,11 +1805,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933394775",
@@ -2149,10 +1827,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933394784",
@@ -2174,10 +1849,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933394791",
@@ -2199,10 +1871,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933394792",
@@ -2224,14 +1893,11 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933394794",
-      "name": "Tiger Sugar",
+      "name": "Cha Redefine",
       "coords": [
         -118.2974025,
         34.0640792
@@ -2239,7 +1905,7 @@
       "amenity": "cafe",
       "cuisine": "bubble_tea",
       "outdoor_seating": "unknown",
-      "website": null,
+      "website": "https://charedefine.com/",
       "phone": null,
       "opening_hours": null,
       "placesId": null,
@@ -2249,24 +1915,21 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933394795",
-      "name": "Toe Bang",
+      "name": "Cap't Loui",
       "coords": [
         -118.2971329,
         34.0640544
       ],
       "amenity": "restaurant",
-      "cuisine": "korean",
+      "cuisine": "seafood",
       "outdoor_seating": "unknown",
-      "website": null,
-      "phone": null,
-      "opening_hours": null,
+      "website": "https://captloui.com/los-angeles-koreatown-ca",
+      "phone": "+1 213-315-5191",
+      "opening_hours": "Mo-Th,Su 11:30-24:00; Fr-Sa 11:30-02:00",
       "placesId": null,
       "rating": null,
       "priceLevel": null,
@@ -2274,17 +1937,14 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933394797",
       "name": "Origin Korean BBQ",
       "coords": [
-        -118.2973637,
-        34.063831
+        -118.2973154,
+        34.0638067
       ],
       "amenity": "restaurant",
       "cuisine": "korean;barbecue",
@@ -2299,10 +1959,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933394798",
@@ -2312,11 +1969,11 @@
         34.0637391
       ],
       "amenity": "restaurant",
-      "cuisine": null,
+      "cuisine": "korean;colombian",
       "outdoor_seating": "unknown",
-      "website": null,
-      "phone": null,
-      "opening_hours": null,
+      "website": "https://escalaktown.com/",
+      "phone": "+1-213-387-1113",
+      "opening_hours": "Mo-We,Su 11:30-24:00; Th-Sa 11:30-02:00",
       "placesId": null,
       "rating": null,
       "priceLevel": null,
@@ -2324,24 +1981,21 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933394799",
       "name": "KazuNori",
       "coords": [
-        -118.2971382,
-        34.0637259
+        -118.2969952,
+        34.0638113
       ],
       "amenity": "restaurant",
-      "cuisine": "japanese",
+      "cuisine": "sushi",
       "outdoor_seating": "unknown",
-      "website": null,
-      "phone": null,
-      "opening_hours": null,
+      "website": "https://www.handrollbar.com/locations/koreatown/",
+      "phone": "+1 213-338-2284",
+      "opening_hours": "Mo-Th,Su 11:30-23:00; Fr-Sa 11:30-23:30; PH off",
       "placesId": null,
       "rating": null,
       "priceLevel": null,
@@ -2349,17 +2003,14 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933394800",
       "name": "Starbucks",
       "coords": [
-        -118.2970113,
-        34.0637289
+        -118.2971159,
+        34.0637788
       ],
       "amenity": "cafe",
       "cuisine": "coffee_shop",
@@ -2374,10 +2025,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933394801",
@@ -2399,10 +2047,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933394802",
@@ -2415,7 +2060,7 @@
       "cuisine": "ramen",
       "outdoor_seating": "unknown",
       "website": null,
-      "phone": null,
+      "phone": "+1 213-318-5216",
       "opening_hours": null,
       "placesId": null,
       "rating": null,
@@ -2424,10 +2069,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933394803",
@@ -2449,10 +2091,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933394804",
@@ -2464,9 +2103,9 @@
       "amenity": "restaurant",
       "cuisine": "korean",
       "outdoor_seating": "unknown",
-      "website": null,
+      "website": "https://www.loudersla.com/",
       "phone": null,
-      "opening_hours": null,
+      "opening_hours": "Mo 17:00-01:00; Tu 17:00-01:30; We-Sa 12:00-01:30; Su 12:00-24:00",
       "placesId": null,
       "rating": null,
       "priceLevel": null,
@@ -2474,10 +2113,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933444906",
@@ -2489,8 +2125,8 @@
       "amenity": "restaurant",
       "cuisine": "french",
       "outdoor_seating": "unknown",
-      "website": null,
-      "phone": null,
+      "website": "https://www.lecomptoirla.com/",
+      "phone": "+1-213-290-0750",
       "opening_hours": null,
       "placesId": null,
       "rating": null,
@@ -2499,10 +2135,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933444907",
@@ -2524,14 +2157,11 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933444908",
-      "name": "King",
+      "name": "King Chang",
       "coords": [
         -118.3038152,
         34.0634212
@@ -2539,9 +2169,9 @@
       "amenity": "restaurant",
       "cuisine": "korean",
       "outdoor_seating": "unknown",
-      "website": null,
-      "phone": null,
-      "opening_hours": null,
+      "website": "https://kingchangla.com/",
+      "phone": "+1 213-318-5250",
+      "opening_hours": "Mo-We,Su 16:00-24:00; Th-Sa 16:00-02:00",
       "placesId": null,
       "rating": null,
       "priceLevel": null,
@@ -2549,10 +2179,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933444909",
@@ -2564,7 +2191,7 @@
       "amenity": "restaurant",
       "cuisine": "korean;barbecue",
       "outdoor_seating": "unknown",
-      "website": null,
+      "website": "https://www.kijung.com/ahgassi-gopchang/",
       "phone": null,
       "opening_hours": null,
       "placesId": null,
@@ -2574,14 +2201,11 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10933444910",
-      "name": "3Thyme",
+      "name": "3THYME Coffee & Herbs",
       "coords": [
         -118.3039153,
         34.0631358
@@ -2589,9 +2213,9 @@
       "amenity": "cafe",
       "cuisine": "coffee_shop",
       "outdoor_seating": "unknown",
-      "website": null,
-      "phone": null,
-      "opening_hours": null,
+      "website": "https://3thyme.com/index.html",
+      "phone": "+1 213-568-3435",
+      "opening_hours": "Mo-Th,Su 08:00-20:00; Fr-Sa 08:00-22:00",
       "placesId": null,
       "rating": null,
       "priceLevel": null,
@@ -2599,10 +2223,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10982834406",
@@ -2624,10 +2245,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/10982834505",
@@ -2649,10 +2267,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11361257949",
@@ -2674,10 +2289,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11361257951",
@@ -2699,10 +2311,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11560851269",
@@ -2724,10 +2333,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11639971855",
@@ -2749,10 +2355,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11768603523",
@@ -2774,10 +2377,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11768603524",
@@ -2799,10 +2399,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11773268804",
@@ -2824,10 +2421,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11773268805",
@@ -2849,10 +2443,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11773268806",
@@ -2874,10 +2465,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11774890857",
@@ -2899,10 +2487,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11789393827",
@@ -2924,11 +2509,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11789400379",
@@ -2950,10 +2531,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11789400383",
@@ -2975,10 +2553,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11789400396",
@@ -3000,10 +2575,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11795085558",
@@ -3025,10 +2597,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11795099606",
@@ -3050,10 +2619,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11795099607",
@@ -3075,10 +2641,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11795099609",
@@ -3100,10 +2663,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11795133870",
@@ -3125,10 +2685,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11795133871",
@@ -3150,10 +2707,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11832175707",
@@ -3175,10 +2729,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/11929713169",
@@ -3200,10 +2751,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/12044908869",
@@ -3225,10 +2773,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/12349545113",
@@ -3250,10 +2795,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/12372861463",
@@ -3275,10 +2817,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/12377108999",
@@ -3300,10 +2839,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/12377109000",
@@ -3325,10 +2861,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/12583177456",
@@ -3350,10 +2883,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/12662780401",
@@ -3375,10 +2905,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/12981827301",
@@ -3400,10 +2927,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13073395321",
@@ -3425,10 +2949,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13073439063",
@@ -3450,10 +2971,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13073495869",
@@ -3475,10 +2993,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13073514111",
@@ -3500,10 +3015,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13073516576",
@@ -3525,10 +3037,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13074481780",
@@ -3550,10 +3059,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13198713201",
@@ -3575,11 +3081,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13395910006",
@@ -3601,10 +3103,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13409045959",
@@ -3626,10 +3125,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13409986774",
@@ -3651,10 +3147,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13411321791",
@@ -3664,8 +3157,8 @@
         34.0636492
       ],
       "amenity": "cafe",
-      "cuisine": null,
-      "outdoor_seating": "unknown",
+      "cuisine": "coffee_shop",
+      "outdoor_seating": "no",
       "website": "https://6ixthsensela.com/pages/copy-of-6xs-coffee-v1",
       "phone": "+1-213-660-1984",
       "opening_hours": "Mo-Su 07:00-16:00",
@@ -3676,10 +3169,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13521708032",
@@ -3701,10 +3191,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13667635905",
@@ -3726,10 +3213,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13667635906",
@@ -3751,10 +3235,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13667635908",
@@ -3776,10 +3257,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13667635910",
@@ -3801,10 +3279,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13667635911",
@@ -3826,10 +3301,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13712429601",
@@ -3851,10 +3323,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13712456101",
@@ -3876,10 +3345,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/node/13808920886",
@@ -3901,11 +3367,183 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Cocktails",
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
+    },
+    {
+      "id": "osm/node/13954715192",
+      "name": "Woo Hyang Woo",
+      "coords": [
+        -118.2964652,
+        34.0637475
+      ],
+      "amenity": "restaurant",
+      "cuisine": "korean",
+      "outdoor_seating": "unknown",
+      "website": "https://www.hyungroupusa.com/woohyangwoo-about",
+      "phone": "+1 213-315-5080",
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": []
+    },
+    {
+      "id": "osm/node/13954763768",
+      "name": "Wacky Grill",
+      "coords": [
+        -118.3146109,
+        34.0620521
+      ],
+      "amenity": "restaurant",
+      "cuisine": "japanese",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": []
+    },
+    {
+      "id": "osm/node/13954812406",
+      "name": "Arado",
+      "coords": [
+        -118.3143382,
+        34.0620463
+      ],
+      "amenity": "restaurant",
+      "cuisine": "korean",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": []
+    },
+    {
+      "id": "osm/node/13954825914",
+      "name": "Danbi",
+      "coords": [
+        -118.2969116,
+        34.063993
+      ],
+      "amenity": "restaurant",
+      "cuisine": "korean",
+      "outdoor_seating": "unknown",
+      "website": "https://danbi-la.com/",
+      "phone": "+1 818-527-2213",
+      "opening_hours": "Mo off; Tu-Th,Su 17:00-22:00; Fr-Sa 17:00-23:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": []
+    },
+    {
+      "id": "osm/node/13955080238",
+      "name": "Yeogiyo",
+      "coords": [
+        -118.2970945,
+        34.0631186
+      ],
+      "amenity": "restaurant",
+      "cuisine": "korean",
+      "outdoor_seating": "unknown",
+      "website": "https://yeogiyo.net/",
+      "phone": null,
+      "opening_hours": "11:00-23:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": []
+    },
+    {
+      "id": "osm/node/13955684778",
+      "name": "Nandarang",
+      "coords": [
+        -118.3058773,
+        34.0638447
+      ],
+      "amenity": "restaurant",
+      "cuisine": "korean",
+      "outdoor_seating": "unknown",
+      "website": "https://nandarangla.com/",
+      "phone": "+1 213-388-8513",
+      "opening_hours": "11:00-02:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": []
+    },
+    {
+      "id": "osm/node/13955684781",
+      "name": "Mr Boba",
+      "coords": [
+        -118.3056959,
+        34.0638388
+      ],
+      "amenity": "cafe",
+      "cuisine": "bubble_tea",
+      "outdoor_seating": "unknown",
+      "website": null,
+      "phone": null,
+      "opening_hours": null,
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": []
+    },
+    {
+      "id": "osm/node/13955712030",
+      "name": "Liu's Cafe",
+      "coords": [
+        -118.3084386,
+        34.063628
+      ],
+      "amenity": "cafe",
+      "cuisine": "taiwanese",
+      "outdoor_seating": "unknown",
+      "website": "https://liuscafe.com/",
+      "phone": "+1 213-264-8585",
+      "opening_hours": "Mo-Tu off; We-Su 11:00-21:00",
+      "placesId": null,
+      "rating": null,
+      "priceLevel": null,
+      "reviewCount": null,
+      "photoRef": null,
+      "openNow": null,
+      "seatingType": null,
+      "drinkTypes": []
     },
     {
       "id": "osm/way/402220799",
@@ -3927,10 +3565,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/420669052",
@@ -3952,10 +3587,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/420672425",
@@ -3977,10 +3609,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/427272068",
@@ -4002,10 +3631,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/427274618",
@@ -4027,10 +3653,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/427274664",
@@ -4052,10 +3675,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/427278381",
@@ -4077,10 +3697,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/427278383",
@@ -4102,10 +3719,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/427278413",
@@ -4127,10 +3741,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/427290092",
@@ -4152,10 +3763,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/427462766",
@@ -4177,10 +3785,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/1267068014",
@@ -4202,10 +3807,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/1267068023",
@@ -4227,10 +3829,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Coffee",
-        "Beer"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/1267068027",
@@ -4252,10 +3851,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/1267068028",
@@ -4277,10 +3873,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/1267847603",
@@ -4302,10 +3895,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/1268124665",
@@ -4327,10 +3917,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     },
     {
       "id": "osm/way/1268124669",
@@ -4352,10 +3939,7 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": [
-        "Beer",
-        "Wine"
-      ]
+      "drinkTypes": []
     }
   ]
 }
