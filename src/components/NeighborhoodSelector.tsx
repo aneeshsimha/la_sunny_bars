@@ -123,6 +123,7 @@ export default function NeighborhoodSelector({ onSelect }: NeighborhoodSelectorP
               className="neighborhood-selector__search-input"
               type="text"
               role="combobox"
+              aria-label="Search neighborhoods"
               aria-expanded={open}
               aria-controls={listboxId}
               aria-activedescendant={
@@ -143,7 +144,7 @@ export default function NeighborhoodSelector({ onSelect }: NeighborhoodSelectorP
             aria-label="Neighborhood"
           >
             {filtered.length === 0 ? (
-              <li className="neighborhood-selector__empty">No neighborhoods found</li>
+              <li role="presentation" className="neighborhood-selector__empty">No neighborhoods found</li>
             ) : (
               filtered.map((n, i) => {
                 const isActive = n.slug === neighborhoodSlug;
