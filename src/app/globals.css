@@ -1273,17 +1273,12 @@ body {
   transition: transform 0.15s ease;
 }
 
-.neighborhood-selector__menu {
+.neighborhood-selector__dropdown {
   position: absolute;
   top: 46px;
   left: 50%;
   transform: translateX(-50%);
   width: 300px;
-  max-height: 340px;
-  overflow-y: auto;
-  margin: 0;
-  padding: 7px;
-  list-style: none;
   background: rgba(254, 249, 238, 0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -1291,6 +1286,53 @@ body {
   border-radius: 16px;
   box-shadow: 0 20px 50px -16px rgba(28, 25, 23, 0.4);
   animation: lsbRise 0.2s ease;
+  overflow: hidden;
+}
+
+.neighborhood-selector__search {
+  position: relative;
+  padding: 8px 8px 4px;
+}
+
+.neighborhood-selector__search-icon {
+  position: absolute;
+  left: 21px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+
+.neighborhood-selector__search-input {
+  width: 100%;
+  padding: 8px 12px 8px 34px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  color: var(--color-text);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.neighborhood-selector__search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.neighborhood-selector__search-input:focus {
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 0 0 3px var(--color-sun-glow);
+}
+
+.neighborhood-selector__menu {
+  max-height: 280px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 4px 7px 7px;
+  list-style: none;
 }
 
 .neighborhood-selector__option {
@@ -1314,6 +1356,23 @@ body {
 .neighborhood-selector__option.active {
   background: rgba(245, 158, 11, 0.12);
   font-weight: 700;
+}
+
+.neighborhood-selector__option.highlighted {
+  background: rgba(28, 25, 23, 0.07);
+  outline: none;
+}
+
+.neighborhood-selector__option.active.highlighted {
+  background: rgba(245, 158, 11, 0.2);
+}
+
+.neighborhood-selector__empty {
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  text-align: center;
+  user-select: none;
 }
 
 .neighborhood-selector__option-count {
