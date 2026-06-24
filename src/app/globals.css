@@ -124,6 +124,35 @@ body {
   font-style: italic;
 }
 
+.sidebar-github-credit {
+  flex-shrink: 0;
+  padding: 10px 16px;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.sidebar-github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 11.5px;
+  font-weight: 450;
+  letter-spacing: 0.01em;
+  transition: color 0.15s ease;
+}
+
+.sidebar-github-link:hover {
+  color: var(--color-text-secondary);
+}
+
+.sidebar-github-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
 /* ============ SEARCH ============ */
 
 .search-container { padding: 18px 24px 0; }
