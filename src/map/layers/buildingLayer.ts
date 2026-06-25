@@ -159,6 +159,9 @@ export function updateSunLight(
   map.setFog({
     color: palette.fogColor,
     "high-color": palette.fogHighColor,
+    "star-intensity": 0.6,
+    "space-color": "rgb(11, 11, 25)",
+    "horizon-blend": 0.02,
   });
 
   // Move the sky's sun with the real sun so the atmosphere brightens toward it.
