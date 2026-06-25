@@ -81,6 +81,12 @@ export function bindStores(map: mapboxgl.Map): () => void {
   };
   map.on("moveend", handleMoveEnd);
 
+  // ── Bearing: keep uiStore in sync so the CompassButton needle reflects
+  //    the current map rotation. Seed immediately, then update on each rotate.
+  const onRotate = () => useUIStore.getState().setBearing(map.getBearing());
+  map.on("rotate", onRotate);
+  onRotate(); // seed initial bearing
+
   // ── Time store: lighting + scoring + shadows ────────────────────────────
   const unsubTime = useTimeStore.subscribe((state, prev) => {
     if (state.currentTime === prev.currentTime) return;
@@ -137,6 +143,14 @@ export function bindStores(map: mapboxgl.Map): () => void {
     if (state.shadowOverlayOn) scheduleShadows();
   });
 
+  // ── North-reset nonce: ease map back to north when CompassButton is clicked.
+  //    Subscribe detects changes by comparing nonce; no initial-fire concern
+  //    since the subscriber only runs when something changes.
+  const unsubNorthReset = useUIStore.subscribe((state, prev) => {
+    if (state.northResetNonce === prev.northResetNonce) return;
+    map.easeTo({ bearing: 0, duration: 400 });
+  });
+
   // Seed initial viewport bounds + shadows now that the map is loaded.
   const initBbox = currentBbox(map);
   if (initBbox) useUIStore.getState().setMapBounds(initBbox);
@@ -144,11 +158,13 @@ export function bindStores(map: mapboxgl.Map): () => void {
 
   return () => {
     map.off("moveend", handleMoveEnd);
+    map.off("rotate", onRotate);
     if (shadowTimer) clearTimeout(shadowTimer);
     unsubTime();
     unsubVenues();
     unsubFilter();
     unsubLocation();
     unsubUI();
+    unsubNorthReset();
   };
 }

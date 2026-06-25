@@ -148,6 +148,7 @@ export default function AppShell({
       {
         padding: { top: 120, right: 80, bottom: 160, left: 420 },
         pitch: 45,
+        bearing: map.getBearing(),
         duration: 900,
       }
     );
@@ -194,7 +195,7 @@ export default function AppShell({
             [west, south],
             [east, north],
           ],
-          { padding: { top: 70, bottom: 120, left: 50, right: 50 }, pitch: 45, duration: 600 }
+          { padding: { top: 70, bottom: 120, left: 50, right: 50 }, pitch: 45, bearing: map.getBearing(), duration: 600 }
         );
       }
     }

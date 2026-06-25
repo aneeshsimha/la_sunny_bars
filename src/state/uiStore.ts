@@ -12,12 +12,16 @@ interface UIState {
   shadeMode: boolean;
   sheetSnap: SheetSnap;
   mapBounds: MapBounds | null;
+  bearing: number;
+  northResetNonce: number;
   setMapReady: (ready: boolean) => void;
   setShadowOverlayOn: (on: boolean) => void;
   setFocusedNeighborhood: (neighborhood: string | null) => void;
   setShadeMode: (on: boolean) => void;
   setSheetSnap: (snap: SheetSnap) => void;
   setMapBounds: (bounds: MapBounds | null) => void;
+  setBearing: (b: number) => void;
+  requestNorthReset: () => void;
 }
 
 export const useUIStore = create<UIState>((set) => ({
@@ -27,6 +31,8 @@ export const useUIStore = create<UIState>((set) => ({
   shadeMode: false,
   sheetSnap: "peek",
   mapBounds: null,
+  bearing: 0,
+  northResetNonce: 0,
   setMapReady: (ready) => set({ mapReady: ready }),
   setShadowOverlayOn: (on) => set({ shadowOverlayOn: on }),
   setFocusedNeighborhood: (neighborhood) =>
@@ -34,4 +40,7 @@ export const useUIStore = create<UIState>((set) => ({
   setShadeMode: (on) => set({ shadeMode: on }),
   setSheetSnap: (snap) => set({ sheetSnap: snap }),
   setMapBounds: (bounds) => set({ mapBounds: bounds }),
+  setBearing: (b) => set({ bearing: b }),
+  requestNorthReset: () =>
+    set((s) => ({ northResetNonce: s.northResetNonce + 1 })),
 }));

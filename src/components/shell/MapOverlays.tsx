@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { useVenueStore } from "@/state/venueStore";
 import TimeSlider from "@/components/controls/TimeSlider";
 import ShadowToggle from "@/components/controls/ShadowToggle";
+import CompassButton from "@/components/controls/CompassButton";
 import SunArcHUDContainer from "@/components/shell/SunArcHUDContainer";
 import SunContextCard from "@/components/shell/SunContextCard";
 import GithubBadge from "@/components/shell/GithubBadge";
@@ -29,6 +30,7 @@ export default function MapOverlays() {
       <SunContextCard />
       <SunArcHUDContainer />
       <GithubBadge />
+      <CompassButton />
       <ShadowToggle />
       <TimeSlider />
       {selectedVenue && (
