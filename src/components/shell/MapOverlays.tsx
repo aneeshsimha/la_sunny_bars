@@ -6,6 +6,7 @@ import TimeSlider from "@/components/controls/TimeSlider";
 import ShadowToggle from "@/components/controls/ShadowToggle";
 import SunArcHUDContainer from "@/components/shell/SunArcHUDContainer";
 import SunContextCard from "@/components/shell/SunContextCard";
+import GithubBadge from "@/components/shell/GithubBadge";
 import VenueDetail from "@/components/venue/VenueDetail";
 
 /**
@@ -27,6 +28,7 @@ export default function MapOverlays() {
     <>
       <SunContextCard />
       <SunArcHUDContainer />
+      <GithubBadge />
       <ShadowToggle />
       <TimeSlider />
       {selectedVenue && (
