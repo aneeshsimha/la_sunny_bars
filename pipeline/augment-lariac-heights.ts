@@ -44,7 +44,10 @@ import {
   feetToMeters,
   polygonCentroid,
   findNearestLariacMatch,
+  assertResponseIs4326,
+  shouldWriteNeighborhood,
   MATCH_RADIUS_METERS,
+  LARIAC_MIN_COVERAGE,
   type LariacRecord,
 } from './lariac.js';
 
@@ -96,6 +99,7 @@ interface ArcGisResponse {
   features?: ArcGisFeature[];
   exceededTransferLimit?: boolean;
   error?: { code: number; message: string };
+  spatialReference?: { wkid?: number; latestWkid?: number };
 }
 
 function sleep(ms: number): Promise<void> {
@@ -150,6 +154,7 @@ async function fetchLariacPage(
   if (json.error) {
     throw new Error(`LARIAC FeatureServer error: ${JSON.stringify(json.error)}`);
   }
+  assertResponseIs4326(json.spatialReference);
   return json;
 }
 
@@ -206,6 +211,7 @@ interface AugmentResult {
   afterMedian: number;
   matched: number;
   gzKB: number;
+  skipped: boolean; // true if LARIAC coverage was below LARIAC_MIN_COVERAGE and the write was withheld
 }
 
 async function augmentNeighborhood(
@@ -270,19 +276,45 @@ async function augmentNeighborhood(
     );
   }
 
+  const matchRate = beforeCount > 0 ? matched / beforeCount : 0;
+  const afterMeasuredPct = matchRate * 100;
+  const beforeMeasuredPct = (beforeMeasuredCount / beforeCount) * 100;
+  const afterMedian = median(occluders.map((o) => o.height));
+
   const output: BuildingsFile = {
     ...before,
     generatedAt: new Date().toISOString(),
     occluders,
   };
-
   const json = JSON.stringify(output);
   const gzKB = zlib.gzipSync(json).length / 1024;
-  fs.writeFileSync(buildingsPath, json);
 
-  const afterMeasuredPct = (matched / beforeCount) * 100;
-  const beforeMeasuredPct = (beforeMeasuredCount / beforeCount) * 100;
-  const afterMedian = median(occluders.map((o) => o.height));
+  // Coverage gate: if LARIAC's own height coverage for this bbox is too
+  // sparse (match rate below LARIAC_MIN_COVERAGE), withhold the write and
+  // keep the existing OSM-derived heights. This makes the Pasadena
+  // withholding decision structural — a future `--all` re-run cannot
+  // silently ship low-coverage data (was previously enforced only by a
+  // manual git-checkout). See docs/height-audit.md v2.
+  const willWrite = shouldWriteNeighborhood(matchRate);
+  if (!willWrite) {
+    console.warn(
+      `[lariac] SKIP ${hood.slug}: LARIAC coverage ${afterMeasuredPct.toFixed(1)}% < ` +
+        `${(LARIAC_MIN_COVERAGE * 100).toFixed(0)}% — keeping existing heights (buildings.json not overwritten)`
+    );
+    return {
+      slug: hood.slug,
+      count: beforeCount,
+      beforeMeasuredPct,
+      afterMeasuredPct,
+      beforeMedian,
+      afterMedian,
+      matched,
+      gzKB,
+      skipped: true,
+    };
+  }
+
+  fs.writeFileSync(buildingsPath, json);
 
   console.log(
     `[lariac] ${hood.slug}: matched ${matched}/${beforeCount} (${afterMeasuredPct.toFixed(1)}%) — ` +
@@ -305,6 +337,7 @@ async function augmentNeighborhood(
     afterMedian,
     matched,
     gzKB,
+    skipped: false,
   };
 }
 
@@ -345,12 +378,20 @@ async function main(): Promise<void> {
   }
 
   console.log('\n[lariac] ===== summary =====');
-  console.log('slug'.padEnd(16), 'measured before->after'.padEnd(24), 'median before->after');
+  console.log('slug'.padEnd(16), 'measured before->after'.padEnd(24), 'median before->after'.padEnd(24), 'written?');
   for (const r of results) {
     console.log(
       r.slug.padEnd(16),
       `${r.beforeMeasuredPct.toFixed(1)}% -> ${r.afterMeasuredPct.toFixed(1)}%`.padEnd(24),
-      `${r.beforeMedian.toFixed(1)}m -> ${r.afterMedian.toFixed(1)}m`
+      `${r.beforeMedian.toFixed(1)}m -> ${r.afterMedian.toFixed(1)}m`.padEnd(24),
+      r.skipped ? 'SKIPPED (low coverage)' : 'written'
+    );
+  }
+
+  const skipped = results.filter((r) => r.skipped).map((r) => r.slug);
+  if (skipped.length > 0) {
+    console.warn(
+      `\n[lariac] skipped (LARIAC coverage < ${(LARIAC_MIN_COVERAGE * 100).toFixed(0)}%, existing heights kept): ${skipped.join(', ')}`
     );
   }
 

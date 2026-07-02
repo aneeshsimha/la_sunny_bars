@@ -1,5 +1,13 @@
 import { describe, it, expect } from 'vitest';
-import { feetToMeters, polygonCentroid, findNearestLariacMatch, type LariacRecord } from './lariac';
+import {
+  feetToMeters,
+  polygonCentroid,
+  findNearestLariacMatch,
+  shouldWriteNeighborhood,
+  assertResponseIs4326,
+  LARIAC_MIN_COVERAGE,
+  type LariacRecord,
+} from './lariac';
 
 describe('feetToMeters', () => {
   it('converts US Bank Tower (1016.83 ft measured LARIAC HEIGHT) to ~309.9m, not ~1000m', () => {
@@ -82,5 +90,39 @@ describe('findNearestLariacMatch', () => {
     const onBoundary = offsetRecord(20, 0, 100, 50);
     const match = findNearestLariacMatch(centroid, [onBoundary], 20);
     expect(match).not.toBeNull();
+  });
+});
+
+describe('shouldWriteNeighborhood (coverage gate)', () => {
+  it('withholds the write below the coverage threshold (e.g. Pasadena at 29.9%)', () => {
+    expect(shouldWriteNeighborhood(0.299)).toBe(false);
+  });
+
+  it('permits the write at or above the coverage threshold', () => {
+    expect(shouldWriteNeighborhood(LARIAC_MIN_COVERAGE)).toBe(true); // exactly at threshold
+    expect(shouldWriteNeighborhood(0.993)).toBe(true); // e.g. Silver Lake
+  });
+
+  it('withholds the write at a zero match rate', () => {
+    expect(shouldWriteNeighborhood(0)).toBe(false);
+  });
+});
+
+describe('assertResponseIs4326 (SR guard)', () => {
+  it('accepts a 4326 spatial reference', () => {
+    expect(() => assertResponseIs4326({ wkid: 4326, latestWkid: 4326 })).not.toThrow();
+  });
+
+  it('accepts when only latestWkid reports 4326', () => {
+    expect(() => assertResponseIs4326({ latestWkid: 4326 })).not.toThrow();
+  });
+
+  it('rejects a Web Mercator (102100/3857) spatial reference', () => {
+    expect(() => assertResponseIs4326({ wkid: 102100, latestWkid: 3857 })).toThrow(/spatial reference/i);
+  });
+
+  it('tolerates a missing/empty spatial reference (does not throw)', () => {
+    expect(() => assertResponseIs4326(undefined)).not.toThrow();
+    expect(() => assertResponseIs4326({})).not.toThrow();
   });
 });

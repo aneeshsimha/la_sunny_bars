@@ -23,9 +23,51 @@ export const FEET_TO_METERS = 0.3048;
 // ANS-235 brief).
 export const MATCH_RADIUS_METERS = 20;
 
+// Minimum fraction of a neighborhood's footprints that must match a LARIAC
+// measured height for the augmentation to be written. Below this, LARIAC's
+// own height coverage for that bbox is too sparse to trust (e.g. Pasadena:
+// only ~5.6% of building polygons carry any HEIGHT/ELEV, yielding a 29.9%
+// match rate) and overwriting would ship worse data than the existing OSM
+// heights. This makes the withholding guardrail structural rather than a
+// manual git-checkout step, so a future `--all` re-run can't silently ship
+// Pasadena-quality data. See docs/height-audit.md v2.
+export const LARIAC_MIN_COVERAGE = 0.5;
+
+/**
+ * Whether a neighborhood's LARIAC augmentation should be persisted, given
+ * the fraction of its footprints that matched a measured LARIAC height.
+ * Writes at or above LARIAC_MIN_COVERAGE; skips below it.
+ */
+export function shouldWriteNeighborhood(matchRate: number): boolean {
+  return matchRate >= LARIAC_MIN_COVERAGE;
+}
+
 /** Convert a LARIAC HEIGHT/ELEV value (feet) to meters. */
 export function feetToMeters(feet: number): number {
   return feet * FEET_TO_METERS;
+}
+
+/**
+ * Guard against silently ingesting mis-projected centroids. The ArcGIS query
+ * sets outSR=4326, but if the service ever ignores/changes that, centroids
+ * would come back in Web Mercator (wkid 102100/3857) meters instead of
+ * lng/lat degrees — which the 20m match radius would silently mishandle.
+ * Throws if a spatial reference is reported and its wkid is not 4326. A
+ * missing/undefined spatialReference is tolerated (older/edge responses),
+ * only a present-and-wrong wkid is rejected.
+ */
+export function assertResponseIs4326(spatialReference?: {
+  wkid?: number;
+  latestWkid?: number;
+}): void {
+  if (!spatialReference) return;
+  const { wkid, latestWkid } = spatialReference;
+  if (wkid === undefined && latestWkid === undefined) return;
+  if (wkid === 4326 || latestWkid === 4326) return;
+  throw new Error(
+    `LARIAC FeatureServer returned an unexpected spatial reference (wkid=${wkid}, latestWkid=${latestWkid}); ` +
+      `expected 4326. Centroids are likely mis-projected (Web Mercator meters) — refusing to ingest.`
+  );
 }
 
 /** A LARIAC building record: centroid (lng/lat, EPSG:4326) + raw feet values. */
