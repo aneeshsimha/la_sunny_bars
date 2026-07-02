@@ -268,16 +268,15 @@ describe('scorePartialShade acceptance: N-facing vs S-facing patio on the same b
   // from it entirely (south rows top out well below bandSouthMeters), so the
   // two must diverge materially.
   //
-  // The building's east-west edge is placed deliberately: `computeShadowPolygon`
-  // builds the shadow as [footprint, ...projected.reverse()], which only
-  // yields a vertical boundary edge at each rectangle's *east* edge (not its
-  // west edge) — so a point is only reliably detected as "in shadow" when its
-  // longitude falls within the shift-magnitude-wide strip between the
-  // footprint's east edge and the projected footprint's east edge, not
-  // anywhere in the footprint's full width. Placing the footprint's east edge
-  // just beyond the sample grid's east column (for a west-falling morning
-  // shadow) or just west of the grid's west column (for an east-falling
-  // evening shadow) keeps every sample column inside that reliable strip.
+  // The building's east-west edge is placed deliberately, positioning its
+  // east edge just beyond the sample grid's east column (for a west-falling
+  // morning shadow) or just west of the grid's west column (for an
+  // east-falling evening shadow), so every sample column sits inside the
+  // shadow's ground footprint.
+  // (Historical note: this placement used to be load-bearing to dodge a
+  // `computeShadowPolygon` self-intersecting-ring bug, fixed in ANS-234 —
+  // shade detection is now reliable across a footprint's full width, but the
+  // placement is left as-is since it still exercises the intended scenario.)
   const cosLat = Math.cos((CENTER[1] * Math.PI) / 180);
   const metersToDLat = (m: number) => m / METERS_PER_DEG_LAT;
   const metersToDLng = (m: number) => m / (METERS_PER_DEG_LAT * cosLat);

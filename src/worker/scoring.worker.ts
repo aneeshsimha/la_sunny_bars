@@ -3,11 +3,12 @@ declare const self: DedicatedWorkerGlobalScope;
 
 import SunCalc from 'suncalc';
 import type { Occluder, SunPosition } from '../engine/shadows';
-import { buildSpatialIndex, precomputeCandidates } from '../engine/spatial';
+import { buildSpatialIndex, precomputeCandidates, nearestGroundElev, type SpatialIndex } from '../engine/spatial';
 import { scorePartialShade } from '../engine/partialShade';
 import { flatHorizonProfile, isSunAboveHorizon } from '../engine/terrain';
 import type { HorizonProfile } from '../engine/terrain';
-import type { WorkerInMsg, WorkerOutMsg, PlanResultMsg } from './protocol';
+import { computeShadowFeatures } from '../engine/shadowProjection';
+import type { WorkerInMsg, WorkerOutMsg, PlanResultMsg, ShadowResultMsg } from './protocol';
 
 // --- State ---
 
@@ -17,6 +18,8 @@ type StoredVenue = {
   facadeAzimuths?: number[];
   seatingType?: string | null;
   buildingHeight?: number | null;
+  /** Venue's ground elevation (meters), precomputed at init (ANS-238). */
+  groundElev: number | null;
 };
 
 let storedVenues: StoredVenue[] = [];
@@ -24,13 +27,29 @@ let candidateMap: Map<string, Occluder[]> = new Map();
 let storedHorizonProfile: HorizonProfile = flatHorizonProfile();
 
 /**
+ * Spatial index of BUILDING-only occluders (ANS-237), retained across the
+ * worker's lifetime to serve `shadow` messages. Deliberately separate from
+ * the scoring index above `init` builds (which includes tree/awning
+ * occluders and is only used transiently for `precomputeCandidates`) —
+ * reusing that index here would silently add tree-canopy shadows to the
+ * visible ground-shadow layer, which never rendered them before. Empty until
+ * `init` runs.
+ */
+let shadowIndex: SpatialIndex = buildSpatialIndex([]);
+
+/**
  * Receiver elevation (meters) for scoring a venue: a rooftop venue matched to
  * a building of known height is scored at that roof elevation instead of
  * ground level (ANS-218 D6); everything else scores at z=0.
  *
- * TODO(D6 follow-up): near-field terrain slope (sloped streets) is not
- * modeled here — that needs ground-elevation data from a DEM (USGS
- * 3DEP/SRTM), which isn't in the repo and would require a network fetch.
+ * Composes with the venue's ground elevation (`groundElev`, ANS-238) via
+ * `scorePartialShade`'s `groundElev` option — see `scoreVenues` / the `plan`
+ * handler below.
+ *
+ * TODO(D3 follow-up): the far-terrain horizon profile (hills/mountains
+ * occluding low sun beyond any matched building — ANS-120) is not modeled
+ * here — that needs a DEM (USGS 3DEP/SRTM), which isn't in the repo and
+ * would require a network fetch.
  */
 function receiverZFor(venue: StoredVenue): number {
   return venue.seatingType === 'rooftop' && venue.buildingHeight != null
@@ -65,6 +84,7 @@ function scoreVenues(sun: SunPosition): Record<string, number> {
     scores[venue.id] = scorePartialShade(venue.coords, candidates, sun, {
       facadeAzimuths: venue.facadeAzimuths ?? [],
       receiverZ: receiverZFor(venue),
+      groundElev: venue.groundElev,
     });
   }
 
@@ -77,11 +97,19 @@ self.onmessage = (event: MessageEvent<WorkerInMsg>) => {
   const msg = event.data;
 
   if (msg.type === 'init') {
-    storedVenues = msg.venues;
     storedHorizonProfile = msg.horizonProfile ?? flatHorizonProfile();
 
     const index = buildSpatialIndex(msg.occluders);
-    candidateMap = precomputeCandidates(index, storedVenues);
+    candidateMap = precomputeCandidates(index, msg.venues);
+    shadowIndex = buildSpatialIndex(msg.buildingOccluders ?? msg.occluders);
+
+    // Estimate each venue's ground elevation from its nearest candidate
+    // occluder with a known baseElev (ANS-238); null when no candidate has
+    // one (unmatched, or a withheld neighborhood like Pasadena).
+    storedVenues = msg.venues.map((venue) => ({
+      ...venue,
+      groundElev: nearestGroundElev(venue.coords, candidateMap.get(venue.id) ?? []),
+    }));
 
     const reply: WorkerOutMsg = {
       type: 'ready',
@@ -98,6 +126,23 @@ self.onmessage = (event: MessageEvent<WorkerInMsg>) => {
       type: 'scoreResult',
       requestId: msg.requestId,
       scores,
+    };
+    self.postMessage(reply);
+    return;
+  }
+
+  if (msg.type === 'shadow') {
+    const features = computeShadowFeatures(
+      shadowIndex,
+      msg.sun,
+      msg.bounds,
+      msg.zoom,
+      msg.cap
+    );
+    const reply: ShadowResultMsg = {
+      type: 'shadowResult',
+      requestId: msg.requestId,
+      features,
     };
     self.postMessage(reply);
     return;
@@ -138,6 +183,7 @@ self.onmessage = (event: MessageEvent<WorkerInMsg>) => {
       const score = scorePartialShade(venue.coords, candidates, sun, {
         facadeAzimuths: venue.facadeAzimuths ?? [],
         receiverZ: receiverZFor(venue),
+        groundElev: venue.groundElev,
       });
       // Threshold: if score drops below 0.2, consider it in shadow
       if (score < 0.2) {

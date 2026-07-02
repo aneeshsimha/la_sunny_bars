@@ -9,6 +9,7 @@ export interface Occluder {
   height: number; // height in meters
   opacity?: number; // 1.0 = solid building; <1.0 = tree canopy, attenuates shadow
   heightSource?: 'measured' | 'levels' | 'default'; // provenance of `height`, if known (ANS-213 B9)
+  baseElev?: number | null; // ground elevation in meters, from LARIAC ELEV when matched (ANS-235); null if unmatched
 }
 
 export interface SunPosition {
@@ -34,12 +35,16 @@ export const METERS_PER_DEG_LAT = 111_320;
  *
  * `receiverZ` (meters, default 0) is the receiver's elevation above ground
  * (e.g. a rooftop patio's height); see `computeShadowPolygon` (ANS-218 D6).
+ * `receiverGroundElev` (meters, absolute) is the receiver's ground elevation;
+ * when known (along with an occluder's `baseElev`) it makes shading
+ * elevation-aware (ANS-238) — see `effectiveCasterHeight`.
  */
 export function isPointInSunlight(
   point: [number, number], // [lng, lat]
   occluders: Occluder[],
   sun: SunPosition,
-  receiverZ: number = 0
+  receiverZ: number = 0,
+  receiverGroundElev?: number | null
 ): boolean {
   // Sun below or at the horizon — everything is in shadow
   if (sun.altitude <= 0) return false;
@@ -49,7 +54,7 @@ export function isPointInSunlight(
     // Very transparent occluders do not block sun at all
     if (opacity <= 0.3) continue;
 
-    const shadowPoly = computeShadowPolygon(occluder, sun, receiverZ);
+    const shadowPoly = computeShadowPolygon(occluder, sun, receiverZ, receiverGroundElev);
     if (isPointInPolygon(point, shadowPoly)) {
       return false;
     }
@@ -59,43 +64,89 @@ export function isPointInSunlight(
 }
 
 /**
+ * Effective caster height (meters) of `occluder` as seen by a receiver at
+ * `receiverZ` meters above its own ground (`receiverGroundElev`, meters,
+ * absolute — e.g. LARIAC ELEV), per ANS-238's near-field ground-slope model:
+ *
+ *   receiverAbsoluteZ  = receiverGroundElev + receiverZ
+ *   casterTopAbsoluteZ = (occluder.baseElev ?? receiverGroundElev) + occluder.height
+ *   effectiveHeight    = casterTopAbsoluteZ - receiverAbsoluteZ
+ *
+ * so an uphill caster (higher `baseElev`) shades more than the flat-plane
+ * model, and a downhill caster shades less (or not at all).
+ *
+ * Fallback (byte-identical to pre-ANS-238 / D6 behavior): when
+ * `receiverGroundElev` is null/undefined OR `occluder.baseElev` is
+ * null/undefined, elevation is not composed at all — this returns
+ * `occluder.height - receiverZ` directly (no addition/subtraction through
+ * `receiverGroundElev`, so no floating-point drift from the pre-existing
+ * ground-level formula). This covers the common case (no LARIAC match) and
+ * withheld neighborhoods (e.g. Pasadena, where `baseElev` is always null).
+ */
+function effectiveCasterHeight(
+  occluder: Occluder,
+  receiverZ: number,
+  receiverGroundElev?: number | null
+): number {
+  if (receiverGroundElev == null || occluder.baseElev == null) {
+    return occluder.height - receiverZ;
+  }
+  const receiverAbsoluteZ = receiverGroundElev + receiverZ;
+  const casterTopAbsoluteZ = occluder.baseElev + occluder.height;
+  return casterTopAbsoluteZ - receiverAbsoluteZ;
+}
+
+/**
  * Compute the shadow polygon cast by an occluder given a sun position, as
  * seen by a receiver at elevation `receiverZ` meters above ground (default
  * 0 = ground level).
  *
- * The shadow is formed by projecting each vertex of the footprint along the
- * ground in the direction opposite the sun. The resulting polygon is the
- * concatenation of the original vertices + projected vertices (wound in
- * reverse) to form a closed ring.
+ * The ground shadow of a footprint extruded to height `h` is the region
+ * swept between the footprint and its ground-projected copy (each vertex
+ * pushed along the ground in the direction opposite the sun). For a convex
+ * footprint that region is exactly the convex hull of (footprint vertices ∪
+ * projected vertices) — computed via `convexHull` (ANS-234). The resulting
+ * ring is OPEN (not closed back to its first vertex); callers close it
+ * (e.g. `shadowLayer.ts` does `[...ring, ring[0]]`) and `isPointInPolygon`
+ * handles open rings.
+ *
+ * Non-convex footprints: the hull can slightly OVER-cover (mark a bit more
+ * ground as shaded than the true swept region) since it fills in the
+ * footprint's own concavities. That's acceptable and conservative — it
+ * never misses real shade, it can only over-report it.
  *
  * An occluder can only shade a receiver above ground if part of it rises
  * above the receiver's elevation; the effective caster height used for the
- * projection is `occluder.height - receiverZ` (ANS-218 D6). Occluders at or
- * below the receiver (effective height <= 0) cast no shadow on it. Omitting
- * `receiverZ` (or passing 0) is byte-identical to the pre-D6 ground-level
- * behavior.
+ * projection is `occluder.height - receiverZ` (ANS-218 D6), extended by
+ * ANS-238 to account for near-field ground-elevation slope (see
+ * `effectiveCasterHeight` below) when `receiverGroundElev` and
+ * `occluder.baseElev` are both known. Occluders at or below the receiver
+ * (effective height <= 0) cast no shadow on it. Omitting `receiverZ` (or
+ * passing 0) and `receiverGroundElev` is byte-identical to the pre-D6
+ * ground-level behavior.
  *
- * TODO(D6 follow-up): near-field terrain slope (ground elevation under the
- * receiver/occluders) is not modeled — `receiverZ` currently only accounts
- * for a venue's own elevation (e.g. rooftop height), not sloped streets.
- * Wiring in real ground-elevation deltas needs a DEM (USGS 3DEP/SRTM), which
- * is not in the repo and requires a network fetch — deferred to a future
- * ticket.
+ * TODO(D3 follow-up): the far-terrain horizon profile (hills/mountains
+ * occluding low sun beyond any matched building — ANS-120) is still not
+ * modeled; this ticket (ANS-238) only accounts for near-field ground-slope
+ * via LARIAC point elevations (`baseElev`) on matched occluders. A proper
+ * horizon raster needs a DEM (USGS 3DEP/SRTM), which is not in the repo and
+ * requires a network fetch — remains deferred to a future ticket.
  */
 export function computeShadowPolygon(
   occluder: Occluder,
   sun: SunPosition,
-  receiverZ: number = 0
+  receiverZ: number = 0,
+  receiverGroundElev?: number | null
 ): [number, number][] {
   // Sun at or below horizon: shadow extends infinitely — return empty polygon.
   if (sun.altitude <= 0) return [];
 
-  const { polygon, height } = occluder;
+  const { polygon } = occluder;
   if (polygon.length === 0) return [];
 
   // Effective caster height as seen by a receiver at `receiverZ`. An occluder
   // at or below the receiver casts no shadow on it.
-  const effectiveHeight = height - receiverZ;
+  const effectiveHeight = effectiveCasterHeight(occluder, receiverZ, receiverGroundElev);
   if (effectiveHeight <= 0) return [];
 
   // Shadow length on the ground in meters.
@@ -122,13 +173,62 @@ export function computeShadowPolygon(
     lat + dLat,
   ]);
 
-  // Build the shadow polygon: original footprint + projected footprint reversed.
-  const shadowPoly: [number, number][] = [
-    ...polygon,
-    ...projected.reverse(),
-  ];
+  // Build the shadow polygon as the convex hull of footprint + projected
+  // vertices (see function doc for why — ANS-234).
+  return convexHull([...polygon, ...projected]);
+}
 
-  return shadowPoly;
+/**
+ * Convex hull of a set of 2D points via Andrew's monotone chain
+ * (exported for testing). Points are sorted lexicographically, duplicate
+ * points are removed, and collinear points along an edge are dropped (only
+ * the extreme points of each collinear run are kept). Returns an OPEN ring
+ * (no repeated first/last point) — 0, 1, or 2 points if fewer than 3
+ * distinct points are given.
+ */
+export function convexHull(points: [number, number][]): [number, number][] {
+  const uniqueByKey = new Map<string, [number, number]>();
+  for (const p of points) uniqueByKey.set(`${p[0]},${p[1]}`, p);
+  const sorted = [...uniqueByKey.values()].sort(
+    (a, b) => a[0] - b[0] || a[1] - b[1]
+  );
+
+  if (sorted.length < 3) return sorted;
+
+  // Cross product of (o->a) x (o->b); > 0 means a->b turns left (CCW) around o.
+  const cross = (
+    o: [number, number],
+    a: [number, number],
+    b: [number, number]
+  ) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+
+  const lower: [number, number][] = [];
+  for (const p of sorted) {
+    while (
+      lower.length >= 2 &&
+      cross(lower[lower.length - 2], lower[lower.length - 1], p) <= 0
+    ) {
+      lower.pop();
+    }
+    lower.push(p);
+  }
+
+  const upper: [number, number][] = [];
+  for (let i = sorted.length - 1; i >= 0; i--) {
+    const p = sorted[i];
+    while (
+      upper.length >= 2 &&
+      cross(upper[upper.length - 2], upper[upper.length - 1], p) <= 0
+    ) {
+      upper.pop();
+    }
+    upper.push(p);
+  }
+
+  // Each of lower/upper ends with the other's starting point — drop that dupe.
+  lower.pop();
+  upper.pop();
+  return lower.concat(upper);
 }
 
 /**
@@ -145,12 +245,15 @@ export function computeShadowPolygon(
  *
  * `receiverZ` (meters, default 0) is the receiver's elevation above ground
  * (e.g. a rooftop patio's height); see `computeShadowPolygon` (ANS-218 D6).
+ * `receiverGroundElev` (meters, absolute) is the receiver's ground elevation;
+ * see `isPointInSunlight` / `effectiveCasterHeight` (ANS-238).
  */
 export function scoreSunlight(
   point: [number, number],
   occluders: Occluder[],
   sun: SunPosition,
-  receiverZ: number = 0
+  receiverZ: number = 0,
+  receiverGroundElev?: number | null
 ): number {
   if (sun.altitude <= 0) return 0.0;
 
@@ -161,7 +264,7 @@ export function scoreSunlight(
     // Very transparent: no shadow contribution
     if (opacity <= 0.3) continue;
 
-    const shadowPoly = computeShadowPolygon(occluder, sun, receiverZ);
+    const shadowPoly = computeShadowPolygon(occluder, sun, receiverZ, receiverGroundElev);
     if (isPointInPolygon(point, shadowPoly)) {
       const score = opacity >= 1.0 ? 0.0 : 1.0 - opacity;
       if (score < minScore) minScore = score;

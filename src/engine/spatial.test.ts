@@ -4,6 +4,7 @@ import {
   getCandidateOccluders,
   getCandidatesInBbox,
   precomputeCandidates,
+  nearestGroundElev,
 } from './spatial';
 import type { Occluder } from './shadows';
 
@@ -80,5 +81,62 @@ describe('precomputeCandidates', () => {
     expect(map.has('v1')).toBe(true);
     expect(map.get('v1')).toContain(nearBuilding);
     expect(map.get('v1')).not.toContain(farBuilding);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// nearestGroundElev (ANS-238) — the venue's ground elevation is estimated as
+// the baseElev of the nearest candidate (by centroid distance) that has one.
+// ---------------------------------------------------------------------------
+describe('nearestGroundElev', () => {
+  it('returns null for an empty candidate list', () => {
+    expect(nearestGroundElev(testPoint, [])).toBeNull();
+  });
+
+  it('returns null when no candidate has a baseElev (e.g. Pasadena — withheld neighborhood)', () => {
+    const pasadenaLike: Occluder = { ...nearBuilding, baseElev: null };
+    expect(nearestGroundElev(testPoint, [pasadenaLike])).toBeNull();
+  });
+
+  it('returns the baseElev of the single candidate that has one', () => {
+    const withElev: Occluder = { ...nearBuilding, baseElev: 123.4 };
+    expect(nearestGroundElev(testPoint, [withElev])).toBe(123.4);
+  });
+
+  it('picks the nearest-by-centroid candidate among several with baseElev', () => {
+    // Two candidates on either side of testPoint; the closer one's centroid
+    // (0.0005° east) wins over the farther one's (0.01° east).
+    const near: Occluder = {
+      polygon: [[-118.2765, 34.0835], [-118.2755, 34.0835], [-118.2755, 34.0845], [-118.2765, 34.0845]],
+      height: 10,
+      baseElev: 50,
+    };
+    const far: Occluder = {
+      polygon: [[-118.267, 34.0835], [-118.266, 34.0835], [-118.266, 34.0845], [-118.267, 34.0845]],
+      height: 10,
+      baseElev: 200,
+    };
+    expect(nearestGroundElev(testPoint, [far, near])).toBe(50);
+  });
+
+  it('skips candidates with a null baseElev in favor of a farther candidate that has one', () => {
+    // The nearest candidate has no baseElev (unmatched); the venue's
+    // estimated ground elevation falls back to the next-nearest that does.
+    const nearestButUnmatched: Occluder = {
+      polygon: [[-118.2771, 34.0839], [-118.2769, 34.0839], [-118.2769, 34.0841], [-118.2771, 34.0841]],
+      height: 10,
+      baseElev: null,
+    };
+    const fartherMatched: Occluder = {
+      polygon: [[-118.267, 34.0835], [-118.266, 34.0835], [-118.266, 34.0845], [-118.267, 34.0845]],
+      height: 10,
+      baseElev: 77,
+    };
+    expect(nearestGroundElev(testPoint, [nearestButUnmatched, fartherMatched])).toBe(77);
+  });
+
+  it('ignores empty-polygon candidates', () => {
+    const empty: Occluder = { polygon: [], height: 10, baseElev: 999 };
+    expect(nearestGroundElev(testPoint, [empty])).toBeNull();
   });
 });
