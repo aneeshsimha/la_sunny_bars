@@ -3,11 +3,12 @@ declare const self: DedicatedWorkerGlobalScope;
 
 import SunCalc from 'suncalc';
 import type { Occluder, SunPosition } from '../engine/shadows';
-import { buildSpatialIndex, precomputeCandidates, nearestGroundElev } from '../engine/spatial';
+import { buildSpatialIndex, precomputeCandidates, nearestGroundElev, type SpatialIndex } from '../engine/spatial';
 import { scorePartialShade } from '../engine/partialShade';
 import { flatHorizonProfile, isSunAboveHorizon } from '../engine/terrain';
 import type { HorizonProfile } from '../engine/terrain';
-import type { WorkerInMsg, WorkerOutMsg, PlanResultMsg } from './protocol';
+import { computeShadowFeatures } from '../engine/shadowProjection';
+import type { WorkerInMsg, WorkerOutMsg, PlanResultMsg, ShadowResultMsg } from './protocol';
 
 // --- State ---
 
@@ -24,6 +25,17 @@ type StoredVenue = {
 let storedVenues: StoredVenue[] = [];
 let candidateMap: Map<string, Occluder[]> = new Map();
 let storedHorizonProfile: HorizonProfile = flatHorizonProfile();
+
+/**
+ * Spatial index of BUILDING-only occluders (ANS-237), retained across the
+ * worker's lifetime to serve `shadow` messages. Deliberately separate from
+ * the scoring index above `init` builds (which includes tree/awning
+ * occluders and is only used transiently for `precomputeCandidates`) —
+ * reusing that index here would silently add tree-canopy shadows to the
+ * visible ground-shadow layer, which never rendered them before. Empty until
+ * `init` runs.
+ */
+let shadowIndex: SpatialIndex = buildSpatialIndex([]);
 
 /**
  * Receiver elevation (meters) for scoring a venue: a rooftop venue matched to
@@ -89,6 +101,7 @@ self.onmessage = (event: MessageEvent<WorkerInMsg>) => {
 
     const index = buildSpatialIndex(msg.occluders);
     candidateMap = precomputeCandidates(index, msg.venues);
+    shadowIndex = buildSpatialIndex(msg.buildingOccluders ?? msg.occluders);
 
     // Estimate each venue's ground elevation from its nearest candidate
     // occluder with a known baseElev (ANS-238); null when no candidate has
@@ -113,6 +126,23 @@ self.onmessage = (event: MessageEvent<WorkerInMsg>) => {
       type: 'scoreResult',
       requestId: msg.requestId,
       scores,
+    };
+    self.postMessage(reply);
+    return;
+  }
+
+  if (msg.type === 'shadow') {
+    const features = computeShadowFeatures(
+      shadowIndex,
+      msg.sun,
+      msg.bounds,
+      msg.zoom,
+      msg.cap
+    );
+    const reply: ShadowResultMsg = {
+      type: 'shadowResult',
+      requestId: msg.requestId,
+      features,
     };
     self.postMessage(reply);
     return;
