@@ -16,6 +16,20 @@ export interface PatioOrientation {
 }
 
 /**
+ * Options for `scorePartialShade`: D5's patio orientation plus D6's receiver
+ * elevation (ANS-218 D6).
+ */
+export interface ScorePartialShadeOptions extends PatioOrientation {
+  /**
+   * Receiver elevation in meters above ground (default 0 = ground level).
+   * Used to score rooftop patios at their real elevation instead of ground
+   * level, so occluders shorter than the receiver don't spuriously shade it
+   * (see `scoreSunlight` / `computeShadowPolygon` in `shadows.ts`).
+   */
+  receiverZ?: number;
+}
+
+/**
  * Convert a venue's facade azimuths into a ground-plane [east, north] offset
  * (in meters) that biases the sample grid toward the mean street-facing
  * direction. Returns null when orientation is unknown (empty array) or when
@@ -105,21 +119,24 @@ export function sampleGrid(
  * @param center - [lng, lat] of the venue
  * @param occluders - nearby occluder geometries
  * @param sun - current sun position
- * @param orientation - optional known patio orientation (ANS-217 D5); when
- *   omitted or `facadeAzimuths` is empty, samples symmetrically as before.
+ * @param options - optional known patio orientation (ANS-217 D5) and receiver
+ *   elevation (ANS-218 D6). When orientation is omitted or `facadeAzimuths`
+ *   is empty, samples symmetrically as before. When `receiverZ` is omitted
+ *   (or 0), scores at ground level as before.
  */
 export function scorePartialShade(
   center: [number, number],
   occluders: Occluder[],
   sun: SunPosition,
-  orientation?: PatioOrientation
+  options?: ScorePartialShadeOptions
 ): number {
   if (sun.altitude <= 0) return 0;
 
-  const samples = sampleGrid(center, PATIO_RADIUS_METERS, orientation);
+  const samples = sampleGrid(center, PATIO_RADIUS_METERS, options);
+  const receiverZ = options?.receiverZ ?? 0;
   let total = 0;
   for (const pt of samples) {
-    total += scoreSunlight(pt, occluders, sun);
+    total += scoreSunlight(pt, occluders, sun, receiverZ);
   }
   return total / samples.length;
 }

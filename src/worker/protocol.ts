@@ -4,7 +4,15 @@ import type { HorizonProfile } from '../engine/terrain';
 export type InitMsg = {
   type: 'init';
   occluders: Occluder[];
-  venues: Array<{ id: string; coords: [number, number]; facadeAzimuths?: number[] }>;
+  venues: Array<{
+    id: string;
+    coords: [number, number];
+    facadeAzimuths?: number[];
+    /** Seating type; used to derive receiver elevation for rooftops (ANS-218 D6). */
+    seatingType?: string | null;
+    /** Matched building roof height in meters, if any (ANS-218 D6). */
+    buildingHeight?: number | null;
+  }>;
   horizonProfile?: HorizonProfile;
 };
 

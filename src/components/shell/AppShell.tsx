@@ -214,6 +214,10 @@ export default function AppShell({
             v.seatingType === 'patio' || v.seatingType === 'sidewalk'
               ? v.facadeAzimuths
               : [],
+          // Lets the worker score rooftop venues at their real roof elevation
+          // instead of ground level (ANS-218 D6).
+          seatingType: v.seatingType,
+          buildingHeight: v.buildingHeight,
         }))
       )
       .catch(() => {

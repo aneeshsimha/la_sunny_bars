@@ -207,6 +207,59 @@ describe('scorePartialShade with orientation (symmetric fallback golden test)', 
   });
 });
 
+describe('scorePartialShade with receiverZ (ANS-218 D6)', () => {
+  it('golden: omitting receiverZ is byte-identical to receiverZ: 0', () => {
+    const cosLat = Math.cos((CENTER[1] * Math.PI) / 180);
+    const occluder: Occluder = {
+      polygon: [
+        [CENTER[0] - 0.0005 / cosLat, CENTER[1] + 0.0001],
+        [CENTER[0] + 0.0005 / cosLat, CENTER[1] + 0.0001],
+        [CENTER[0] + 0.0005 / cosLat, CENTER[1] + 0.0002],
+        [CENTER[0] - 0.0005 / cosLat, CENTER[1] + 0.0002],
+      ],
+      height: 20,
+    };
+
+    const withoutReceiverZ = scorePartialShade(CENTER, [occluder], SUN_UP, {
+      facadeAzimuths: [],
+    });
+    const withReceiverZZero = scorePartialShade(CENTER, [occluder], SUN_UP, {
+      facadeAzimuths: [],
+      receiverZ: 0,
+    });
+
+    expect(withReceiverZZero).toBe(withoutReceiverZ);
+  });
+
+  it('acceptance scene: a rooftop reads sunny at low sun where the same point at z=0 would be shaded', () => {
+    // Neighbor building south of CENTER; low sun altitude → long shadow that
+    // covers the whole 3x3 sample grid at ground level.
+    const cosLat = Math.cos((CENTER[1] * Math.PI) / 180);
+    const halfW = 0.001 / cosLat;
+    const neighbor: Occluder = {
+      polygon: [
+        [CENTER[0] - halfW, CENTER[1] - 0.002],
+        [CENTER[0] + halfW, CENTER[1] - 0.002],
+        [CENTER[0] + halfW, CENTER[1] - 0.001],
+        [CENTER[0] - halfW, CENTER[1] - 0.001],
+      ],
+      height: 15,
+    };
+    const lowSun: SunPosition = { azimuth: 0, altitude: 0.1 };
+
+    const groundScore = scorePartialShade(CENTER, [neighbor], lowSun, {
+      facadeAzimuths: [],
+    });
+    const rooftopScore = scorePartialShade(CENTER, [neighbor], lowSun, {
+      facadeAzimuths: [],
+      receiverZ: 20, // taller than the 15m neighbor
+    });
+
+    expect(groundScore).toBeLessThan(1);
+    expect(rooftopScore).toBe(1);
+  });
+});
+
 describe('scorePartialShade acceptance: N-facing vs S-facing patio on the same building', () => {
   // A building "wall" sits north of the venue's raw OSM point, spanning
   // latitudes [bandSouthMeters, bandNorthMeters] (relative to CENTER). A
