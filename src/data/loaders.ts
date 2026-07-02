@@ -2,6 +2,7 @@ export interface Occluder {
   polygon: [number, number][];
   height: number;
   opacity?: number;
+  heightSource?: 'measured' | 'levels' | 'default'; // provenance of `height`, if known (ANS-213 B9)
 }
 
 export interface NeighborhoodManifestEntry {

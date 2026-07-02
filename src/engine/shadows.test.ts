@@ -287,6 +287,111 @@ describe('opacity / scoreSunlight', () => {
 });
 
 // ---------------------------------------------------------------------------
+// 7. Receiver elevation (ANS-218 D6) — score a receiver above ground level.
+// An occluder can only shade an elevated receiver if occluder.height >
+// receiverZ; the effective caster height becomes (occluder.height -
+// receiverZ). Omitting receiverZ (or passing 0) must remain byte-identical
+// to the pre-D6 ground-level behavior.
+// ---------------------------------------------------------------------------
+describe('receiver elevation (receiverZ)', () => {
+  const building: Occluder = {
+    polygon: [
+      [0, 0],
+      [0.001, 0],
+      [0.001, 0.001],
+      [0, 0.001],
+    ],
+    height: 10,
+  };
+  const sun: SunPosition = { azimuth: 0, altitude: Math.PI / 4 };
+  const shadowPoint: [number, number] = [0.0005, 0.00105];
+
+  it('golden: computeShadowPolygon(occluder, sun) === computeShadowPolygon(occluder, sun, 0)', () => {
+    const implicit = computeShadowPolygon(building, sun);
+    const explicitZero = computeShadowPolygon(building, sun, 0);
+    expect(explicitZero).toEqual(implicit);
+    // Pin the exact pre-D6 geometry so a regression in the effective-height
+    // path can't silently change the ground-level (z=0) result.
+    expect(implicit).toHaveLength(8);
+    const maxLat = Math.max(...implicit.map(([, lat]) => lat));
+    expect(maxLat).toBeCloseTo(0.001 + 10 / METERS_PER_DEG_LAT, 5);
+  });
+
+  it('golden: isPointInSunlight and scoreSunlight are unchanged when receiverZ is omitted vs 0', () => {
+    expect(isPointInSunlight(shadowPoint, [building], sun, 0)).toBe(
+      isPointInSunlight(shadowPoint, [building], sun)
+    );
+    expect(isPointInSunlight(shadowPoint, [building], sun)).toBe(false);
+    expect(scoreSunlight(shadowPoint, [building], sun, 0)).toBe(
+      scoreSunlight(shadowPoint, [building], sun)
+    );
+    expect(scoreSunlight(shadowPoint, [building], sun)).toBe(0.0);
+  });
+
+  it('an occluder shorter than the receiver casts no shadow', () => {
+    // building height=10, receiver at z=15 → occluder is entirely below the
+    // receiver, so it cannot shade it.
+    expect(computeShadowPolygon(building, sun, 15)).toEqual([]);
+    expect(isPointInSunlight(shadowPoint, [building], sun, 15)).toBe(true);
+    expect(scoreSunlight(shadowPoint, [building], sun, 15)).toBe(1.0);
+  });
+
+  it('an occluder exactly at the receiver height casts no shadow (at/below rule)', () => {
+    expect(computeShadowPolygon(building, sun, 10)).toEqual([]);
+    expect(isPointInSunlight(shadowPoint, [building], sun, 10)).toBe(true);
+  });
+
+  it('a taller occluder casts a correspondingly shorter shadow on an elevated receiver', () => {
+    const tallBuilding: Occluder = {
+      polygon: [
+        [0, 0],
+        [0.001, 0],
+        [0.001, 0.001],
+        [0, 0.001],
+      ],
+      height: 20,
+    };
+    // Full height (z=0): shadow tip at lat ≈ 0.001 + 20/METERS_PER_DEG_LAT ≈ 0.0011797
+    // Effective height at receiverZ=10 (20-10=10): tip at ≈ 0.001 + 10/METERS_PER_DEG_LAT ≈ 0.0010898
+    const nearPoint: [number, number] = [0.0005, 0.00105]; // inside both shadows
+    const farPoint: [number, number] = [0.0005, 0.00115]; // inside full-height shadow only
+
+    expect(isPointInSunlight(nearPoint, [tallBuilding], sun, 0)).toBe(false);
+    expect(isPointInSunlight(farPoint, [tallBuilding], sun, 0)).toBe(false);
+
+    // At receiverZ=10 the effective caster height is halved: the near point
+    // is still within the (shorter) shadow, but the far point is now sunlit.
+    expect(isPointInSunlight(nearPoint, [tallBuilding], sun, 10)).toBe(false);
+    expect(isPointInSunlight(farPoint, [tallBuilding], sun, 10)).toBe(true);
+  });
+
+  it('acceptance scene: a rooftop above a shorter neighbor reads sunny at low sun where z=0 would be shaded', () => {
+    // Neighbor building south of the point, low sun altitude → long shadow
+    // reaches ~150m north.
+    const neighbor: Occluder = {
+      polygon: [
+        [0, 0],
+        [0.001, 0],
+        [0.001, 0.001],
+        [0, 0.001],
+      ],
+      height: 15,
+    };
+    const lowSun: SunPosition = { azimuth: 0, altitude: 0.1 }; // ~5.7°
+    const point: [number, number] = [0.0005, 0.0015]; // well within the long low-sun shadow
+
+    // Ground level (z=0): shaded by the 15m neighbor.
+    expect(isPointInSunlight(point, [neighbor], lowSun, 0)).toBe(false);
+    expect(scoreSunlight(point, [neighbor], lowSun, 0)).toBe(0);
+
+    // Rooftop at z=20 (taller than the 15m neighbor): the neighbor is below
+    // the receiver and casts no shadow on it — reads sunny.
+    expect(isPointInSunlight(point, [neighbor], lowSun, 20)).toBe(true);
+    expect(scoreSunlight(point, [neighbor], lowSun, 20)).toBe(1.0);
+  });
+});
+
+// ---------------------------------------------------------------------------
 // isPointInPolygon — exported helper
 // ---------------------------------------------------------------------------
 describe('isPointInPolygon', () => {

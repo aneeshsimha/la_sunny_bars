@@ -1,7 +1,15 @@
 import type { Occluder, SunPosition } from '../engine/shadows';
 import type { InitMsg, ScoreMsg, PlanMsg, WorkerOutMsg } from './protocol';
 
-export type VenueCoords = { id: string; coords: [number, number] };
+export type VenueCoords = {
+  id: string;
+  coords: [number, number];
+  facadeAzimuths?: number[];
+  /** Seating type; used to derive receiver elevation for rooftops (ANS-218 D6). */
+  seatingType?: string | null;
+  /** Matched building roof height in meters, if any (ANS-218 D6). */
+  buildingHeight?: number | null;
+};
 
 export interface ScoringClient {
   /** Initialize the worker with occluders and venue list. Must call before score(). */

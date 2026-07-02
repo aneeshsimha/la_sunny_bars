@@ -64,6 +64,27 @@ export function getCandidateOccluders(
 }
 
 /**
+ * Return all occluders whose bounding box overlaps a rectangular lng/lat bbox.
+ * Unlike `getCandidateOccluders` (point + radius, used for venue scoring),
+ * this is a direct region query — used by the shadow-polygon layer to fetch
+ * everything in the current viewport (+ margin) without a linear scan.
+ *
+ * Same conservative-filter guarantee as `getCandidateOccluders`: occluders are
+ * matched by (slightly padded) bbox overlap, so partially-in-view buildings are
+ * included even if their centroid falls outside `bbox`.
+ */
+export function getCandidatesInBbox(
+  index: SpatialIndex,
+  bbox: [west: number, south: number, east: number, north: number]
+): Occluder[] {
+  if (index.occluders.length === 0) return [];
+
+  const [west, south, east, north] = bbox;
+  const indices = index.flatbush.search(west, south, east, north);
+  return indices.map((i) => index.occluders[i]);
+}
+
+/**
  * Precompute candidate occluder lists for all venues at init time.
  * Returns a Map from venue id to occluder array.
  * This avoids repeated spatial queries during scoring.

@@ -21,6 +21,11 @@ export interface VenueRecord {
   openNow: boolean | null;
   seatingType: 'patio' | 'sidewalk' | 'rooftop' | 'indoor' | null;
   drinkTypes: string[];
+  // building linkage fields (filled by B10, null until then):
+  buildingId: number | null;
+  buildingHeight: number | null;
+  buildingCentroid: [number, number] | null;
+  facadeAzimuths: number[];
 }
 
 export interface NeighborhoodVenueFile {

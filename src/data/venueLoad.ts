@@ -18,6 +18,9 @@ interface VenueRecord {
   openNow: boolean | null;
   seatingType: "patio" | "sidewalk" | "rooftop" | "indoor" | null;
   drinkTypes: string[];
+  buildingHeight: number | null;
+  buildingCentroid: [number, number] | null;
+  facadeAzimuths: number[];
 }
 
 interface VenueFile {
@@ -77,7 +80,14 @@ export async function loadVenueFeatures(slug: string): Promise<VenueFeature[]> {
     openNow: r.openNow,
     seatingType: r.seatingType,
     drinkTypes: r.drinkTypes ?? [],
-    confidence: getConfidence({ seatingType: r.seatingType }),
+    buildingHeight: r.buildingHeight ?? null,
+    buildingCentroid: r.buildingCentroid ?? null,
+    facadeAzimuths: r.facadeAzimuths ?? [],
+    confidence: getConfidence({
+      seatingType: r.seatingType,
+      orientationKnown: (r.facadeAzimuths ?? []).length > 0,
+      canElevate: r.buildingHeight != null,
+    }),
     walkTimeMinutes: null,
   }));
 }

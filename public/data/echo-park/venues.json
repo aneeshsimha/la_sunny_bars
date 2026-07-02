@@ -23,7 +23,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 974,
+      "buildingHeight": 5.4,
+      "buildingCentroid": [
+        -118.26659788181816,
+        34.077879336363644
+      ],
+      "facadeAzimuths": [
+        206.30052645611295,
+        206.37813607123456,
+        296.0726466870559
+      ]
     },
     {
       "id": "osm/node/4098454491",
@@ -45,7 +56,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 2110,
+      "buildingHeight": 10.5,
+      "buildingCentroid": [
+        -118.25978353333333,
+        34.077578450000004
+      ],
+      "facadeAzimuths": [
+        27.970499049674004,
+        115.89259143437835,
+        36.44946451048838
+      ]
     },
     {
       "id": "osm/node/4098462580",
@@ -67,7 +89,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 1492,
+      "buildingHeight": 4.2,
+      "buildingCentroid": [
+        -118.26136209999999,
+        34.0777288375
+      ],
+      "facadeAzimuths": [
+        291.65589752725447,
+        348.73511910647375,
+        111.80852658186666
+      ]
     },
     {
       "id": "osm/node/4098487069",
@@ -89,7 +122,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 1084,
+      "buildingHeight": 8.4,
+      "buildingCentroid": [
+        -118.2655329631579,
+        34.07714749473684
+      ],
+      "facadeAzimuths": [
+        296.72101211198157,
+        16.903931546585056,
+        116.70852683710257
+      ]
     },
     {
       "id": "osm/node/4098487070",
@@ -111,7 +155,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 904,
+      "buildingHeight": 10.3,
+      "buildingCentroid": [
+        -118.2690363875,
+        34.07990656000001
+      ],
+      "facadeAzimuths": [
+        171.46776961942862,
+        151.8672524633198,
+        142.70850605154067
+      ]
     },
     {
       "id": "osm/node/4098494396",
@@ -133,7 +188,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 932,
+      "buildingHeight": 4.2,
+      "buildingCentroid": [
+        -118.27294506666665,
+        34.08293499999999
+      ],
+      "facadeAzimuths": [
+        223.40197741899433,
+        130.78286226089665,
+        310.8318753709896
+      ]
     },
     {
       "id": "osm/node/4166608938",
@@ -155,7 +221,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 3950,
+      "buildingHeight": 7.2,
+      "buildingCentroid": [
+        -118.27364313529414,
+        34.0827559882353
+      ],
+      "facadeAzimuths": [
+        47.91938638992025,
+        119.07115348322543,
+        31.790527543946382
+      ]
     },
     {
       "id": "osm/node/4166608942",
@@ -177,7 +254,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 39,
+      "buildingHeight": 7.1,
+      "buildingCentroid": [
+        -118.27332421999999,
+        34.08254128
+      ],
+      "facadeAzimuths": [
+        40.43196839936991,
+        296.7234628512919,
+        180
+      ]
     },
     {
       "id": "osm/node/4166615843",
@@ -199,7 +287,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 7104,
+      "buildingHeight": 4.9,
+      "buildingCentroid": [
+        -118.259817,
+        34.080006919999995
+      ],
+      "facadeAzimuths": [
+        272.2364534676992,
+        208.60177309001062,
+        27.85631682665303
+      ]
     },
     {
       "id": "osm/node/4166615846",
@@ -221,7 +320,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 2274,
+      "buildingHeight": 5.5,
+      "buildingCentroid": [
+        -118.2571955142857,
+        34.07633871428571
+      ],
+      "facadeAzimuths": [
+        27.835910699127453,
+        117.54571632459488,
+        297.5600404521824
+      ]
     },
     {
       "id": "osm/node/4566480465",
@@ -243,7 +353,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 3429,
+      "buildingHeight": 7.1,
+      "buildingCentroid": [
+        -118.2645583375,
+        34.077661671875006
+      ],
+      "facadeAzimuths": [
+        168.7245468350552,
+        258.42899002331416,
+        168.60398018499393
+      ]
     },
     {
       "id": "osm/node/4584804826",
@@ -265,7 +386,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 2276,
+      "buildingHeight": 9.3,
+      "buildingCentroid": [
+        -118.25800313181816,
+        34.076738968181814
+      ],
+      "facadeAzimuths": [
+        27.673688233196685,
+        296.43146994502,
+        28.514805012541444
+      ]
     },
     {
       "id": "osm/node/5309210186",
@@ -287,7 +419,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 799,
+      "buildingHeight": 5.7,
+      "buildingCentroid": [
+        -118.26989406,
+        34.08042731333333
+      ],
+      "facadeAzimuths": [
+        43.949591829304836,
+        43.76296817806576,
+        116.31137901287815
+      ]
     },
     {
       "id": "osm/node/5453034257",
@@ -309,7 +452,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 4165,
+      "buildingHeight": 5.8,
+      "buildingCentroid": [
+        -118.2737151888889,
+        34.08281608888889
+      ],
+      "facadeAzimuths": [
+        296.9754833292222,
+        117.01077770176306,
+        47.89231280450372
+      ]
     },
     {
       "id": "osm/node/5465480293",
@@ -331,7 +485,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 792,
+      "buildingHeight": 4.7,
+      "buildingCentroid": [
+        -118.27221231428572,
+        34.08257030714286
+      ],
+      "facadeAzimuths": [
+        220.2791993620124,
+        35.609751041969275,
+        129.9126834090962
+      ]
     },
     {
       "id": "osm/node/5465486705",
@@ -353,7 +518,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 684,
+      "buildingHeight": 9.4,
+      "buildingCentroid": [
+        -118.27006882,
+        34.0799382
+      ],
+      "facadeAzimuths": [
+        310.3579788173389,
+        44.37955435698228,
+        180
+      ]
     },
     {
       "id": "osm/node/5465490961",
@@ -375,7 +551,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 904,
+      "buildingHeight": 10.3,
+      "buildingCentroid": [
+        -118.2690363875,
+        34.07990656000001
+      ],
+      "facadeAzimuths": [
+        21.92241475448691,
+        340.21949271768233,
+        331.4319827389054
+      ]
     },
     {
       "id": "osm/node/5465494845",
@@ -397,7 +584,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 974,
+      "buildingHeight": 5.4,
+      "buildingCentroid": [
+        -118.26659788181816,
+        34.077879336363644
+      ],
+      "facadeAzimuths": [
+        296.0305137987891,
+        206.38062643146404,
+        296.0725912440491
+      ]
     },
     {
       "id": "osm/node/5465500821",
@@ -419,7 +617,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 3506,
+      "buildingHeight": 5.4,
+      "buildingCentroid": [
+        -118.26472638333335,
+        34.07777216666667
+      ],
+      "facadeAzimuths": [
+        280.4219573354309,
+        172.43069318057314,
+        95.21530153505188
+      ]
     },
     {
       "id": "osm/node/5862944051",
@@ -441,7 +650,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 5578,
+      "buildingHeight": 7.2,
+      "buildingCentroid": [
+        -118.25945826071428,
+        34.077853499999996
+      ],
+      "facadeAzimuths": [
+        116.04920320163131,
+        26.368678563268816,
+        116.21973821348894
+      ]
     },
     {
       "id": "osm/node/7221024858",
@@ -463,7 +683,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 5707,
+      "buildingHeight": 8,
+      "buildingCentroid": [
+        -118.25592398571429,
+        34.0797949
+      ],
+      "facadeAzimuths": [
+        117.21164699490805,
+        27.550854598835713,
+        117.32252039925305
+      ]
     },
     {
       "id": "osm/node/7391447886",
@@ -485,7 +716,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 1197,
+      "buildingHeight": 7.2,
+      "buildingCentroid": [
+        -118.26419840000001,
+        34.07714204285715
+      ],
+      "facadeAzimuths": [
+        270.40760005711144,
+        348.19976683550215,
+        90.33538198396303
+      ]
     },
     {
       "id": "osm/node/7435728085",
@@ -507,7 +749,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 5566,
+      "buildingHeight": 17.6,
+      "buildingCentroid": [
+        -118.2548647521739,
+        34.081222600000004
+      ],
+      "facadeAzimuths": [
+        106.01861237735613,
+        12.72922518564792,
+        107.38205208782267
+      ]
     },
     {
       "id": "osm/node/7439788686",
@@ -529,7 +782,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 1193,
+      "buildingHeight": 7,
+      "buildingCentroid": [
+        -118.26389936666668,
+        34.077347833333334
+      ],
+      "facadeAzimuths": [
+        116.40517564669398,
+        195.33854010573748,
+        270.3573040820936
+      ]
     },
     {
       "id": "osm/node/7472265589",
@@ -551,7 +815,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 5847,
+      "buildingHeight": 6.5,
+      "buildingCentroid": [
+        -118.27394338235295,
+        34.071718317647054
+      ],
+      "facadeAzimuths": [
+        27.356481258090298,
+        207.3327838267359,
+        116.91647955872293
+      ]
     },
     {
       "id": "osm/node/8326602556",
@@ -573,7 +848,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 6667,
+      "buildingHeight": 4,
+      "buildingCentroid": [
+        -118.26264769999999,
+        34.06867962222222
+      ],
+      "facadeAzimuths": [
+        103.58276368403847,
+        284.1400594986342,
+        201.91976175614266
+      ]
     },
     {
       "id": "osm/node/9862848303",
@@ -595,7 +881,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 3311,
+      "buildingHeight": 4.6,
+      "buildingCentroid": [
+        -118.25432524444444,
+        34.07584486666667
+      ],
+      "facadeAzimuths": [
+        117.51688051657032,
+        117.54000041398604,
+        207.84266132908178
+      ]
     },
     {
       "id": "osm/node/10131265134",
@@ -617,7 +914,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 2969,
+      "buildingHeight": 7.5,
+      "buildingCentroid": [
+        -118.25597105714287,
+        34.07639733571428
+      ],
+      "facadeAzimuths": [
+        294.84764015998235,
+        207.6590904577161,
+        297.1230129694267
+      ]
     },
     {
       "id": "osm/node/10689723505",
@@ -639,7 +947,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 3532,
+      "buildingHeight": 5.2,
+      "buildingCentroid": [
+        -118.26555511250001,
+        34.0777650875
+      ],
+      "facadeAzimuths": [
+        30.253980531423736,
+        299.11106149614807,
+        180
+      ]
     },
     {
       "id": "osm/node/11290774914",
@@ -661,7 +980,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 2159,
+      "buildingHeight": 5,
+      "buildingCentroid": [
+        -118.2523768769231,
+        34.0742776
+      ],
+      "facadeAzimuths": [
+        79.96262054370999,
+        207.84106338167274,
+        27.987586042904923
+      ]
     },
     {
       "id": "osm/node/11378679117",
@@ -683,7 +1013,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 2894,
+      "buildingHeight": 9.6,
+      "buildingCentroid": [
+        -118.25526264545452,
+        34.07607673636364
+      ],
+      "facadeAzimuths": [
+        207.2162004031526,
+        117.3698946246372,
+        207.11523749583867
+      ]
     },
     {
       "id": "osm/node/11378679119",
@@ -705,7 +1046,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 2192,
+      "buildingHeight": 5.2,
+      "buildingCentroid": [
+        -118.25640559285715,
+        34.07605897142857
+      ],
+      "facadeAzimuths": [
+        27.71089835396441,
+        206.5216859779451,
+        296.3753487356385
+      ]
     },
     {
       "id": "osm/node/11378679120",
@@ -727,7 +1079,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 2423,
+      "buildingHeight": 7.8,
+      "buildingCentroid": [
+        -118.25668983749999,
+        34.076276574999994
+      ],
+      "facadeAzimuths": [
+        296.861449337258,
+        27.58939750111881,
+        307.9388746528509
+      ]
     },
     {
       "id": "osm/node/11378679121",
@@ -749,7 +1112,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 2899,
+      "buildingHeight": 6.1,
+      "buildingCentroid": [
+        -118.25660126363636,
+        34.076730409090914
+      ],
+      "facadeAzimuths": [
+        207.680382703715,
+        297.5047521071938,
+        297.64423429786905
+      ]
     },
     {
       "id": "osm/node/11378679126",
@@ -771,7 +1145,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 2328,
+      "buildingHeight": 6.7,
+      "buildingCentroid": [
+        -118.25911224000001,
+        34.07726136
+      ],
+      "facadeAzimuths": [
+        296.42598658227325,
+        115.82204277735957,
+        206.04061679718947
+      ]
     },
     {
       "id": "osm/node/11390840167",
@@ -793,7 +1178,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 826,
+      "buildingHeight": 12.9,
+      "buildingCentroid": [
+        -118.27039341904762,
+        34.08103184761905
+      ],
+      "facadeAzimuths": [
+        141.58910449384769,
+        231.56286907784732,
+        231.52164397783116
+      ]
     },
     {
       "id": "osm/node/11390840168",
@@ -815,7 +1211,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 826,
+      "buildingHeight": 12.9,
+      "buildingCentroid": [
+        -118.27039341904762,
+        34.08103184761905
+      ],
+      "facadeAzimuths": [
+        231.51825786007217,
+        321.22980783115895,
+        231.56289404985515
+      ]
     },
     {
       "id": "osm/node/11391069569",
@@ -837,7 +1244,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 909,
+      "buildingHeight": 3.5,
+      "buildingCentroid": [
+        -118.27184912857145,
+        34.08209827142857
+      ],
+      "facadeAzimuths": [
+        219.09201225745522,
+        128.98089948239988,
+        39.26942615351959
+      ]
     },
     {
       "id": "osm/node/11391069570",
@@ -859,7 +1277,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 909,
+      "buildingHeight": 3.5,
+      "buildingCentroid": [
+        -118.27184912857145,
+        34.08209827142857
+      ],
+      "facadeAzimuths": [
+        309.83759669311996,
+        39.269437393126,
+        219.09202348273388
+      ]
     },
     {
       "id": "osm/node/11391069572",
@@ -881,7 +1310,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 792,
+      "buildingHeight": 4.7,
+      "buildingCentroid": [
+        -118.27221231428572,
+        34.08257030714286
+      ],
+      "facadeAzimuths": [
+        220.27918357698596,
+        129.91269915924983,
+        35.609735892125514
+      ]
     },
     {
       "id": "osm/node/11970793863",
@@ -903,7 +1343,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 3193,
+      "buildingHeight": 10.7,
+      "buildingCentroid": [
+        -118.25695272499998,
+        34.077014793749996
+      ],
+      "facadeAzimuths": [
+        297.6570153368513,
+        28.169167493951022,
+        297.7238914866366
+      ]
     },
     {
       "id": "osm/node/11970834253",
@@ -925,7 +1376,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 3183,
+      "buildingHeight": 3.3,
+      "buildingCentroid": [
+        -118.25674723333333,
+        34.077394500000004
+      ],
+      "facadeAzimuths": [
+        207.73203558935276,
+        297.50989592216575,
+        117.50989592216581
+      ]
     },
     {
       "id": "osm/node/11970887709",
@@ -947,7 +1409,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 5692,
+      "buildingHeight": 12.2,
+      "buildingCentroid": [
+        -118.2553649142857,
+        34.08035212857143
+      ],
+      "facadeAzimuths": [
+        27.46215242713123,
+        207.47065153913704,
+        117.36870322389598
+      ]
     },
     {
       "id": "osm/node/12596695609",
@@ -969,7 +1442,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 1197,
+      "buildingHeight": 7.2,
+      "buildingCentroid": [
+        -118.26419840000001,
+        34.07714204285715
+      ],
+      "facadeAzimuths": [
+        270.4076011860597,
+        167.84875097005704,
+        90.11140180385348
+      ]
     },
     {
       "id": "osm/node/12596705808",
@@ -991,7 +1475,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 994,
+      "buildingHeight": 8.1,
+      "buildingCentroid": [
+        -118.26471228,
+        34.07717696
+      ],
+      "facadeAzimuths": [
+        359.8219206360958,
+        270.7287511240394,
+        180.42015579506307
+      ]
     },
     {
       "id": "osm/node/12695459909",
@@ -1013,7 +1508,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 5566,
+      "buildingHeight": 17.6,
+      "buildingCentroid": [
+        -118.2548647521739,
+        34.081222600000004
+      ],
+      "facadeAzimuths": [
+        27.024978508760512,
+        101.02319457077635,
+        103.59135246477337
+      ]
     },
     {
       "id": "osm/node/12696842935",
@@ -1035,7 +1541,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 5584,
+      "buildingHeight": 7,
+      "buildingCentroid": [
+        -118.25675300769228,
+        34.078243307692304
+      ],
+      "facadeAzimuths": [
+        297.478352513825,
+        297.95477002047124,
+        217.7840045872714
+      ]
     },
     {
       "id": "osm/node/13411261924",
@@ -1057,7 +1574,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 780,
+      "buildingHeight": 11,
+      "buildingCentroid": [
+        -118.27158309999999,
+        34.082085218181824
+      ],
+      "facadeAzimuths": [
+        220.49819218179124,
+        308.9809154959023,
+        298.6091030869836
+      ]
     },
     {
       "id": "osm/node/13883947401",
@@ -1079,7 +1607,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 1193,
+      "buildingHeight": 7,
+      "buildingCentroid": [
+        -118.26389936666668,
+        34.077347833333334
+      ],
+      "facadeAzimuths": [
+        346.96387540916095,
+        116.40515206957912,
+        60.47284924604014
+      ]
     },
     {
       "id": "osm/way/423023766",
@@ -1101,7 +1640,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 2999,
+      "buildingHeight": 4.6,
+      "buildingCentroid": [
+        -118.25439091999999,
+        34.07568489999999
+      ],
+      "facadeAzimuths": [
+        117.52746172224374,
+        162.45324212482478,
+        251.35278541901977
+      ]
     },
     {
       "id": "osm/way/425652780",
@@ -1123,7 +1673,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 3679,
+      "buildingHeight": 5.1,
+      "buildingCentroid": [
+        -118.25352013333332,
+        34.0753714
+      ],
+      "facadeAzimuths": [
+        296.7185030321089,
+        27.755800199372175,
+        180
+      ]
     },
     {
       "id": "osm/way/426205558",
@@ -1145,7 +1706,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 5444,
+      "buildingHeight": 4.8,
+      "buildingCentroid": [
+        -118.25894175,
+        34.07774306
+      ],
+      "facadeAzimuths": [
+        117.61004534432794,
+        117.04481168594845,
+        28.233576618938514
+      ]
     },
     {
       "id": "osm/way/426230696",
@@ -1167,7 +1739,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 6412,
+      "buildingHeight": 7.4,
+      "buildingCentroid": [
+        -118.27757552727272,
+        34.06961436363636
+      ],
+      "facadeAzimuths": [
+        207.9121983163752,
+        27.90191331860774,
+        117.86714822292123
+      ]
     },
     {
       "id": "osm/way/426706984",
@@ -1189,7 +1772,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 7098,
+      "buildingHeight": 8.5,
+      "buildingCentroid": [
+        -118.25989699189189,
+        34.07981272432433
+      ],
+      "facadeAzimuths": [
+        271.31798084848253,
+        272.1210323853106,
+        182.38401160420324
+      ]
     },
     {
       "id": "osm/way/886564589",
@@ -1211,7 +1805,18 @@
       "photoRef": null,
       "openNow": null,
       "seatingType": null,
-      "drinkTypes": []
+      "drinkTypes": [],
+      "buildingId": 7355,
+      "buildingHeight": 8.2,
+      "buildingCentroid": [
+        -118.26164262,
+        34.07834782
+      ],
+      "facadeAzimuths": [
+        258.42746999403755,
+        168.68833515514564,
+        258.4928619810686
+      ]
     }
   ]
 }

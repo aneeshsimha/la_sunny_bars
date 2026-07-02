@@ -1,5 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { buildSpatialIndex, getCandidateOccluders, precomputeCandidates } from './spatial';
+import {
+  buildSpatialIndex,
+  getCandidateOccluders,
+  getCandidatesInBbox,
+  precomputeCandidates,
+} from './spatial';
 import type { Occluder } from './shadows';
 
 const nearBuilding: Occluder = {
@@ -42,6 +47,27 @@ describe('getCandidateOccluders', () => {
   it('returns empty array for empty index', () => {
     const idx = buildSpatialIndex([]);
     const candidates = getCandidateOccluders(idx, testPoint, 500);
+    expect(candidates).toHaveLength(0);
+  });
+});
+
+describe('getCandidatesInBbox', () => {
+  it('returns occluders whose bbox overlaps the query bbox', () => {
+    const idx = buildSpatialIndex([nearBuilding, farBuilding]);
+    const candidates = getCandidatesInBbox(idx, [-118.278, 34.083, -118.275, 34.086]);
+    expect(candidates).toContain(nearBuilding);
+    expect(candidates).not.toContain(farBuilding);
+  });
+
+  it('returns empty array for empty index', () => {
+    const idx = buildSpatialIndex([]);
+    const candidates = getCandidatesInBbox(idx, [-118.278, 34.083, -118.275, 34.086]);
+    expect(candidates).toHaveLength(0);
+  });
+
+  it('returns empty array when bbox does not overlap any occluder', () => {
+    const idx = buildSpatialIndex([nearBuilding, farBuilding]);
+    const candidates = getCandidatesInBbox(idx, [0, 0, 0.001, 0.001]);
     expect(candidates).toHaveLength(0);
   });
 });

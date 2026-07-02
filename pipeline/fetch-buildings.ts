@@ -9,10 +9,12 @@
 import fs from 'fs';
 import path from 'path';
 import { fetchWithRetry } from './lib/rateLimit.js';
+import { classifyHeight, type HeightSource } from './heightClassification.js';
 
 interface Occluder {
   polygon: [number, number][];
   height: number;
+  heightSource: HeightSource;
 }
 
 interface BuildingsOutput {
@@ -103,18 +105,9 @@ async function fetchBuildings(): Promise<void> {
     if (polygon.length < 3) continue;
 
     const tags = el.tags ?? {};
-    let height = 8; // default 8m if no height data
-    if (tags['height']) {
-      const parsed = parseFloat(tags['height']);
-      if (!isNaN(parsed)) height = parsed;
-    } else if (tags['building:levels']) {
-      const levels = parseFloat(tags['building:levels']);
-      if (!isNaN(levels)) height = levels * 4;
-    } else if (tags['building'] === 'yes' || tags['building']) {
-      height = 8;
-    }
+    const { height, heightSource } = classifyHeight(tags);
 
-    occluders.push({ polygon, height });
+    occluders.push({ polygon, height, heightSource });
   }
 
   // Budget check

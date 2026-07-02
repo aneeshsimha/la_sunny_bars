@@ -11,9 +11,32 @@ import type { WorkerInMsg, WorkerOutMsg, PlanResultMsg } from './protocol';
 
 // --- State ---
 
-let storedVenues: Array<{ id: string; coords: [number, number] }> = [];
+type StoredVenue = {
+  id: string;
+  coords: [number, number];
+  facadeAzimuths?: number[];
+  seatingType?: string | null;
+  buildingHeight?: number | null;
+};
+
+let storedVenues: StoredVenue[] = [];
 let candidateMap: Map<string, Occluder[]> = new Map();
 let storedHorizonProfile: HorizonProfile = flatHorizonProfile();
+
+/**
+ * Receiver elevation (meters) for scoring a venue: a rooftop venue matched to
+ * a building of known height is scored at that roof elevation instead of
+ * ground level (ANS-218 D6); everything else scores at z=0.
+ *
+ * TODO(D6 follow-up): near-field terrain slope (sloped streets) is not
+ * modeled here — that needs ground-elevation data from a DEM (USGS
+ * 3DEP/SRTM), which isn't in the repo and would require a network fetch.
+ */
+function receiverZFor(venue: StoredVenue): number {
+  return venue.seatingType === 'rooftop' && venue.buildingHeight != null
+    ? venue.buildingHeight
+    : 0;
+}
 
 // --- Scoring ---
 
@@ -39,7 +62,10 @@ function scoreVenues(sun: SunPosition): Record<string, number> {
 
   for (const venue of storedVenues) {
     const candidates = candidateMap.get(venue.id) ?? [];
-    scores[venue.id] = scorePartialShade(venue.coords, candidates, sun);
+    scores[venue.id] = scorePartialShade(venue.coords, candidates, sun, {
+      facadeAzimuths: venue.facadeAzimuths ?? [],
+      receiverZ: receiverZFor(venue),
+    });
   }
 
   return scores;
@@ -109,7 +135,10 @@ self.onmessage = (event: MessageEvent<WorkerInMsg>) => {
         break;
       }
 
-      const score = scorePartialShade(venue.coords, candidates, sun);
+      const score = scorePartialShade(venue.coords, candidates, sun, {
+        facadeAzimuths: venue.facadeAzimuths ?? [],
+        receiverZ: receiverZFor(venue),
+      });
       // Threshold: if score drops below 0.2, consider it in shadow
       if (score < 0.2) {
         sunUntilMinutes = (i - 1) * stepMinutes;
