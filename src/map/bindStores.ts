@@ -10,6 +10,8 @@ import { updateVenueScores, updateVenueVisibility } from "@/map/layers/venueLaye
 import { updateShadowOverlay, updateShadowPolygons } from "@/map/layers/shadowLayer";
 import { updateUserLocation } from "@/map/layers/userLayer";
 import { loadBuildingOccluders } from "@/data/loaders";
+import { defaultScoringClient, ShadowRequestSuperseded } from "@/worker/client";
+import type { SunPosition } from "@/engine/shadows";
 import type { MapBounds } from "@/state/uiStore";
 
 const LA_LAT = 34.0195;
@@ -33,10 +35,41 @@ export function bindStores(map: mapboxgl.Map): () => void {
   let shadowTimer: ReturnType<typeof setTimeout> | null = null;
   let shadowPending = false;
 
+  // Prefer projecting shadows in the scoring worker (ANS-237) so the main
+  // thread stays free during slider scrub. The main-thread projection in
+  // shadowLayer.ts is kept as a mandatory FALLBACK: if the worker isn't
+  // initialized yet or errors, we fall back to it immediately so the shadow
+  // layer never goes blank/stale. A request superseded by a newer one
+  // (rapid scrub) is NOT a fallback trigger — the newer request is already
+  // in flight and will render shortly, so we just skip this stale frame.
   async function recomputeShadows(): Promise<void> {
     if (!useUIStore.getState().shadowOverlayOn) return;
     const bbox = currentBbox(map);
     if (!bbox) return;
+    const sun = SunCalc.getPosition(
+      useTimeStore.getState().currentTime,
+      LA_LAT,
+      LA_LNG
+    );
+    const sunPos: SunPosition = { azimuth: sun.azimuth, altitude: sun.altitude };
+
+    try {
+      const features = await defaultScoringClient.requestShadows(
+        sunPos,
+        bbox,
+        map.getZoom()
+      );
+      const source = map.getSource("shadow-polygons") as
+        | mapboxgl.GeoJSONSource
+        | undefined;
+      if (source) source.setData(features);
+      return;
+    } catch (err) {
+      if (err instanceof ShadowRequestSuperseded) return;
+      // Worker not ready (not yet initialized) or errored — fall back to
+      // the main-thread projection below.
+    }
+
     const slug = useLocationStore.getState().neighborhoodSlug;
     let occluders;
     try {
@@ -44,17 +77,7 @@ export function bindStores(map: mapboxgl.Map): () => void {
     } catch {
       return;
     }
-    const sun = SunCalc.getPosition(
-      useTimeStore.getState().currentTime,
-      LA_LAT,
-      LA_LNG
-    );
-    updateShadowPolygons(
-      map,
-      occluders,
-      { azimuth: sun.azimuth, altitude: sun.altitude },
-      bbox
-    );
+    updateShadowPolygons(map, occluders, sunPos, bbox);
   }
 
   function scheduleShadows(): void {

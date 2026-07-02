@@ -13,7 +13,7 @@ import { useTimeStore } from "@/state/timeStore";
 import { useLocationStore } from "@/state/locationStore";
 import { useVenueStore } from "@/state/venueStore";
 import { loadVenueFeatures } from "@/data/venueLoad";
-import { loadAllOccluders } from "@/data/loaders";
+import { loadBuildingOccluders, loadTreeOccluders } from "@/data/loaders";
 import { getDefaultScoringClient } from "@/worker/client";
 import { scoreAndApply } from "@/worker/scoreAndApply";
 import { neighborhoods } from "@/lib/neighborhoods";
@@ -173,10 +173,19 @@ export default function AppShell({
   // source, (re)initialize the scoring worker with the venue coords, and score.
   const loadNeighborhood = useCallback(async (slug: string) => {
     setNeighborhoodLoading(true);
-    const [venues, occluders] = await Promise.all([
+    // Buildings and trees are loaded separately (rather than via
+    // loadAllOccluders) so the worker can be given the building-only set
+    // too, for the visible shadow layer (ANS-237) — see the `.init()` call
+    // below. Venue scoring keeps using the combined buildings+trees set,
+    // unchanged. Preserves loadAllOccluders' original all-or-nothing
+    // failure behavior: if either fetch fails, both come back empty.
+    const [venues, [buildings, trees]] = await Promise.all([
       loadVenueFeatures(slug),
-      loadAllOccluders(slug).catch((): import("@/data/loaders").Occluder[] => []),
+      Promise.all([loadBuildingOccluders(slug), loadTreeOccluders(slug)]).catch(
+        (): [import("@/data/loaders").Occluder[], import("@/data/loaders").Occluder[]] => [[], []]
+      ),
     ]);
+    const occluders = [...buildings, ...trees];
 
     useVenueStore.getState().setVenues(venues);
     useVenueStore.getState().setSelectedVenueId(null);
@@ -218,7 +227,8 @@ export default function AppShell({
           // instead of ground level (ANS-218 D6).
           seatingType: v.seatingType,
           buildingHeight: v.buildingHeight,
-        }))
+        })),
+        buildings
       )
       .catch(() => {
         // Worker may already be initialized — ignore double-init errors.
