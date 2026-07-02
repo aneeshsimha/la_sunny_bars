@@ -8,9 +8,16 @@ describe('getConfidence', () => {
     ).toBe('high');
   });
 
-  it('is high for rooftop seating (orientation-agnostic)', () => {
-    expect(getConfidence({ seatingType: 'rooftop' })).toBe('high');
-    expect(getConfidence({ seatingType: 'rooftop', orientationKnown: false })).toBe('high');
+  it('is high for rooftop seating with a matched building (elevatable, ANS-218 D6)', () => {
+    expect(getConfidence({ seatingType: 'rooftop', canElevate: true })).toBe('high');
+    expect(
+      getConfidence({ seatingType: 'rooftop', canElevate: true, orientationKnown: false })
+    ).toBe('high');
+  });
+
+  it('is medium for rooftop seating without a matched building (cannot elevate, ANS-218 D6)', () => {
+    expect(getConfidence({ seatingType: 'rooftop' })).toBe('medium');
+    expect(getConfidence({ seatingType: 'rooftop', canElevate: false })).toBe('medium');
   });
 
   it('is low when seatingType is unknown (null)', () => {
