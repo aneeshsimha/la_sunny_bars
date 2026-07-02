@@ -83,7 +83,10 @@ export async function loadVenueFeatures(slug: string): Promise<VenueFeature[]> {
     buildingHeight: r.buildingHeight ?? null,
     buildingCentroid: r.buildingCentroid ?? null,
     facadeAzimuths: r.facadeAzimuths ?? [],
-    confidence: getConfidence({ seatingType: r.seatingType }),
+    confidence: getConfidence({
+      seatingType: r.seatingType,
+      orientationKnown: (r.facadeAzimuths ?? []).length > 0,
+    }),
     walkTimeMinutes: null,
   }));
 }
