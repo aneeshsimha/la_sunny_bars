@@ -6920,7 +6920,7 @@
       "reviewCount": null,
       "photoRef": null,
       "openNow": null,
-      "seatingType": null,
+      "seatingType": "rooftop",
       "drinkTypes": [],
       "buildingId": 4131,
       "buildingHeight": 55.07,
