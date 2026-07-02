@@ -4,7 +4,7 @@ import type { HorizonProfile } from '../engine/terrain';
 export type InitMsg = {
   type: 'init';
   occluders: Occluder[];
-  venues: Array<{ id: string; coords: [number, number] }>;
+  venues: Array<{ id: string; coords: [number, number]; facadeAzimuths?: number[] }>;
   horizonProfile?: HorizonProfile;
 };
 

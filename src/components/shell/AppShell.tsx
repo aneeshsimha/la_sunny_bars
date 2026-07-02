@@ -204,7 +204,17 @@ export default function AppShell({
     await client
       .init(
         occluders,
-        venues.map((v) => ({ id: v.id, coords: v.coordinates }))
+        venues.map((v) => ({
+          id: v.id,
+          coords: v.coordinates,
+          // Only bias the sample grid for ground-level outdoor seating; rooftop
+          // is orientation-agnostic (ANS-217 D6) and indoor/unknown seating has
+          // no meaningful patio location to orient toward.
+          facadeAzimuths:
+            v.seatingType === 'patio' || v.seatingType === 'sidewalk'
+              ? v.facadeAzimuths
+              : [],
+        }))
       )
       .catch(() => {
         // Worker may already be initialized — ignore double-init errors.

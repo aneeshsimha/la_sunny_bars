@@ -1,7 +1,7 @@
 import type { Occluder, SunPosition } from '../engine/shadows';
 import type { InitMsg, ScoreMsg, PlanMsg, WorkerOutMsg } from './protocol';
 
-export type VenueCoords = { id: string; coords: [number, number] };
+export type VenueCoords = { id: string; coords: [number, number]; facadeAzimuths?: number[] };
 
 export interface ScoringClient {
   /** Initialize the worker with occluders and venue list. Must call before score(). */

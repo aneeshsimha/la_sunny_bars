@@ -11,7 +11,7 @@ import type { WorkerInMsg, WorkerOutMsg, PlanResultMsg } from './protocol';
 
 // --- State ---
 
-let storedVenues: Array<{ id: string; coords: [number, number] }> = [];
+let storedVenues: Array<{ id: string; coords: [number, number]; facadeAzimuths?: number[] }> = [];
 let candidateMap: Map<string, Occluder[]> = new Map();
 let storedHorizonProfile: HorizonProfile = flatHorizonProfile();
 
@@ -39,7 +39,9 @@ function scoreVenues(sun: SunPosition): Record<string, number> {
 
   for (const venue of storedVenues) {
     const candidates = candidateMap.get(venue.id) ?? [];
-    scores[venue.id] = scorePartialShade(venue.coords, candidates, sun);
+    scores[venue.id] = scorePartialShade(venue.coords, candidates, sun, {
+      facadeAzimuths: venue.facadeAzimuths ?? [],
+    });
   }
 
   return scores;
@@ -109,7 +111,9 @@ self.onmessage = (event: MessageEvent<WorkerInMsg>) => {
         break;
       }
 
-      const score = scorePartialShade(venue.coords, candidates, sun);
+      const score = scorePartialShade(venue.coords, candidates, sun, {
+        facadeAzimuths: venue.facadeAzimuths ?? [],
+      });
       // Threshold: if score drops below 0.2, consider it in shadow
       if (score < 0.2) {
         sunUntilMinutes = (i - 1) * stepMinutes;
