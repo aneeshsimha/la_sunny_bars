@@ -27,6 +27,14 @@ export interface ScorePartialShadeOptions extends PatioOrientation {
    * (see `scoreSunlight` / `computeShadowPolygon` in `shadows.ts`).
    */
   receiverZ?: number;
+  /**
+   * Receiver's ground elevation in meters, absolute (e.g. LARIAC ELEV at the
+   * venue), when known — composes with `receiverZ` and each occluder's
+   * `baseElev` for near-field ground-slope-aware shading (ANS-238). Null or
+   * omitted falls back to the flat-plane model exactly (see
+   * `effectiveCasterHeight` in `shadows.ts`).
+   */
+  groundElev?: number | null;
 }
 
 /**
@@ -119,10 +127,12 @@ export function sampleGrid(
  * @param center - [lng, lat] of the venue
  * @param occluders - nearby occluder geometries
  * @param sun - current sun position
- * @param options - optional known patio orientation (ANS-217 D5) and receiver
- *   elevation (ANS-218 D6). When orientation is omitted or `facadeAzimuths`
- *   is empty, samples symmetrically as before. When `receiverZ` is omitted
- *   (or 0), scores at ground level as before.
+ * @param options - optional known patio orientation (ANS-217 D5), receiver
+ *   elevation (ANS-218 D6), and receiver ground elevation (ANS-238). When
+ *   orientation is omitted or `facadeAzimuths` is empty, samples
+ *   symmetrically as before. When `receiverZ` is omitted (or 0), scores at
+ *   ground level as before. When `groundElev` is omitted (or null), shading
+ *   uses the flat-plane model as before.
  */
 export function scorePartialShade(
   center: [number, number],
@@ -134,9 +144,10 @@ export function scorePartialShade(
 
   const samples = sampleGrid(center, PATIO_RADIUS_METERS, options);
   const receiverZ = options?.receiverZ ?? 0;
+  const groundElev = options?.groundElev ?? null;
   let total = 0;
   for (const pt of samples) {
-    total += scoreSunlight(pt, occluders, sun, receiverZ);
+    total += scoreSunlight(pt, occluders, sun, receiverZ, groundElev);
   }
   return total / samples.length;
 }

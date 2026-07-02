@@ -400,6 +400,125 @@ describe('receiver elevation (receiverZ)', () => {
 });
 
 // ---------------------------------------------------------------------------
+// 8. Near-field terrain slope via ground elevation (ANS-238)
+//
+// effectiveHeight = (occluder.baseElev ?? receiverGroundElev) + occluder.height
+//                    - (receiverGroundElev + receiverZ)
+// Fallback (occluder.baseElev == null OR receiverGroundElev == null):
+// effectiveHeight = occluder.height - receiverZ (byte-identical to pre-ANS-238).
+//
+// Shared scene: 1m x 1m footprint (in degrees) at [0,0]-[0.001,0.001],
+// height=10, sun altitude=45deg (tan=1) azimuth=0 (shadow thrown due north).
+// Flat-plane shadow tip: 0.001 + 10/METERS_PER_DEG_LAT ≈ 0.0010898311
+// ---------------------------------------------------------------------------
+describe('near-field terrain slope via ground elevation (ANS-238)', () => {
+  const baseBuilding = {
+    polygon: [
+      [0, 0],
+      [0.001, 0],
+      [0.001, 0.001],
+      [0, 0.001],
+    ] as [number, number][],
+    height: 10,
+  };
+  const sun: SunPosition = { azimuth: 0, altitude: Math.PI / 4 };
+  const flatTipLat = 0.001 + 10 / METERS_PER_DEG_LAT; // ≈ 0.0010898311
+
+  describe('uphill caster shades a downhill receiver beyond the flat-plane boundary', () => {
+    // baseElev=20 (caster 20m uphill of receiver), receiverGroundElev=0.
+    // effectiveHeight = (20+10) - (0+0) = 30 (vs flat-plane 10).
+    // Elevation-aware tip: 0.001 + 30/METERS_PER_DEG_LAT ≈ 0.0012694934
+    const uphillBuilding: Occluder = { ...baseBuilding, baseElev: 20 };
+    const upTipLat = 0.001 + 30 / METERS_PER_DEG_LAT; // ≈ 0.0012694934
+    // Hand-computed midpoint between the flat-plane and elevation-aware tips —
+    // strictly beyond flat-plane shade, strictly within elevation-aware shade.
+    const boundaryPoint: [number, number] = [0.0005, (flatTipLat + upTipLat) / 2];
+
+    it('flat-plane model (no groundElev) reads this point as sunlit', () => {
+      expect(isPointInSunlight(boundaryPoint, [uphillBuilding], sun, 0)).toBe(true);
+      expect(scoreSunlight(boundaryPoint, [uphillBuilding], sun, 0)).toBe(1.0);
+    });
+
+    it('elevation-aware model (receiverGroundElev=0) reads this point as shaded', () => {
+      expect(isPointInSunlight(boundaryPoint, [uphillBuilding], sun, 0, 0)).toBe(false);
+      expect(scoreSunlight(boundaryPoint, [uphillBuilding], sun, 0, 0)).toBe(0.0);
+    });
+  });
+
+  describe('downhill caster shades less than the flat-plane model', () => {
+    // baseElev=-5 (caster 5m downhill of receiver), receiverGroundElev=0.
+    // effectiveHeight = (-5+10) - (0+0) = 5 (vs flat-plane 10).
+    // Elevation-aware tip: 0.001 + 5/METERS_PER_DEG_LAT ≈ 0.0010449156
+    const downhillBuilding: Occluder = { ...baseBuilding, baseElev: -5 };
+    const downTipLat = 0.001 + 5 / METERS_PER_DEG_LAT; // ≈ 0.0010449156
+    // Hand-computed midpoint between the elevation-aware and flat-plane tips —
+    // strictly within flat-plane shade, strictly beyond elevation-aware shade.
+    const boundaryPoint: [number, number] = [0.0005, (downTipLat + flatTipLat) / 2];
+
+    it('flat-plane model (no groundElev) reads this point as shaded', () => {
+      expect(isPointInSunlight(boundaryPoint, [downhillBuilding], sun, 0)).toBe(false);
+      expect(scoreSunlight(boundaryPoint, [downhillBuilding], sun, 0)).toBe(0.0);
+    });
+
+    it('elevation-aware model (receiverGroundElev=0) reads this point as sunlit', () => {
+      expect(isPointInSunlight(boundaryPoint, [downhillBuilding], sun, 0, 0)).toBe(true);
+      expect(scoreSunlight(boundaryPoint, [downhillBuilding], sun, 0, 0)).toBe(1.0);
+    });
+  });
+
+  describe('null-fallback byte-identity', () => {
+    const shadowPoint: [number, number] = [0.0005, 0.00105]; // reused from earlier D6 tests
+
+    it('occluder.baseElev == null falls back exactly, even with a known receiverGroundElev', () => {
+      const unmatchedOccluder: Occluder = { ...baseBuilding, baseElev: null };
+      const withGroundElev = computeShadowPolygon(unmatchedOccluder, sun, 0, 20);
+      const flatPlane = computeShadowPolygon(baseBuilding, sun, 0);
+      expect(withGroundElev).toEqual(flatPlane);
+      expect(isPointInSunlight(shadowPoint, [unmatchedOccluder], sun, 0, 20)).toBe(
+        isPointInSunlight(shadowPoint, [baseBuilding], sun, 0)
+      );
+      expect(scoreSunlight(shadowPoint, [unmatchedOccluder], sun, 0, 20)).toBe(
+        scoreSunlight(shadowPoint, [baseBuilding], sun, 0)
+      );
+    });
+
+    it('receiverGroundElev == null falls back exactly, even with a known occluder.baseElev', () => {
+      const matchedOccluder: Occluder = { ...baseBuilding, baseElev: 20 };
+      const withoutGroundElev = computeShadowPolygon(matchedOccluder, sun, 0, null);
+      const flatPlane = computeShadowPolygon(baseBuilding, sun, 0);
+      expect(withoutGroundElev).toEqual(flatPlane);
+      expect(isPointInSunlight(shadowPoint, [matchedOccluder], sun, 0, null)).toBe(
+        isPointInSunlight(shadowPoint, [baseBuilding], sun, 0)
+      );
+      expect(scoreSunlight(shadowPoint, [matchedOccluder], sun, 0, null)).toBe(
+        scoreSunlight(shadowPoint, [baseBuilding], sun, 0)
+      );
+    });
+
+    it('receiverGroundElev omitted (undefined) falls back exactly, same as passing null', () => {
+      const matchedOccluder: Occluder = { ...baseBuilding, baseElev: 20 };
+      const omitted = computeShadowPolygon(matchedOccluder, sun, 0);
+      const explicitNull = computeShadowPolygon(matchedOccluder, sun, 0, null);
+      expect(omitted).toEqual(explicitNull);
+    });
+
+    it('golden: a Pasadena-like scene (baseElev always null) is unaffected by a passed-through groundElev', () => {
+      // Simulates the worker passing a computed venue groundElev into scoring
+      // for a withheld-neighborhood occluder set where every baseElev is null.
+      const pasadenaOccluders: Occluder[] = [
+        { ...baseBuilding, baseElev: null },
+        { ...baseBuilding, height: 20, baseElev: null },
+      ];
+      const withVenueGroundElev = pasadenaOccluders.map((o) =>
+        computeShadowPolygon(o, sun, 0, 150)
+      );
+      const withoutGroundElev = pasadenaOccluders.map((o) => computeShadowPolygon(o, sun, 0));
+      expect(withVenueGroundElev).toEqual(withoutGroundElev);
+    });
+  });
+});
+
+// ---------------------------------------------------------------------------
 // computeShadowPolygon — winding fix (ANS-234)
 //
 // The old ring construction `[...polygon, ...projected.reverse()]` is only
