@@ -25,7 +25,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 496,
-      "buildingHeight": 8,
+      "buildingHeight": 5.14,
       "buildingCentroid": [
         -118.38529054615385,
         34.08343737692307
@@ -58,7 +58,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 7,
-      "buildingHeight": 7.2,
+      "buildingHeight": 7.74,
       "buildingCentroid": [
         -118.38061601874998,
         34.07706644375
@@ -91,7 +91,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 12,
-      "buildingHeight": 5.5,
+      "buildingHeight": 5.7,
       "buildingCentroid": [
         -118.38577164545455,
         34.083252404545455
@@ -124,7 +124,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8160,
-      "buildingHeight": 5.6,
+      "buildingHeight": 5.61,
       "buildingCentroid": [
         -118.38511832857141,
         34.08382784285714
@@ -157,7 +157,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8090,
-      "buildingHeight": 4.7,
+      "buildingHeight": 4.67,
       "buildingCentroid": [
         -118.37887948947369,
         34.08213092105263
@@ -190,7 +190,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8486,
-      "buildingHeight": 9.1,
+      "buildingHeight": 9.12,
       "buildingCentroid": [
         -118.38369673846152,
         34.08554733076923
@@ -223,7 +223,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3856,
-      "buildingHeight": 8,
+      "buildingHeight": 8.2,
       "buildingCentroid": [
         -118.3746205,
         34.09087332857142
@@ -256,7 +256,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2810,
-      "buildingHeight": 8.5,
+      "buildingHeight": 8.51,
       "buildingCentroid": [
         -118.38393308181817,
         34.08535946363636
@@ -289,7 +289,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 200,
-      "buildingHeight": 6.8,
+      "buildingHeight": 9.72,
       "buildingCentroid": [
         -118.38821439999997,
         34.0909404
@@ -355,7 +355,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 4414,
-      "buildingHeight": 5.2,
+      "buildingHeight": 5.15,
       "buildingCentroid": [
         -118.3891797730769,
         34.090793203846154
@@ -388,7 +388,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9918,
-      "buildingHeight": 7.3,
+      "buildingHeight": 7.26,
       "buildingCentroid": [
         -118.38526607142856,
         34.081406414285716
@@ -421,7 +421,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3139,
-      "buildingHeight": 9.1,
+      "buildingHeight": 9.08,
       "buildingCentroid": [
         -118.3810627238095,
         34.091354185714295
@@ -454,7 +454,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3132,
-      "buildingHeight": 9.1,
+      "buildingHeight": 10.14,
       "buildingCentroid": [
         -118.37959192631574,
         34.09209933157895
@@ -553,7 +553,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 4913,
-      "buildingHeight": 5.6,
+      "buildingHeight": 5.62,
       "buildingCentroid": [
         -118.36260372000001,
         34.09115783
@@ -586,7 +586,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 4922,
-      "buildingHeight": 17.5,
+      "buildingHeight": 17.51,
       "buildingCentroid": [
         -118.36174105789472,
         34.09111398421052
@@ -619,7 +619,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 4910,
-      "buildingHeight": 3.7,
+      "buildingHeight": 3.71,
       "buildingCentroid": [
         -118.36318621111111,
         34.09104323333334
@@ -652,7 +652,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6119,
-      "buildingHeight": 9,
+      "buildingHeight": 8.96,
       "buildingCentroid": [
         -118.36179634444443,
         34.078916677777784
@@ -685,7 +685,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 5598,
-      "buildingHeight": 5.6,
+      "buildingHeight": 4.11,
       "buildingCentroid": [
         -118.36179055000002,
         34.08065192142857
@@ -718,7 +718,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 1633,
-      "buildingHeight": 8,
+      "buildingHeight": 12.33,
       "buildingCentroid": [
         -118.38130506521739,
         34.08717341304348
@@ -751,7 +751,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8567,
-      "buildingHeight": 3.8,
+      "buildingHeight": 3.81,
       "buildingCentroid": [
         -118.38268096153844,
         34.0812300923077
@@ -784,7 +784,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6049,
-      "buildingHeight": 5.9,
+      "buildingHeight": 5.91,
       "buildingCentroid": [
         -118.3611588625,
         34.0773323125
@@ -817,7 +817,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6047,
-      "buildingHeight": 5.5,
+      "buildingHeight": 5.45,
       "buildingCentroid": [
         -118.36067606470587,
         34.07641532941176
@@ -850,7 +850,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6047,
-      "buildingHeight": 5.5,
+      "buildingHeight": 5.45,
       "buildingCentroid": [
         -118.36067606470587,
         34.07641532941176
@@ -916,7 +916,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2632,
-      "buildingHeight": 59.6,
+      "buildingHeight": 59.57,
       "buildingCentroid": [
         -118.3927133,
         34.089892739999996
@@ -949,7 +949,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 4394,
-      "buildingHeight": 11,
+      "buildingHeight": 11.05,
       "buildingCentroid": [
         -118.39165018,
         34.090879820000005
@@ -982,7 +982,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 4477,
-      "buildingHeight": 8.2,
+      "buildingHeight": 8.21,
       "buildingCentroid": [
         -118.3900502625,
         34.090889675
@@ -1015,7 +1015,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2866,
-      "buildingHeight": 10.8,
+      "buildingHeight": 10.76,
       "buildingCentroid": [
         -118.386742452,
         34.090806752000006
@@ -1048,7 +1048,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2927,
-      "buildingHeight": 9.4,
+      "buildingHeight": 9.42,
       "buildingCentroid": [
         -118.38594165714285,
         34.090819950000004
@@ -1081,7 +1081,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2932,
-      "buildingHeight": 8.5,
+      "buildingHeight": 8.48,
       "buildingCentroid": [
         -118.38512646,
         34.09045143
@@ -1114,7 +1114,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2932,
-      "buildingHeight": 8.5,
+      "buildingHeight": 8.48,
       "buildingCentroid": [
         -118.38512646,
         34.09045143
@@ -1147,7 +1147,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2668,
-      "buildingHeight": 8.1,
+      "buildingHeight": 8.14,
       "buildingCentroid": [
         -118.38532988400001,
         34.090841076
@@ -1180,7 +1180,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2890,
-      "buildingHeight": 7.6,
+      "buildingHeight": 7.61,
       "buildingCentroid": [
         -118.38472088333333,
         34.09079485
@@ -1213,7 +1213,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9334,
-      "buildingHeight": 10.6,
+      "buildingHeight": 10.64,
       "buildingCentroid": [
         -118.38390054545454,
         34.09041499090909
@@ -1246,7 +1246,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3143,
-      "buildingHeight": 9.9,
+      "buildingHeight": 9.93,
       "buildingCentroid": [
         -118.3826895617647,
         34.09082008235294
@@ -1279,7 +1279,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8975,
-      "buildingHeight": 6.3,
+      "buildingHeight": 6.34,
       "buildingCentroid": [
         -118.38179064166668,
         34.09117241666667
@@ -1312,7 +1312,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9044,
-      "buildingHeight": 4.3,
+      "buildingHeight": 4.26,
       "buildingCentroid": [
         -118.3832115,
         34.091030233333335
@@ -1404,7 +1404,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3123,
-      "buildingHeight": 9.2,
+      "buildingHeight": 9.24,
       "buildingCentroid": [
         -118.37939083571428,
         34.09264533214285
@@ -1437,7 +1437,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3089,
-      "buildingHeight": 14.1,
+      "buildingHeight": 15.36,
       "buildingCentroid": [
         -118.3787489,
         34.09221515294117
@@ -1470,7 +1470,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8994,
-      "buildingHeight": 9.8,
+      "buildingHeight": 9.76,
       "buildingCentroid": [
         -118.37787776818182,
         34.09374947272729
@@ -1503,7 +1503,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8994,
-      "buildingHeight": 9.8,
+      "buildingHeight": 9.76,
       "buildingCentroid": [
         -118.37787776818182,
         34.09374947272729
@@ -1536,7 +1536,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8994,
-      "buildingHeight": 9.8,
+      "buildingHeight": 9.76,
       "buildingCentroid": [
         -118.37787776818182,
         34.09374947272729
@@ -1569,7 +1569,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6890,
-      "buildingHeight": 49.5,
+      "buildingHeight": 49.23,
       "buildingCentroid": [
         -118.37443484285716,
         34.094484909523814
@@ -1602,7 +1602,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6890,
-      "buildingHeight": 49.5,
+      "buildingHeight": 49.23,
       "buildingCentroid": [
         -118.37443484285716,
         34.094484909523814
@@ -1635,7 +1635,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 497,
-      "buildingHeight": 8,
+      "buildingHeight": 10.44,
       "buildingCentroid": [
         -118.38597630606056,
         34.083948590909095
@@ -1701,7 +1701,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8238,
-      "buildingHeight": 6.2,
+      "buildingHeight": 6.16,
       "buildingCentroid": [
         -118.3848377,
         34.084018666666665
@@ -1734,7 +1734,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8283,
-      "buildingHeight": 6,
+      "buildingHeight": 6.02,
       "buildingCentroid": [
         -118.38477511250001,
         34.084123350000006
@@ -1767,7 +1767,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8057,
-      "buildingHeight": 5.9,
+      "buildingHeight": 6.92,
       "buildingCentroid": [
         -118.38414505,
         34.08447005
@@ -1800,7 +1800,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8057,
-      "buildingHeight": 5.9,
+      "buildingHeight": 6.92,
       "buildingCentroid": [
         -118.38414505,
         34.08447005
@@ -1833,7 +1833,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8057,
-      "buildingHeight": 5.9,
+      "buildingHeight": 6.92,
       "buildingCentroid": [
         -118.38414505,
         34.08447005
@@ -1866,7 +1866,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2797,
-      "buildingHeight": 8,
+      "buildingHeight": 8.36,
       "buildingCentroid": [
         -118.38527578,
         34.08440924
@@ -1899,7 +1899,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2797,
-      "buildingHeight": 8,
+      "buildingHeight": 8.36,
       "buildingCentroid": [
         -118.38527578,
         34.08440924
@@ -1932,7 +1932,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2797,
-      "buildingHeight": 8,
+      "buildingHeight": 8.36,
       "buildingCentroid": [
         -118.38527578,
         34.08440924
@@ -1965,7 +1965,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9401,
-      "buildingHeight": 5.7,
+      "buildingHeight": 5.69,
       "buildingCentroid": [
         -118.38321924444443,
         34.08595337777778
@@ -1998,7 +1998,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 94,
-      "buildingHeight": 8,
+      "buildingHeight": 4.77,
       "buildingCentroid": [
         -118.38557775714284,
         34.084281242857145
@@ -2031,7 +2031,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8100,
-      "buildingHeight": 6.8,
+      "buildingHeight": 6.77,
       "buildingCentroid": [
         -118.3809925047619,
         34.08660966190475
@@ -2097,7 +2097,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8358,
-      "buildingHeight": 8.9,
+      "buildingHeight": 4.43,
       "buildingCentroid": [
         -118.37991077,
         34.08726662
@@ -2130,7 +2130,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9058,
-      "buildingHeight": 6.7,
+      "buildingHeight": 6.69,
       "buildingCentroid": [
         -118.38073985714286,
         34.087413985714285
@@ -2163,7 +2163,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 1684,
-      "buildingHeight": 13.6,
+      "buildingHeight": 13.58,
       "buildingCentroid": [
         -118.38042795999999,
         34.087561199999996
@@ -2196,7 +2196,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 1633,
-      "buildingHeight": 8,
+      "buildingHeight": 12.33,
       "buildingCentroid": [
         -118.38130506521739,
         34.08717341304348
@@ -2229,7 +2229,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 1633,
-      "buildingHeight": 8,
+      "buildingHeight": 12.33,
       "buildingCentroid": [
         -118.38130506521739,
         34.08717341304348
@@ -2262,7 +2262,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 86,
-      "buildingHeight": 4.5,
+      "buildingHeight": 4.47,
       "buildingCentroid": [
         -118.3834899368421,
         34.0768625631579
@@ -2328,7 +2328,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3027,
-      "buildingHeight": 6.1,
+      "buildingHeight": 6.05,
       "buildingCentroid": [
         -118.37765122580647,
         34.08908722903225
@@ -2361,7 +2361,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 1682,
-      "buildingHeight": 19.2,
+      "buildingHeight": 19.21,
       "buildingCentroid": [
         -118.37872119795918,
         34.08862205918368
@@ -2394,7 +2394,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 1682,
-      "buildingHeight": 19.2,
+      "buildingHeight": 19.21,
       "buildingCentroid": [
         -118.37872119795918,
         34.08862205918368
@@ -2427,7 +2427,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 1680,
-      "buildingHeight": 8.2,
+      "buildingHeight": 8.21,
       "buildingCentroid": [
         -118.37954324318183,
         34.08808112954546
@@ -2460,7 +2460,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 7211,
-      "buildingHeight": 7.8,
+      "buildingHeight": 7.85,
       "buildingCentroid": [
         -118.37014721818181,
         34.08346114545455
@@ -2526,7 +2526,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3230,
-      "buildingHeight": 4,
+      "buildingHeight": 4.21,
       "buildingCentroid": [
         -118.37589608888887,
         34.08256488888889
@@ -2559,7 +2559,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 5457,
-      "buildingHeight": 14.8,
+      "buildingHeight": 14.79,
       "buildingCentroid": [
         -118.36185764285715,
         34.08652947142857
@@ -2592,7 +2592,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6934,
-      "buildingHeight": 6.5,
+      "buildingHeight": 6.46,
       "buildingCentroid": [
         -118.37563650000001,
         34.08957636
@@ -2625,7 +2625,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 7333,
-      "buildingHeight": 7.9,
+      "buildingHeight": 7.59,
       "buildingCentroid": [
         -118.36930567727272,
         34.083944540909094
@@ -2658,7 +2658,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 4956,
-      "buildingHeight": 8.7,
+      "buildingHeight": 4.6,
       "buildingCentroid": [
         -118.36179036595748,
         34.0886060319149
@@ -2691,7 +2691,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 205,
-      "buildingHeight": 5.5,
+      "buildingHeight": 5.26,
       "buildingCentroid": [
         -118.386967975,
         34.081044575
@@ -2724,7 +2724,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2993,
-      "buildingHeight": 6,
+      "buildingHeight": 9.88,
       "buildingCentroid": [
         -118.37681950833333,
         34.082270666666666
@@ -2757,7 +2757,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2993,
-      "buildingHeight": 6,
+      "buildingHeight": 9.88,
       "buildingCentroid": [
         -118.37681950833333,
         34.082270666666666
@@ -2790,7 +2790,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6906,
-      "buildingHeight": 3.6,
+      "buildingHeight": 3.62,
       "buildingCentroid": [
         -118.37392046000001,
         34.09032317333333
@@ -2823,7 +2823,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6900,
-      "buildingHeight": 8.9,
+      "buildingHeight": 8.93,
       "buildingCentroid": [
         -118.37363338333336,
         34.090352149999994
@@ -2856,7 +2856,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3636,
-      "buildingHeight": 5.2,
+      "buildingHeight": 5.17,
       "buildingCentroid": [
         -118.37320308999999,
         34.09089171
@@ -2889,7 +2889,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9951,
-      "buildingHeight": 8,
+      "buildingHeight": 12.99,
       "buildingCentroid": [
         -118.36663534285715,
         34.091035053571424
@@ -2922,7 +2922,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9951,
-      "buildingHeight": 8,
+      "buildingHeight": 12.99,
       "buildingCentroid": [
         -118.36663534285715,
         34.091035053571424
@@ -2955,7 +2955,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3747,
-      "buildingHeight": 9.9,
+      "buildingHeight": 9.89,
       "buildingCentroid": [
         -118.3669618,
         34.09109692307693
@@ -2988,7 +2988,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3747,
-      "buildingHeight": 9.9,
+      "buildingHeight": 9.89,
       "buildingCentroid": [
         -118.3669618,
         34.09109692307693
@@ -3021,7 +3021,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3760,
-      "buildingHeight": 3.4,
+      "buildingHeight": 7.14,
       "buildingCentroid": [
         -118.36717362727276,
         34.091121227272716
@@ -3054,7 +3054,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6735,
-      "buildingHeight": 5.4,
+      "buildingHeight": 5.41,
       "buildingCentroid": [
         -118.36717897142856,
         34.0905217
@@ -3087,7 +3087,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3761,
-      "buildingHeight": 7.9,
+      "buildingHeight": 7.86,
       "buildingCentroid": [
         -118.36771863529412,
         34.09111369411765
@@ -3120,7 +3120,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3683,
-      "buildingHeight": 8,
+      "buildingHeight": 5.09,
       "buildingCentroid": [
         -118.36942555454544,
         34.091131463636366
@@ -3153,7 +3153,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3724,
-      "buildingHeight": 8,
+      "buildingHeight": 4.94,
       "buildingCentroid": [
         -118.36963275,
         34.0909643375
@@ -3186,7 +3186,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3700,
-      "buildingHeight": 8,
+      "buildingHeight": 7.11,
       "buildingCentroid": [
         -118.36992064,
         34.090874559999996
@@ -3219,7 +3219,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3714,
-      "buildingHeight": 8,
+      "buildingHeight": 4.93,
       "buildingCentroid": [
         -118.36977055,
         34.09091041666667
@@ -3252,7 +3252,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6775,
-      "buildingHeight": 6.9,
+      "buildingHeight": 4.1,
       "buildingCentroid": [
         -118.369995715,
         34.090391634999996
@@ -3285,7 +3285,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6852,
-      "buildingHeight": 4.1,
+      "buildingHeight": 4.01,
       "buildingCentroid": [
         -118.36950837500001,
         34.090436016666665
@@ -3318,7 +3318,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3665,
-      "buildingHeight": 8,
+      "buildingHeight": 4.43,
       "buildingCentroid": [
         -118.37054936666668,
         34.0909064
@@ -3351,7 +3351,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 5054,
-      "buildingHeight": 3.9,
+      "buildingHeight": 3.92,
       "buildingCentroid": [
         -118.36109493783783,
         34.08509621351352
@@ -3384,7 +3384,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2641,
-      "buildingHeight": 8.2,
+      "buildingHeight": 7.39,
       "buildingCentroid": [
         -118.36980073529412,
         34.0758009
@@ -3417,7 +3417,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 215,
-      "buildingHeight": 9.1,
+      "buildingHeight": 9.3,
       "buildingCentroid": [
         -118.38526589285712,
         34.081753407142855
@@ -3450,7 +3450,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 214,
-      "buildingHeight": 7.4,
+      "buildingHeight": 15.72,
       "buildingCentroid": [
         -118.3836508153846,
         34.081459346153856
@@ -3516,7 +3516,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 213,
-      "buildingHeight": 7.3,
+      "buildingHeight": 6.29,
       "buildingCentroid": [
         -118.38520442222222,
         34.08122016666667
@@ -3549,7 +3549,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8120,
-      "buildingHeight": 6.5,
+      "buildingHeight": 6.54,
       "buildingCentroid": [
         -118.38525612333335,
         34.08201176333333
@@ -3582,7 +3582,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2066,
-      "buildingHeight": 9.9,
+      "buildingHeight": 9.45,
       "buildingCentroid": [
         -118.37629714799999,
         34.07797394000001
@@ -3615,7 +3615,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2993,
-      "buildingHeight": 6,
+      "buildingHeight": 9.88,
       "buildingCentroid": [
         -118.37681950833333,
         34.082270666666666
@@ -3648,7 +3648,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8100,
-      "buildingHeight": 6.8,
+      "buildingHeight": 6.77,
       "buildingCentroid": [
         -118.3809925047619,
         34.08660966190475
@@ -3681,7 +3681,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8456,
-      "buildingHeight": 6.8,
+      "buildingHeight": 6.79,
       "buildingCentroid": [
         -118.37685121666668,
         34.080910816666666
@@ -3747,7 +3747,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6037,
-      "buildingHeight": 8.3,
+      "buildingHeight": 8.32,
       "buildingCentroid": [
         -118.36110074285715,
         34.07904512857142
@@ -3813,7 +3813,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 5429,
-      "buildingHeight": 19.9,
+      "buildingHeight": 16.93,
       "buildingCentroid": [
         -118.3617741442623,
         34.08597117049181
@@ -3846,7 +3846,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6037,
-      "buildingHeight": 8.3,
+      "buildingHeight": 8.32,
       "buildingCentroid": [
         -118.36110074285715,
         34.07904512857142
@@ -3879,7 +3879,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 5429,
-      "buildingHeight": 19.9,
+      "buildingHeight": 16.93,
       "buildingCentroid": [
         -118.3617741442623,
         34.08597117049181
@@ -3945,7 +3945,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3143,
-      "buildingHeight": 9.9,
+      "buildingHeight": 9.93,
       "buildingCentroid": [
         -118.3826895617647,
         34.09082008235294
@@ -4011,7 +4011,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2797,
-      "buildingHeight": 8,
+      "buildingHeight": 8.36,
       "buildingCentroid": [
         -118.38527578,
         34.08440924
@@ -4044,7 +4044,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 5429,
-      "buildingHeight": 19.9,
+      "buildingHeight": 16.93,
       "buildingCentroid": [
         -118.3617741442623,
         34.08597117049181
@@ -4077,7 +4077,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8361,
-      "buildingHeight": 4.4,
+      "buildingHeight": 6.31,
       "buildingCentroid": [
         -118.37387760000001,
         34.07583708461539
@@ -4110,7 +4110,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2437,
-      "buildingHeight": 12,
+      "buildingHeight": 11.97,
       "buildingCentroid": [
         -118.37031404999999,
         34.07639468333333
@@ -4176,7 +4176,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6047,
-      "buildingHeight": 5.5,
+      "buildingHeight": 5.45,
       "buildingCentroid": [
         -118.36067606470587,
         34.07641532941176
@@ -4209,7 +4209,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3724,
-      "buildingHeight": 8,
+      "buildingHeight": 4.94,
       "buildingCentroid": [
         -118.36963275,
         34.0909643375
@@ -4242,7 +4242,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2762,
-      "buildingHeight": 8,
+      "buildingHeight": 10.63,
       "buildingCentroid": [
         -118.38469868571428,
         34.08482567142857
@@ -4275,7 +4275,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6942,
-      "buildingHeight": 7.9,
+      "buildingHeight": 7.95,
       "buildingCentroid": [
         -118.37531921111112,
         34.09037428888889
@@ -4308,7 +4308,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9920,
-      "buildingHeight": 7.4,
+      "buildingHeight": 5.36,
       "buildingCentroid": [
         -118.38488743333335,
         34.081072049999996
@@ -4341,7 +4341,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9928,
-      "buildingHeight": 6.7,
+      "buildingHeight": 6.69,
       "buildingCentroid": [
         -118.38500041428568,
         34.08057204285715
@@ -4374,7 +4374,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9922,
-      "buildingHeight": 7.4,
+      "buildingHeight": 5.04,
       "buildingCentroid": [
         -118.38470473333332,
         34.08116023333333
@@ -4466,7 +4466,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8105,
-      "buildingHeight": 6.1,
+      "buildingHeight": 4.51,
       "buildingCentroid": [
         -118.3800313375,
         34.082172425
@@ -4499,7 +4499,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3635,
-      "buildingHeight": 8,
+      "buildingHeight": 5.71,
       "buildingCentroid": [
         -118.371992825,
         34.09102145000001
@@ -4532,7 +4532,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9936,
-      "buildingHeight": 8,
+      "buildingHeight": 5.14,
       "buildingCentroid": [
         -118.37015630000002,
         34.090927344444445
@@ -4624,7 +4624,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2825,
-      "buildingHeight": 8,
+      "buildingHeight": 5.06,
       "buildingCentroid": [
         -118.3854631,
         34.084381359999995
@@ -4657,7 +4657,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6912,
-      "buildingHeight": 4.7,
+      "buildingHeight": 5.42,
       "buildingCentroid": [
         -118.37611400666667,
         34.090477373333336
@@ -4690,7 +4690,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3666,
-      "buildingHeight": 8,
+      "buildingHeight": 2.6,
       "buildingCentroid": [
         -118.37130808571429,
         34.09109207142857
@@ -4723,7 +4723,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 2925,
-      "buildingHeight": 35.7,
+      "buildingHeight": 35.71,
       "buildingCentroid": [
         -118.38512187368423,
         34.0896869631579
@@ -4756,7 +4756,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9046,
-      "buildingHeight": 5.2,
+      "buildingHeight": 5.23,
       "buildingCentroid": [
         -118.37755855,
         34.09395646666666
@@ -4789,7 +4789,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 4962,
-      "buildingHeight": 10.1,
+      "buildingHeight": 10.12,
       "buildingCentroid": [
         -118.36176468571429,
         34.09054978571429
@@ -4822,7 +4822,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6889,
-      "buildingHeight": 50.4,
+      "buildingHeight": 50.37,
       "buildingCentroid": [
         -118.37211150000002,
         34.095082867924525
@@ -4855,7 +4855,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9894,
-      "buildingHeight": 40,
+      "buildingHeight": 44.51,
       "buildingCentroid": [
         -118.37357856000001,
         34.0947892
@@ -4888,7 +4888,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9894,
-      "buildingHeight": 40,
+      "buildingHeight": 44.51,
       "buildingCentroid": [
         -118.37357856000001,
         34.0947892
@@ -4921,7 +4921,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 6890,
-      "buildingHeight": 49.5,
+      "buildingHeight": 49.23,
       "buildingCentroid": [
         -118.37443484285716,
         34.094484909523814
@@ -4954,7 +4954,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9894,
-      "buildingHeight": 40,
+      "buildingHeight": 44.51,
       "buildingCentroid": [
         -118.37357856000001,
         34.0947892
@@ -4987,7 +4987,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 276,
-      "buildingHeight": 4.3,
+      "buildingHeight": 5.09,
       "buildingCentroid": [
         -118.38845423333335,
         34.08216508
@@ -5020,7 +5020,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 334,
-      "buildingHeight": 4.9,
+      "buildingHeight": 4.85,
       "buildingCentroid": [
         -118.37897154615385,
         34.093068800000005
@@ -5086,7 +5086,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 3422,
-      "buildingHeight": 8,
+      "buildingHeight": 8.78,
       "buildingCentroid": [
         -118.38096218333334,
         34.077128800000004
@@ -5119,7 +5119,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 4410,
-      "buildingHeight": 10.5,
+      "buildingHeight": 10.54,
       "buildingCentroid": [
         -118.3883118681818,
         34.090415695454546
@@ -5152,7 +5152,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 4864,
-      "buildingHeight": 5,
+      "buildingHeight": 5.04,
       "buildingCentroid": [
         -118.36560094285713,
         34.091251878571434
@@ -5185,7 +5185,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 5116,
-      "buildingHeight": 4.6,
+      "buildingHeight": 4.57,
       "buildingCentroid": [
         -118.36458680000001,
         34.0905209875
@@ -5218,7 +5218,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 8085,
-      "buildingHeight": 6.9,
+      "buildingHeight": 4.17,
       "buildingCentroid": [
         -118.38531501578944,
         34.08369842631579
@@ -5251,7 +5251,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9394,
-      "buildingHeight": 5.3,
+      "buildingHeight": 5.35,
       "buildingCentroid": [
         -118.38328111428571,
         34.08576335714286
@@ -5284,7 +5284,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9437,
-      "buildingHeight": 5.8,
+      "buildingHeight": 6.05,
       "buildingCentroid": [
         -118.38962535000003,
         34.08215091428571
@@ -5317,7 +5317,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9442,
-      "buildingHeight": 6.1,
+      "buildingHeight": 6.09,
       "buildingCentroid": [
         -118.38910187647059,
         34.0818
@@ -5350,7 +5350,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9568,
-      "buildingHeight": 8.2,
+      "buildingHeight": 7.18,
       "buildingCentroid": [
         -118.3892490222222,
         34.08172962222222
@@ -5383,7 +5383,7 @@
       "seatingType": null,
       "drinkTypes": [],
       "buildingId": 9831,
-      "buildingHeight": 8,
+      "buildingHeight": 43.72,
       "buildingCentroid": [
         -118.39265024,
         34.09075574
