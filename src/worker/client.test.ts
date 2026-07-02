@@ -131,23 +131,34 @@ describe('requestShadows — drop-and-replace coalescing', () => {
   });
 });
 
-describe('requestShadows — queued during init', () => {
-  it('waits for "ready" before sending a shadow request made mid-init', async () => {
+describe('requestShadows — rejects (not queues) during (re-)init', () => {
+  it('rejects not-ready — NOT supersede — while the worker is initializing, so callers fall back promptly', async () => {
     const client = createScoringClient();
     const w = FakeWorker.instances[0];
 
+    // init() in flight (state === 'initializing'), not yet ready. This is the
+    // neighborhood-switch window: a shadow request here must reject promptly
+    // rather than queue behind init, or bindStores would await the whole
+    // re-init and render stale (previous-neighborhood) shadows.
     const initPromise = client.init([], []);
     const shadowPromise = client.requestShadows(sun, bounds, 16);
 
+    // Nothing was posted to the worker, and the promise rejects immediately
+    // with the not-ready error (so bindStores hits its catch and falls back).
     expect(shadowMsgsOf(w)).toHaveLength(0);
+    await expect(shadowPromise).rejects.toThrow(/not initialized/);
+    await expect(shadowPromise).rejects.not.toBeInstanceOf(ShadowRequestSuperseded);
 
+    // init still completes normally afterward.
     w.reply({ type: 'ready', venueCount: 0, occluderCount: 0 });
     await initPromise;
 
+    // And once ready, a fresh shadow request works.
+    const p2 = client.requestShadows(sun, bounds, 16);
     const [msg] = shadowMsgsOf(w);
     expect(msg).toBeTruthy();
     w.reply({ type: 'shadowResult', requestId: msg.requestId, features: fc(5) });
-    await expect(shadowPromise).resolves.toEqual(fc(5));
+    await expect(p2).resolves.toEqual(fc(5));
   });
 });
 

@@ -151,6 +151,35 @@ describe('bindStores — shadow worker path with main-thread fallback (ANS-237)'
     cleanup();
   });
 
+  it('falls back and renders real shadows while the worker is (re-)initializing on a neighborhood switch', async () => {
+    // During a neighborhood switch, AppShell.loadNeighborhood calls init()
+    // again -> the client is 'initializing' and requestShadows rejects
+    // not-ready (NOT supersede). recomputeShadows must fall back promptly to
+    // the main thread and render the CURRENT neighborhood's shadows rather
+    // than awaiting the re-init window and leaving the previous
+    // neighborhood's (stale) shadows on screen (ANS-237).
+    mockRequestShadows.mockRejectedValue(
+      new Error('Worker not initialized. Call init() before requestShadows().')
+    );
+    const occluders = [mkOccluder(20, -118.3, 34.05)];
+    mockLoadBuildingOccluders.mockResolvedValue(occluders);
+
+    const { map, setData } = makeFakeMap();
+    const cleanup = bindStores(map as never);
+    await flush();
+
+    expect(mockRequestShadows).toHaveBeenCalled();
+    expect(mockLoadBuildingOccluders).toHaveBeenCalledWith('silver-lake');
+    // A real, non-empty FeatureCollection was rendered via the fallback —
+    // the layer is not blank/stale during re-init.
+    expect(setData).toHaveBeenCalled();
+    const fc = setData.mock.calls[0][0];
+    expect(fc.type).toBe('FeatureCollection');
+    expect(fc.features.length).toBeGreaterThan(0);
+
+    cleanup();
+  });
+
   it('falls back to the main-thread projection when the worker errors generically', async () => {
     mockRequestShadows.mockRejectedValue(new Error('boom'));
     mockLoadBuildingOccluders.mockResolvedValue([mkOccluder(20, -118.3, 34.05)]);

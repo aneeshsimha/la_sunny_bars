@@ -141,10 +141,10 @@ export function createScoringClient(): ScoringClient {
       if (pending) {
         sendPending();
       }
-      // Same for a shadow request queued before init finished.
-      if (pendingShadow) {
-        sendPendingShadow();
-      }
+      // Note: shadow requests are NOT queued during init — requestShadows
+      // rejects promptly while 'initializing' so bindStores falls back to the
+      // main thread instead of awaiting the re-init window (avoids stale
+      // shadows on neighborhood switch). So there's nothing to flush here.
       return;
     }
 
@@ -298,7 +298,16 @@ export function createScoringClient(): ScoringClient {
       cap?: number,
     ): Promise<ShadowFeatureCollection> {
       return new Promise((resolve, reject) => {
-        if (state === 'idle') {
+        // Reject promptly whenever the worker isn't usable yet — both before
+        // the first init ('idle') AND while a (re-)init is in flight
+        // ('initializing', e.g. a neighborhood switch calling init() again).
+        // Unlike score(), a shadow request must NOT queue behind init: if it
+        // did, bindStores.recomputeShadows would await it for the whole
+        // re-init window, never reach its catch, never fall back — and the
+        // shadow layer would show the PREVIOUS neighborhood's shadows (stale).
+        // Rejecting here (not with the supersede error) makes bindStores fall
+        // back to the main-thread projection immediately (ANS-237).
+        if (state === 'idle' || state === 'initializing') {
           reject(new Error('Worker not initialized. Call init() before requestShadows().'));
           return;
         }
@@ -313,12 +322,11 @@ export function createScoringClient(): ScoringClient {
         }
         pendingShadow = { sun, bounds, zoom, cap, resolve, reject };
 
-        // If the worker is still initializing, wait for 'ready' to flush the
-        // queue. If a shadow request is already in flight, wait for its
-        // shadowResult to flush the queue. Otherwise send immediately —
-        // shadow requests don't wait on score's busy state since the worker
-        // processes messages independently per type.
-        if (state !== 'initializing' && !inFlightShadow) {
+        // If a shadow request is already in flight, wait for its shadowResult
+        // to flush the queue. Otherwise send immediately — shadow requests
+        // don't wait on score's busy state since the worker processes
+        // messages independently per type.
+        if (!inFlightShadow) {
           sendPendingShadow();
         }
       });
