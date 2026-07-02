@@ -21,6 +21,9 @@ export interface VenueFeature {
   openNow: boolean | null;
   seatingType: 'patio' | 'sidewalk' | 'rooftop' | 'indoor' | null;
   drinkTypes: string[];
+  buildingHeight: number | null;
+  buildingCentroid: [number, number] | null;
+  facadeAzimuths: number[];
   confidence: ConfidenceLevel;
   walkTimeMinutes: number | null;
 }
