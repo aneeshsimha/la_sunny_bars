@@ -1,11 +1,38 @@
 import type { VenueRecord } from './schema.js';
+import { classifyRooftop } from './rooftopVenues.js';
+
+export { classifyRooftop } from './rooftopVenues.js';
+
+// High-precision rooftop name patterns (ANS-236). Deliberately conservative:
+// no bare "terrace"/"penthouse"/"high" — those are ambiguous and would
+// cause false positives on ground-level venues.
+const ROOFTOP_NAME_PATTERN = /rooftop|sky bar|skybar|sky lounge|sky deck|roof/;
+
+/**
+ * True if the venue is a rooftop by either the high-precision name pattern
+ * or the curated name+coord list (ANS-236). Exported separately from
+ * `deriveSeatingType` so callers that only care about the rooftop signal
+ * (e.g. the reclassify script, which must not touch non-rooftop
+ * `seatingType` values) don't have to reimplement it.
+ */
+export function isRooftopVenue(record: Pick<VenueRecord, 'name' | 'coords'>): boolean {
+  const name = record.name.toLowerCase();
+
+  if (ROOFTOP_NAME_PATTERN.test(name)) {
+    return true;
+  }
+
+  // Curated name+coord list (ANS-236) — catches known rooftop venues whose
+  // names don't contain any rooftop-signaling word (e.g. "Perch").
+  return classifyRooftop(record.name, record.coords);
+}
 
 export function deriveSeatingType(
   record: VenueRecord,
 ): 'patio' | 'sidewalk' | 'rooftop' | 'indoor' | null {
   const name = record.name.toLowerCase();
 
-  if (/rooftop|sky bar|skybar|roof/.test(name)) {
+  if (isRooftopVenue(record)) {
     return 'rooftop';
   }
 
