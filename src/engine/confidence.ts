@@ -3,13 +3,15 @@ export type ConfidenceLevel = 'high' | 'medium' | 'low';
 /**
  * Derive a confidence level for a venue's sun score.
  *
- * - 'high': rooftop seating (open sky, minimal occlusion risk); manually verified;
- *   or ground-level outdoor seating (patio/sidewalk) whose patio orientation is
- *   known (ANS-217 D5) — the sample grid is biased to the actual patio side
- *   rather than sampled symmetrically around a door/centroid point.
- * - 'low': seatingType is null (unknown patio location) or indoor (score not meaningful)
- * - 'medium': ground-level outdoor seating (patio, sidewalk, etc.) whose orientation
- *   is unknown — should not read 'high' on that basis alone.
+ * - 'high': rooftop seating (open sky, minimal occlusion risk) or manually verified.
+ * - 'low': seatingType is null (unknown patio location) or indoor (score not meaningful);
+ *   OR ground-level outdoor seating (patio/sidewalk) whose patio orientation is unknown
+ *   (ANS-217 D5) — the sample grid falls back to a symmetric guess around a
+ *   door/centroid point, so the score is not trustworthy on that basis.
+ * - 'medium': ground-level outdoor seating (patio/sidewalk) whose orientation is known
+ *   (`facadeAzimuths` present) — the grid is biased toward the actual patio side. Not
+ *   promoted to 'high' because `facadeAzimuths` is itself a heuristic guess, not on
+ *   equal footing with rooftop's structurally-justified 'high'.
  */
 export function getConfidence(venue: {
   seatingType: string | null;
@@ -22,9 +24,9 @@ export function getConfidence(venue: {
   if (venue.seatingType === null || venue.seatingType === 'indoor') return 'low';
   if (
     (venue.seatingType === 'patio' || venue.seatingType === 'sidewalk') &&
-    venue.orientationKnown
+    !venue.orientationKnown
   ) {
-    return 'high';
+    return 'low';
   }
   return 'medium';
 }

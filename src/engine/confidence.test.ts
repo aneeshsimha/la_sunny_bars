@@ -22,14 +22,16 @@ describe('getConfidence', () => {
     expect(getConfidence({ seatingType: 'indoor', orientationKnown: true })).toBe('low');
   });
 
-  it('is medium for patio/sidewalk seating when orientation is unknown', () => {
-    expect(getConfidence({ seatingType: 'patio' })).toBe('medium');
-    expect(getConfidence({ seatingType: 'patio', orientationKnown: false })).toBe('medium');
-    expect(getConfidence({ seatingType: 'sidewalk', orientationKnown: false })).toBe('medium');
+  it('is low for patio/sidewalk seating when orientation is unknown (centroid guess)', () => {
+    expect(getConfidence({ seatingType: 'patio' })).toBe('low');
+    expect(getConfidence({ seatingType: 'patio', orientationKnown: false })).toBe('low');
+    expect(getConfidence({ seatingType: 'sidewalk', orientationKnown: false })).toBe('low');
   });
 
-  it('is high for patio/sidewalk seating when orientation is known', () => {
-    expect(getConfidence({ seatingType: 'patio', orientationKnown: true })).toBe('high');
-    expect(getConfidence({ seatingType: 'sidewalk', orientationKnown: true })).toBe('high');
+  it('is medium (not high) for patio/sidewalk seating when orientation is known', () => {
+    // facadeAzimuths is itself a heuristic guess, so a known orientation only
+    // lifts confidence to 'medium' — not to rooftop's structurally-justified 'high'.
+    expect(getConfidence({ seatingType: 'patio', orientationKnown: true })).toBe('medium');
+    expect(getConfidence({ seatingType: 'sidewalk', orientationKnown: true })).toBe('medium');
   });
 });
