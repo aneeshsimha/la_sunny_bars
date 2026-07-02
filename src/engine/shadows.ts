@@ -63,10 +63,19 @@ export function isPointInSunlight(
  * seen by a receiver at elevation `receiverZ` meters above ground (default
  * 0 = ground level).
  *
- * The shadow is formed by projecting each vertex of the footprint along the
- * ground in the direction opposite the sun. The resulting polygon is the
- * concatenation of the original vertices + projected vertices (wound in
- * reverse) to form a closed ring.
+ * The ground shadow of a footprint extruded to height `h` is the region
+ * swept between the footprint and its ground-projected copy (each vertex
+ * pushed along the ground in the direction opposite the sun). For a convex
+ * footprint that region is exactly the convex hull of (footprint vertices ∪
+ * projected vertices) — computed via `convexHull` (ANS-234). The resulting
+ * ring is OPEN (not closed back to its first vertex); callers close it
+ * (e.g. `shadowLayer.ts` does `[...ring, ring[0]]`) and `isPointInPolygon`
+ * handles open rings.
+ *
+ * Non-convex footprints: the hull can slightly OVER-cover (mark a bit more
+ * ground as shaded than the true swept region) since it fills in the
+ * footprint's own concavities. That's acceptable and conservative — it
+ * never misses real shade, it can only over-report it.
  *
  * An occluder can only shade a receiver above ground if part of it rises
  * above the receiver's elevation; the effective caster height used for the
@@ -122,13 +131,62 @@ export function computeShadowPolygon(
     lat + dLat,
   ]);
 
-  // Build the shadow polygon: original footprint + projected footprint reversed.
-  const shadowPoly: [number, number][] = [
-    ...polygon,
-    ...projected.reverse(),
-  ];
+  // Build the shadow polygon as the convex hull of footprint + projected
+  // vertices (see function doc for why — ANS-234).
+  return convexHull([...polygon, ...projected]);
+}
 
-  return shadowPoly;
+/**
+ * Convex hull of a set of 2D points via Andrew's monotone chain
+ * (exported for testing). Points are sorted lexicographically, duplicate
+ * points are removed, and collinear points along an edge are dropped (only
+ * the extreme points of each collinear run are kept). Returns an OPEN ring
+ * (no repeated first/last point) — 0, 1, or 2 points if fewer than 3
+ * distinct points are given.
+ */
+export function convexHull(points: [number, number][]): [number, number][] {
+  const uniqueByKey = new Map<string, [number, number]>();
+  for (const p of points) uniqueByKey.set(`${p[0]},${p[1]}`, p);
+  const sorted = [...uniqueByKey.values()].sort(
+    (a, b) => a[0] - b[0] || a[1] - b[1]
+  );
+
+  if (sorted.length < 3) return sorted;
+
+  // Cross product of (o->a) x (o->b); > 0 means a->b turns left (CCW) around o.
+  const cross = (
+    o: [number, number],
+    a: [number, number],
+    b: [number, number]
+  ) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+
+  const lower: [number, number][] = [];
+  for (const p of sorted) {
+    while (
+      lower.length >= 2 &&
+      cross(lower[lower.length - 2], lower[lower.length - 1], p) <= 0
+    ) {
+      lower.pop();
+    }
+    lower.push(p);
+  }
+
+  const upper: [number, number][] = [];
+  for (let i = sorted.length - 1; i >= 0; i--) {
+    const p = sorted[i];
+    while (
+      upper.length >= 2 &&
+      cross(upper[upper.length - 2], upper[upper.length - 1], p) <= 0
+    ) {
+      upper.pop();
+    }
+    upper.push(p);
+  }
+
+  // Each of lower/upper ends with the other's starting point — drop that dupe.
+  lower.pop();
+  upper.pop();
+  return lower.concat(upper);
 }
 
 /**
