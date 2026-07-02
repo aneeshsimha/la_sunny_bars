@@ -100,3 +100,48 @@ export function precomputeCandidates(
   }
   return result;
 }
+
+/**
+ * Estimate a venue's ground elevation (meters) as the `baseElev` of the
+ * nearest candidate occluder (by centroid distance) that has a known
+ * `baseElev` (ANS-238). Returns null when no candidate has a `baseElev` —
+ * e.g. no candidates, or a withheld neighborhood (Pasadena) where every
+ * occluder's `baseElev` is null.
+ */
+export function nearestGroundElev(
+  point: [number, number],
+  candidates: Occluder[]
+): number | null {
+  const [pLng, pLat] = point;
+  const cosLat = Math.cos((pLat * Math.PI) / 180);
+
+  let best: number | null = null;
+  let bestDistSq = Infinity;
+
+  for (const occ of candidates) {
+    if (occ.baseElev == null) continue;
+
+    const n = occ.polygon.length;
+    if (n === 0) continue;
+    let cLng = 0;
+    let cLat = 0;
+    for (const [lng, lat] of occ.polygon) {
+      cLng += lng;
+      cLat += lat;
+    }
+    cLng /= n;
+    cLat /= n;
+
+    // Distance in meters (approximate, sufficient for nearest-neighbor comparison).
+    const dEast = (cLng - pLng) * METERS_PER_DEG_LAT * cosLat;
+    const dNorth = (cLat - pLat) * METERS_PER_DEG_LAT;
+    const distSq = dEast * dEast + dNorth * dNorth;
+
+    if (distSq < bestDistSq) {
+      bestDistSq = distSq;
+      best = occ.baseElev;
+    }
+  }
+
+  return best;
+}
