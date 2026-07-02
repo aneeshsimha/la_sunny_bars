@@ -31,11 +31,15 @@ export const METERS_PER_DEG_LAT = 111_320;
  *   - opacity <= 0.3: occluder is too transparent to cast a blocking shadow — skip.
  *   - 0.3 < opacity < 1: treated as fully opaque (conservative).
  *   - opacity === 1 (or undefined): fully opaque.
+ *
+ * `receiverZ` (meters, default 0) is the receiver's elevation above ground
+ * (e.g. a rooftop patio's height); see `computeShadowPolygon` (ANS-218 D6).
  */
 export function isPointInSunlight(
   point: [number, number], // [lng, lat]
   occluders: Occluder[],
-  sun: SunPosition
+  sun: SunPosition,
+  receiverZ: number = 0
 ): boolean {
   // Sun below or at the horizon — everything is in shadow
   if (sun.altitude <= 0) return false;
@@ -45,7 +49,7 @@ export function isPointInSunlight(
     // Very transparent occluders do not block sun at all
     if (opacity <= 0.3) continue;
 
-    const shadowPoly = computeShadowPolygon(occluder, sun);
+    const shadowPoly = computeShadowPolygon(occluder, sun, receiverZ);
     if (isPointInPolygon(point, shadowPoly)) {
       return false;
     }
@@ -55,16 +59,33 @@ export function isPointInSunlight(
 }
 
 /**
- * Compute the shadow polygon cast by an occluder given a sun position.
+ * Compute the shadow polygon cast by an occluder given a sun position, as
+ * seen by a receiver at elevation `receiverZ` meters above ground (default
+ * 0 = ground level).
  *
  * The shadow is formed by projecting each vertex of the footprint along the
  * ground in the direction opposite the sun. The resulting polygon is the
  * concatenation of the original vertices + projected vertices (wound in
  * reverse) to form a closed ring.
+ *
+ * An occluder can only shade a receiver above ground if part of it rises
+ * above the receiver's elevation; the effective caster height used for the
+ * projection is `occluder.height - receiverZ` (ANS-218 D6). Occluders at or
+ * below the receiver (effective height <= 0) cast no shadow on it. Omitting
+ * `receiverZ` (or passing 0) is byte-identical to the pre-D6 ground-level
+ * behavior.
+ *
+ * TODO(D6 follow-up): near-field terrain slope (ground elevation under the
+ * receiver/occluders) is not modeled — `receiverZ` currently only accounts
+ * for a venue's own elevation (e.g. rooftop height), not sloped streets.
+ * Wiring in real ground-elevation deltas needs a DEM (USGS 3DEP/SRTM), which
+ * is not in the repo and requires a network fetch — deferred to a future
+ * ticket.
  */
 export function computeShadowPolygon(
   occluder: Occluder,
-  sun: SunPosition
+  sun: SunPosition,
+  receiverZ: number = 0
 ): [number, number][] {
   // Sun at or below horizon: shadow extends infinitely — return empty polygon.
   if (sun.altitude <= 0) return [];
@@ -72,8 +93,13 @@ export function computeShadowPolygon(
   const { polygon, height } = occluder;
   if (polygon.length === 0) return [];
 
+  // Effective caster height as seen by a receiver at `receiverZ`. An occluder
+  // at or below the receiver casts no shadow on it.
+  const effectiveHeight = height - receiverZ;
+  if (effectiveHeight <= 0) return [];
+
   // Shadow length on the ground in meters.
-  const shadowLengthMeters = height / Math.tan(sun.altitude);
+  const shadowLengthMeters = effectiveHeight / Math.tan(sun.altitude);
 
   // Shadow direction: opposite the sun azimuth.
   // suncalc: azimuth 0 = south, positive = west (clockwise from south).
@@ -116,11 +142,15 @@ export function computeShadowPolygon(
  *   - opacity <= 0.3: occluder casts no shadow — score stays 1.0.
  *   - 0.3 < opacity < 1: partial shadow → score = (1 - opacity).
  *   - opacity >= 1 (or undefined): full shadow → score = 0.0.
+ *
+ * `receiverZ` (meters, default 0) is the receiver's elevation above ground
+ * (e.g. a rooftop patio's height); see `computeShadowPolygon` (ANS-218 D6).
  */
 export function scoreSunlight(
   point: [number, number],
   occluders: Occluder[],
-  sun: SunPosition
+  sun: SunPosition,
+  receiverZ: number = 0
 ): number {
   if (sun.altitude <= 0) return 0.0;
 
@@ -131,7 +161,7 @@ export function scoreSunlight(
     // Very transparent: no shadow contribution
     if (opacity <= 0.3) continue;
 
-    const shadowPoly = computeShadowPolygon(occluder, sun);
+    const shadowPoly = computeShadowPolygon(occluder, sun, receiverZ);
     if (isPointInPolygon(point, shadowPoly)) {
       const score = opacity >= 1.0 ? 0.0 : 1.0 - opacity;
       if (score < minScore) minScore = score;
