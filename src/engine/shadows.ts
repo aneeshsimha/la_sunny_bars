@@ -8,6 +8,7 @@ export interface Occluder {
   polygon: [number, number][]; // [lng, lat] vertices of footprint
   height: number; // height in meters
   opacity?: number; // 1.0 = solid building; <1.0 = tree canopy, attenuates shadow
+  heightSource?: 'measured' | 'levels' | 'default'; // provenance of `height`, if known (ANS-213 B9)
 }
 
 export interface SunPosition {

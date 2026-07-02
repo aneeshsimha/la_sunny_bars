@@ -10,7 +10,6 @@ export const PROXIMITY_RADIUS_METERS = 250;
 // --- Occluder opacity ---
 export const TREE_OPACITY = 0.5;
 export const AWNING_OPACITY = 0.7;
-export const DEFAULT_BUILDING_HEIGHT = 4; // meters, used when OSM height tag is absent
 
 // --- Forecast window ---
 export const FORECAST_MINUTES = 60;
