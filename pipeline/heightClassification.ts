@@ -46,3 +46,24 @@ export function classifyHeight(tags: Record<string, string>): HeightClassificati
 
   return { height: DEFAULT_BUILDING_HEIGHT_METERS, heightSource: 'default' };
 }
+
+/**
+ * Proxy re-classification of a *shipped* height value with no raw OSM tags
+ * available (ANS-235 LARIAC augmentation). The buildings.json files predate
+ * the `heightSource` field, so when a footprint doesn't get a LARIAC match
+ * there's no tag to run through `classifyHeight` — only the final baked
+ * `height` number survives. This applies the same heuristic proxy used by
+ * `scripts/audit-heights.ts`: exactly the bare default implies 'default';
+ * an integer multiple of METERS_PER_LEVEL implies a 'levels' derivation;
+ * anything else implies a real OSM `height` tag ('measured').
+ *
+ * This is an approximation, not ground truth — see docs/height-audit.md for
+ * the caveat (a genuinely measured height that happens to land on a
+ * multiple of METERS_PER_LEVEL is indistinguishable from a levels-derived
+ * one under this heuristic).
+ */
+export function classifyExistingHeight(height: number): HeightSource {
+  if (height === DEFAULT_BUILDING_HEIGHT_METERS) return 'default';
+  if (Number.isInteger(height) && height % METERS_PER_LEVEL === 0) return 'levels';
+  return 'measured';
+}

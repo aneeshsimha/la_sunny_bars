@@ -15,6 +15,7 @@ interface Occluder {
   polygon: [number, number][];
   height: number;
   heightSource: HeightSource;
+  baseElev?: number | null; // ground elevation in meters, from LARIAC ELEV when matched (ANS-235); null if unmatched
 }
 
 interface BuildingsOutput {

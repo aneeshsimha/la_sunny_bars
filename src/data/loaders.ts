@@ -3,6 +3,7 @@ export interface Occluder {
   height: number;
   opacity?: number;
   heightSource?: 'measured' | 'levels' | 'default'; // provenance of `height`, if known (ANS-213 B9)
+  baseElev?: number | null; // ground elevation in meters, from LARIAC ELEV when matched (ANS-235); null if unmatched
 }
 
 export interface NeighborhoodManifestEntry {

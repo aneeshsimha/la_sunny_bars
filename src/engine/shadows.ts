@@ -9,6 +9,7 @@ export interface Occluder {
   height: number; // height in meters
   opacity?: number; // 1.0 = solid building; <1.0 = tree canopy, attenuates shadow
   heightSource?: 'measured' | 'levels' | 'default'; // provenance of `height`, if known (ANS-213 B9)
+  baseElev?: number | null; // ground elevation in meters, from LARIAC ELEV when matched (ANS-235); null if unmatched
 }
 
 export interface SunPosition {
